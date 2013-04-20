@@ -21,7 +21,7 @@ $(document).ready(function() {
 
 function runEvent(event) {
 	manager.currentEvent = event;
-	$(".title").text(event.title);
+	$("#choice-menu").children(".title").text(event.title);
 	$(".choice-description").html(event.description);
 	var count = 0;
 	$("ol li").each(function() {
