@@ -125,3 +125,21 @@ body{
  	background: blue;
  	width: 10%;
  }
+
+ #choice-menu{
+ 	height: 60%;
+ 	width: 50%;
+ 	color: white;
+ 	background: grey;
+ 	margin-left: 25%;
+ 	font-family: 'CapsuulaRegular', Arial, sans-serif;
+ 	position: relative;
+ 	ol {
+	 	position: relative;
+ 		li{
+ 			font-size: 2em;
+	 		list-style:upper-alpha;
+ 		}
+
+ 	}
+ }
