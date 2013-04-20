@@ -11,6 +11,10 @@
 	cursor: default;
 }
 
+body{
+	background: black;
+}
+
 
  #canvas-container{
  	border: black solid 1em;
@@ -96,6 +100,7 @@
  	background:rgba(0,0,0,.7);
  	font-family: 'CapsuulaRegular', Arial, sans-serif;
  	letter-spacing: 0;
+ 	color: white;
  }
 
  #progressbar {
