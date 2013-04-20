@@ -4,30 +4,27 @@ function playerinfo () {
 	this.commodity = new commodity();
 	this.infrastructure = new infrastructure();
 
-	this.resourcepercent = function () {
+	this.resourcespercent = function () {
 		return this.resourcevalue.resources / this.resourcemax.resources;
 	};
 	this.moneypercent = function () {
 		return this.resourcevalue.money / this.resourcemax.money;
+	};
+	this.commoditiespercent = function () {
+		return this.resourcevalue.commodities / this.resourcemax.commodities;
 	};
 }
 
 function resourcevalue () {
 	this.resources = 0;
 	this.money = 0;
+	this.commodities = 0;
 }
 
 function resourcemax () {
 	this.resources = 100;
-	this.money = 1000;
-}
-
-function commodity () {
-	this.helium = 0;
-	this.water = 0;
-	this.oxygen = 0;
-	this.hydrogen = 0;
-	this.preciousmetals = 0;
+	this.money = 10000;
+	this.commodities = 1000;
 }
 function infrastructure () {
 	this.rovers = 0;
