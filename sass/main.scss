@@ -127,18 +127,18 @@ body{
  }
 
  #choice-menu{
- 	height: 60%;
+ 	height: 50%;
  	width: 50%;
  	color: white;
  	background: grey;
  	margin-left: 25%;
+ 	margin-top: 10%;
  	font-family: 'CapsuulaRegular', Arial, sans-serif;
  	position: relative;
  	ol {
-	 	position: relative;
+ 		margin-left: 2em;
  		li{
  			font-size: 2em;
-	 		list-style:upper-alpha;
  		}
 
  	}

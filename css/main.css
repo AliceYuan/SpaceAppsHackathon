@@ -207,20 +207,20 @@ body {
 
 /* line 129, ../sass/main.scss */
 #choice-menu {
-  height: 60%;
+  height: 50%;
   width: 50%;
   color: white;
   background: grey;
   margin-left: 25%;
+  margin-top: 10%;
   font-family: "CapsuulaRegular", Arial, sans-serif;
   position: relative;
 }
-/* line 137, ../sass/main.scss */
+/* line 138, ../sass/main.scss */
 #choice-menu ol {
-  position: relative;
+  margin-left: 2em;
 }
-/* line 139, ../sass/main.scss */
+/* line 140, ../sass/main.scss */
 #choice-menu ol li {
   font-size: 2em;
-  list-style: upper-alpha;
 }
