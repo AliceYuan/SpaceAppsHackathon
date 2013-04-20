@@ -8,6 +8,8 @@
  @import "compass/css3/transition";
  @import "compass/css3/border-radius";
 
+
+
  * {
  	cursor: default;
  }
@@ -27,6 +29,7 @@
 
  body{
  	background: black;
+ 	font-size: 16px;
  }
 
 
@@ -70,18 +73,14 @@
  }
 
 
- #main-menu li:hover {
- 	font-size: 1.6em;
- }
 
  #secondary-menu{
- 	max-height:100px;
+ 	height:100px;
  	width: 100%;
  	background: rgba(0,0,0,.7);
  	color: white;
  }
  #secondary-menu ul{
- 	background: grey;
  	width: 100%;
  	display: block;
  }
@@ -129,27 +128,26 @@
   	color: white;
   }
 
-  #progressbar {
+  .progressbar {
   	background-color: black;
   	border-radius: 13px; /* (height of inner div) / 2 + padding */
   	padding: 3px;
   	margin-top: 5px;
   }
 
-  #progressbar div {
+  .progressbar div {
   	height: 20px;
   	border-radius: 10px;
   }
 
-  #progressbar div p{
+  .progressbar div p{
   	color: white;
   	vertical-align: middle;
   	margin-left: 10px;
   }
 
-  #progressbar.water div{
+  .progressbar.water div{
   	background: blue;
-  	width: 10%;
   }
 
   #choice-menu{
