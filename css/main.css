@@ -103,9 +103,10 @@ body {
   background: black url("img/Moon.jpg") bottom no-repeat;
   margin: auto;
   position: relative;
+  overflow: hidden;
 }
 
-/* line 45, ../sass/main.scss */
+/* line 46, ../sass/main.scss */
 #main-menu {
   height: 60px;
   width: 100%;
@@ -115,7 +116,7 @@ body {
   letter-spacing: 0;
 }
 
-/* line 54, ../sass/main.scss */
+/* line 55, ../sass/main.scss */
 #main-menu li {
   font-size: 1.3em;
   font-weight: bold;
@@ -140,26 +141,26 @@ body {
   text-transform: uppercase;
 }
 
-/* line 70, ../sass/main.scss */
+/* line 72, ../sass/main.scss */
 #main-menu li p {
   margin: auto;
   vertical-align: middle;
 }
 
-/* line 77, ../sass/main.scss */
+/* line 79, ../sass/main.scss */
 #secondary-menu {
   width: 100%;
   background: rgba(0, 0, 0, 0.7);
   color: white;
 }
 
-/* line 82, ../sass/main.scss */
+/* line 84, ../sass/main.scss */
 #secondary-menu ul {
   width: 100%;
   display: block;
 }
 
-/* line 88, ../sass/main.scss */
+/* line 90, ../sass/main.scss */
 #secondary-menu li {
   width: 130px;
   height: 130px;
@@ -167,7 +168,7 @@ body {
   float: left;
   margin-left: 10px;
 }
-/* line 94, ../sass/main.scss */
+/* line 96, ../sass/main.scss */
 #secondary-menu li img {
   width: 100px;
   height: 100px;
@@ -181,7 +182,7 @@ body {
   margin: 10px;
   opacity: 0.6;
 }
-/* line 102, ../sass/main.scss */
+/* line 104, ../sass/main.scss */
 #secondary-menu li img:hover {
   width: 120px;
   height: 120px;
@@ -196,7 +197,7 @@ body {
 /*
  * status bar
  */
-/* line 119, ../sass/main.scss */
+/* line 121, ../sass/main.scss */
 #status {
   width: 40%;
   position: absolute;
@@ -212,7 +213,7 @@ body {
   border-top-right-radius: 10px;
 }
 
-/* line 132, ../sass/main.scss */
+/* line 134, ../sass/main.scss */
 .progressbar {
   background-color: black;
   border-radius: 13px;
@@ -221,40 +222,40 @@ body {
   margin-top: 5px;
 }
 
-/* line 139, ../sass/main.scss */
+/* line 141, ../sass/main.scss */
 .progressbar div {
   height: 20px;
   border-radius: 10px;
 }
 
-/* line 144, ../sass/main.scss */
+/* line 146, ../sass/main.scss */
 .progressbar div p {
   color: white;
   vertical-align: middle;
   margin-left: 10px;
 }
 
-/* line 150, ../sass/main.scss */
+/* line 152, ../sass/main.scss */
 .progressbar.water div {
   background: blue;
 }
 
-/* line 153, ../sass/main.scss */
+/* line 155, ../sass/main.scss */
 .progressbar.value-resources div {
   background: green;
 }
 
-/* line 156, ../sass/main.scss */
+/* line 158, ../sass/main.scss */
 .progressbar.manufacturing-resources div {
   background: purple;
 }
 
-/* line 159, ../sass/main.scss */
+/* line 161, ../sass/main.scss */
 .progressbar.energy div {
   background: orange;
 }
 
-/* line 165, ../sass/main.scss */
+/* line 167, ../sass/main.scss */
 #choice-menu {
   height: 40%;
   width: 50%;
@@ -272,22 +273,33 @@ body {
   -o-border-radius: 10px;
   border-radius: 10px;
 }
-/* line 177, ../sass/main.scss */
+/* line 179, ../sass/main.scss */
 #choice-menu h2.title {
   text-align: center;
   margin: 10px;
 }
-/* line 181, ../sass/main.scss */
+/* line 183, ../sass/main.scss */
 #choice-menu h3.choice-description {
   text-align: center;
   min-height: 3em;
 }
-/* line 186, ../sass/main.scss */
+/* line 188, ../sass/main.scss */
 #choice-menu ol {
   margin-left: 2em;
 }
-/* line 188, ../sass/main.scss */
+/* line 190, ../sass/main.scss */
 #choice-menu ol li {
+  display: block;
   font-size: 2em;
   margin-bottom: .5em;
+}
+/* line 192, ../sass/main.scss */
+#choice-menu ol li p:first-child {
+  float: left;
+  margin-right: 1em;
+}
+
+/* line 204, ../sass/main.scss */
+.hide {
+  visibility: none;
 }

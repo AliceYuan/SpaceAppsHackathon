@@ -17,6 +17,8 @@ $(document).ready(function() {
 	// }
 	event = manager.getNextEvent();
 	runEvent(event);
+
+    initMenuActions();
 });
 
 function runEvent(event) {
