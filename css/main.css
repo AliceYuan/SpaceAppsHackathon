@@ -204,3 +204,23 @@ body {
   background: blue;
   width: 10%;
 }
+
+/* line 129, ../sass/main.scss */
+#choice-menu {
+  height: 60%;
+  width: 50%;
+  color: white;
+  background: grey;
+  margin-left: 25%;
+  font-family: "CapsuulaRegular", Arial, sans-serif;
+  position: relative;
+}
+/* line 137, ../sass/main.scss */
+#choice-menu ol {
+  position: relative;
+}
+/* line 139, ../sass/main.scss */
+#choice-menu ol li {
+  font-size: 2em;
+  list-style: upper-alpha;
+}
