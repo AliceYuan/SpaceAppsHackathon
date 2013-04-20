@@ -4,19 +4,20 @@ function playerinfo () {
 	this.commodity = new commodity();
 	this.infrastructure = new infrastructure();
 
-	this.healthpercent = function () { return playerinfo.resourcevalue / playerinfo.resourcemax; };
-	this.resourcepercent = 0;
-	this.moneypercent = 0;
+	this.resourcepercent = function () {
+		return this.resourcevalue.resources / this.resourcemax.resources;
+	};
+	this.moneypercent = function () {
+		return this.resourcevalue.money / this.resourcemax.money;
+	};
 }
 
 function resourcevalue () {
-	this.health = 50;
 	this.resources = 0;
 	this.money = 0;
 }
 
 function resourcemax () {
-	this.health = 100;
 	this.resources = 100;
 	this.money = 1000;
 }

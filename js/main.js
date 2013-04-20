@@ -5,13 +5,17 @@ $(document).ready(function() {
 	player = new playerinfo();
 	updateProgress();
 	manager = new GameEventManager();
-	event = manager.executeNextEvent();
-	while(event != null) {
-		draw(event.description);
-		window.alert(event.title);
-		var y=window.prompt("please choose next")
-		event = manager.executeNextEvent(y);
-	}
+
+	var p = new playerinfo();
+	console.log(p.healthpercent());
+
+	// event = manager.executeNextEvent();
+	// while(event != null) {
+	// 	draw(event.description);
+	// 	window.alert(event.title);
+	// 	var y=window.prompt("please choose next")
+	// 	event = manager.executeNextEvent(y);
+	// }
 });
 
 function updateProgress() {
