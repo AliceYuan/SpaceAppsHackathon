@@ -67,17 +67,34 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 10, ../sass/main.scss */
+/* line 11, ../sass/main.scss */
 * {
   cursor: default;
 }
 
-/* line 14, ../sass/main.scss */
+/* line 15, ../sass/main.scss */
+h1 {
+  font-size: 3em;
+  font-weight: bold;
+}
+
+/* line 20, ../sass/main.scss */
+h2 {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+/* line 24, ../sass/main.scss */
+h2 {
+  font-size: 1.6em;
+}
+
+/* line 28, ../sass/main.scss */
 body {
   background: black;
 }
 
-/* line 19, ../sass/main.scss */
+/* line 33, ../sass/main.scss */
 #canvas-container {
   border: black solid 1em;
   width: 1366px;
@@ -87,7 +104,7 @@ body {
   position: relative;
 }
 
-/* line 28, ../sass/main.scss */
+/* line 42, ../sass/main.scss */
 #main-menu {
   height: 60px;
   width: 100%;
@@ -97,7 +114,7 @@ body {
   letter-spacing: 0;
 }
 
-/* line 37, ../sass/main.scss */
+/* line 51, ../sass/main.scss */
 #main-menu li {
   font-size: 1.3em;
   font-weight: bold;
@@ -122,18 +139,18 @@ body {
   text-transform: uppercase;
 }
 
-/* line 53, ../sass/main.scss */
+/* line 67, ../sass/main.scss */
 #main-menu li p {
   margin: auto;
   vertical-align: middle;
 }
 
-/* line 59, ../sass/main.scss */
+/* line 73, ../sass/main.scss */
 #main-menu li:hover {
   font-size: 1.6em;
 }
 
-/* line 63, ../sass/main.scss */
+/* line 77, ../sass/main.scss */
 #secondary-menu {
   max-height: 100px;
   width: 100%;
@@ -141,30 +158,50 @@ body {
   color: white;
 }
 
-/* line 69, ../sass/main.scss */
+/* line 83, ../sass/main.scss */
 #secondary-menu ul {
+  background: grey;
   width: 100%;
   display: block;
 }
 
-/* line 75, ../sass/main.scss */
+/* line 90, ../sass/main.scss */
 #secondary-menu li {
-  width: 120px;
-  height: 120px;
+  width: 130px;
+  height: 130px;
   background: black;
   float: left;
+  margin-left: 20px;
 }
-/* line 80, ../sass/main.scss */
+/* line 96, ../sass/main.scss */
 #secondary-menu li img {
+  width: 100px;
+  height: 100px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  border: 5px solid white;
+  background: grey;
+  margin: 10px;
+  opacity: 0.6;
+}
+/* line 104, ../sass/main.scss */
+#secondary-menu li img:hover {
   width: 120px;
   height: 120px;
-  background: grey;
+  opacity: 1;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 /*
  * status bar
  */
-/* line 94, ../sass/main.scss */
+/* line 120, ../sass/main.scss */
 #status {
   width: 40%;
   position: absolute;
@@ -177,7 +214,7 @@ body {
   color: white;
 }
 
-/* line 106, ../sass/main.scss */
+/* line 132, ../sass/main.scss */
 #progressbar {
   background-color: black;
   border-radius: 13px;
@@ -186,41 +223,59 @@ body {
   margin-top: 5px;
 }
 
-/* line 113, ../sass/main.scss */
+/* line 139, ../sass/main.scss */
 #progressbar div {
   height: 20px;
   border-radius: 10px;
 }
 
-/* line 118, ../sass/main.scss */
+/* line 144, ../sass/main.scss */
 #progressbar div p {
   color: white;
   vertical-align: middle;
   margin-left: 10px;
 }
 
-/* line 124, ../sass/main.scss */
+/* line 150, ../sass/main.scss */
 #progressbar.water div {
   background: blue;
   width: 10%;
 }
 
-/* line 129, ../sass/main.scss */
+/* line 155, ../sass/main.scss */
 #choice-menu {
-  height: 50%;
+  height: 40%;
   width: 50%;
+  padding: 2.5%;
+  border: 5px white solid;
   color: white;
   background: grey;
   margin-left: 25%;
   margin-top: 10%;
   font-family: "CapsuulaRegular", Arial, sans-serif;
   position: relative;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
 }
-/* line 138, ../sass/main.scss */
+/* line 167, ../sass/main.scss */
+#choice-menu h2.title {
+  text-align: center;
+  margin: 10px;
+}
+/* line 171, ../sass/main.scss */
+#choice-menu h3.choice-description {
+  text-align: center;
+  min-height: 3em;
+}
+/* line 176, ../sass/main.scss */
 #choice-menu ol {
   margin-left: 2em;
 }
-/* line 140, ../sass/main.scss */
+/* line 178, ../sass/main.scss */
 #choice-menu ol li {
   font-size: 2em;
+  margin-bottom: .5em;
 }

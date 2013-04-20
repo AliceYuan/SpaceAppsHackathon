@@ -6,14 +6,28 @@
  @import "compass/reset";
  @import "compass/css3/images";
  @import "compass/css3/transition";
+ @import "compass/css3/border-radius";
 
-* {
-	cursor: default;
-}
+ * {
+ 	cursor: default;
+ }
 
-body{
-	background: black;
-}
+ h1{
+ 	font-size: 3em;
+ 	font-weight: bold;
+ }
+
+ h2{
+ 	font-size: 2em;
+ 	font-weight: bold;
+ }
+ h2{
+ 	font-size: 1.6em;
+ }
+
+ body{
+ 	background: black;
+ }
 
 
  #canvas-container{
@@ -30,8 +44,8 @@ body{
  	width: 100%;
  	background: black;
  	color: white;
-	font-family: 'CapsuulaRegular', Arial, sans-serif;
-	letter-spacing: 0; 	
+ 	font-family: 'CapsuulaRegular', Arial, sans-serif;
+ 	letter-spacing: 0; 	
  }
 
  #main-menu li {
@@ -67,20 +81,32 @@ body{
  	color: white;
  }
  #secondary-menu ul{
+ 	background: grey;
  	width: 100%;
  	display: block;
  }
 
 
  #secondary-menu li{
- 	width: 120px;
- 	height: 120px;
+ 	width: 130px;
+ 	height: 130px;
  	background:black;
  	float: left;
+ 	margin-left: 20px;
  	img{
- 	width: 120px;
- 	height: 120px;
+ 		width: 100px;
+ 		height: 100px;
+ 		@include border-radius(50%);
+ 		border: 5px solid white;
  		background: grey;
+ 		margin: 10px;
+ 		opacity: 0.6;
+ 		&:hover{
+	 		width: 120px;
+	 		height: 120px;
+	 		opacity: 1;
+	 		@include transition(all 0.5s ease-in-out);
+ 		}
 
  	}
  }
@@ -91,55 +117,68 @@ body{
   * status bar
   */
 
- #status{
- 	width: 40%;
- 	position: absolute;
- 	padding: 6px;
- 	bottom: 0;
- 	left: 0;
- 	background:rgba(0,0,0,.7);
- 	font-family: 'CapsuulaRegular', Arial, sans-serif;
- 	letter-spacing: 0;
- 	color: white;
- }
+  #status{
+  	width: 40%;
+  	position: absolute;
+  	padding: 6px;
+  	bottom: 0;
+  	left: 0;
+  	background:rgba(0,0,0,.7);
+  	font-family: 'CapsuulaRegular', Arial, sans-serif;
+  	letter-spacing: 0;
+  	color: white;
+  }
 
- #progressbar {
- 	background-color: black;
- 	border-radius: 13px; /* (height of inner div) / 2 + padding */
- 	padding: 3px;
- 	margin-top: 5px;
- }
+  #progressbar {
+  	background-color: black;
+  	border-radius: 13px; /* (height of inner div) / 2 + padding */
+  	padding: 3px;
+  	margin-top: 5px;
+  }
 
- #progressbar div {
- 	height: 20px;
- 	border-radius: 10px;
- }
+  #progressbar div {
+  	height: 20px;
+  	border-radius: 10px;
+  }
 
- #progressbar div p{
- 	color: white;
- 	vertical-align: middle;
- 	margin-left: 10px;
- }
+  #progressbar div p{
+  	color: white;
+  	vertical-align: middle;
+  	margin-left: 10px;
+  }
 
- #progressbar.water div{
- 	background: blue;
- 	width: 10%;
- }
+  #progressbar.water div{
+  	background: blue;
+  	width: 10%;
+  }
 
- #choice-menu{
- 	height: 50%;
- 	width: 50%;
- 	color: white;
- 	background: grey;
- 	margin-left: 25%;
- 	margin-top: 10%;
- 	font-family: 'CapsuulaRegular', Arial, sans-serif;
- 	position: relative;
- 	ol {
- 		margin-left: 2em;
- 		li{
- 			font-size: 2em;
- 		}
+  #choice-menu{
+  	height: 40%;
+  	width: 50%;
+  	padding: 2.5%;
+  	border: 5px white solid;
+  	color: white;
+  	background: grey;
+  	margin-left: 25%;
+  	margin-top: 10%;
+  	font-family: 'CapsuulaRegular', Arial, sans-serif;
+  	position: relative;
+  	@include border-radius(10px);
+  	h2.title{
+	 	text-align: center;
+	 	margin: 10px;
+  	}
+  	h3.choice-description{
+	 	text-align: center;
+	 	min-height: 3em;
 
- 	}
- }
+  	}
+  	ol {
+  		margin-left: 2em;
+  		li{
+  			font-size: 2em;
+  			margin-bottom: .5em;
+  		}
+
+  	}
+  }
