@@ -1,0 +1,122 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+ @import "compass/reset";
+ @import "compass/css3/images";
+ @import "compass/css3/transition";
+
+* {
+	cursor: default;
+}
+
+
+ #canvas-container{
+ 	border: black solid 1em;
+ 	width: 1366px;
+ 	height: 868px;
+ 	background: black url('img/Moon.jpg') bottom no-repeat;	
+ 	margin: auto;
+ 	position: relative;
+ }
+
+ #main-menu{
+ 	height:60px;
+ 	width: 100%;
+ 	background: black;
+ 	color: white;
+	font-family: 'CapsuulaRegular', Arial, sans-serif;
+	letter-spacing: 0; 	
+ }
+
+ #main-menu li {
+ 	font-size: 1.3em;
+ 	font-weight: bold;
+ 	width: 200px;
+ 	height: 50px;
+ 	margin-right: 10px;
+ 	float: left;
+ 	cursor: default;
+ 	text-align:center;
+ 	background-color: rgb(76,76,76);
+ 	@include filter-gradient(#4c4c4c, #131313, horizontal);
+ 	@include background-image(radial-gradient(center, ellipse cover, rgba(76,76,76,1) 0%,rgba(0,0,0,1) 100%));	
+ 	@include transition( all 0.5s ease-in-out);
+ 	text-transform: uppercase;
+ }
+
+ #main-menu li p{
+ 	margin: auto;
+ 	vertical-align: middle;
+ }
+
+
+ #main-menu li:hover {
+ 	font-size: 1.6em;
+ }
+
+ #secondary-menu{
+ 	max-height:100px;
+ 	width: 100%;
+ 	background: rgba(0,0,0,.7);
+ 	color: white;
+ }
+ #secondary-menu ul{
+ 	width: 100%;
+ 	display: block;
+ }
+
+
+ #secondary-menu li{
+ 	width: 120px;
+ 	height: 120px;
+ 	background:black;
+ 	float: left;
+ 	img{
+ 	width: 120px;
+ 	height: 120px;
+ 		background: grey;
+
+ 	}
+ }
+
+
+
+ /*
+  * status bar
+  */
+
+ #status{
+ 	width: 40%;
+ 	position: absolute;
+ 	padding: 6px;
+ 	bottom: 0;
+ 	left: 0;
+ 	background:rgba(0,0,0,.7);
+ 	font-family: 'CapsuulaRegular', Arial, sans-serif;
+ 	letter-spacing: 0;
+ }
+
+ #progressbar {
+ 	background-color: black;
+ 	border-radius: 13px; /* (height of inner div) / 2 + padding */
+ 	padding: 3px;
+ 	margin-top: 5px;
+ }
+
+ #progressbar div {
+ 	height: 20px;
+ 	border-radius: 10px;
+ }
+
+ #progressbar div p{
+ 	color: white;
+ 	vertical-align: middle;
+ 	margin-left: 10px;
+ }
+
+ #progressbar.water div{
+ 	background: blue;
+ 	width: 10%;
+ }
