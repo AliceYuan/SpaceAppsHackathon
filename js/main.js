@@ -1,41 +1,58 @@
 var player;
+var manager;
 
 $(document).ready(function() {
-    // startIntialStory();
-    player = new playerinfo();
-    updateProgress();
-    manager = new GameEventManager();
+	// startIntialStory();
+	player = new playerinfo();
+	updateProgress();
+	manager = new GameEventManager();
+	// console.log(p.healthpercent());
 
-    var p = new playerinfo();
-
-    console.log(p.healthpercent());
-    InitMenuActions();
-
-    // event = manager.executeNextEvent();
-    // while(event != null) {
-    //  draw(event.description);
-    //  window.alert(event.title);
-    //  var y=window.prompt("please choose next")
-    //  event = manager.executeNextEvent(y);
-    // }
+	// event = manager.executeNextEvent();
+	// while(event != null) {
+	// 	draw(event.description);
+	// 	window.alert(event.title);
+	// 	var y=window.prompt("please choose next")
+	// 	event = manager.executeNextEvent(y);
+	// }
+	event = manager.getNextEvent();
+	runEvent(event);
 });
 
+function runEvent(event) {
+	manager.currentEvent = event;
+	$(".title").text(event.title);
+	$(".choice-description").html(event.description);
+	var count = 0;
+	$("ol li").each(function() {
+		$(this).unbind();
+		var choice = event.choices[count];	
+		if(choice) {
+			var nextEvent = manager.getNextEvent(count);
+			$(this).children(".text").text(choice);
+			$(this).bind('click', {nextEvent:nextEvent},function(event){
+			    var data = event.data;
+				runEvent(data.nextEvent);
+			});
+		} else {
+			$(this).children(".text").text("");
+		}
+		count ++; 
+	});
+}
+
 function updateProgress() {
-    // var waterPercentage = player.resourcepercent.water;
-    // var moneyPercentage = player.resourcepercent.money;
-    // var heliumPercentage = player.resourcepercent.helium;
-    // var energyPercentage = player.resourcepercent.energy;
-    var waterPercentage = 50;
-    $("#progressbar.water div").width(waterPercentage + "%");
+	var waterPercentage = player.resourcespercent();
+	$(".progressbar.water div").width(waterPercentage + "%");
 
-    var moneyPercentage = 60;
-    $("#progressbar.money div").width(moneyPercentage + "%");
+	var moneyPercentage = player.moneypercent();
+	$(".progressbar.value-resources div").width(moneyPercentage + "%");
 
-    var heliumPercentage = 30;
-    $("#progressbar.helium div").width(heliumPercentage + "%");
+	var heliumPercentage = 30;
+	$(".progressbar.manufacturing-resources div").width(heliumPercentage + "%");
 
     var energyPercentage = 80;
-    $("#progressbar.energy div").width(energyPercentage + "%");
+    $(".progressbar.energy div").width(energyPercentage + "%");
 }
 
 function draw(text) {

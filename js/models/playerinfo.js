@@ -1,7 +1,6 @@
 function playerinfo () {
 	this.resourcevalue = new resourcevalue();
 	this.resourcemax = new resourcemax();
-	this.commodity = new commodity();
 	this.infrastructure = new infrastructure();
 
 	this.resourcespercent = function () {

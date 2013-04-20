@@ -1,16 +1,16 @@
 function GameEventManager() {
 	this.events = [];
-	this.currentEvent;
+	this.currentEvent = null;
 
 	this.getNextEvent = function (choice) {
 		this.getAllEvents();
 		this.turn +=1;
 		if(this.currentEvent == null) {
-			this.currentEvent = this.events[0];
+			nextEvent = this.events[0];
 		} else {
-			this.currentEvent = this.getEventWithID(this.currentEvent.next[choice])
+			nextEvent = this.getEventWithID(this.currentEvent.next[choice])
 		}
-		return this.currentEvent;
+		return nextEvent;
 	};
 
 	this.getEventWithID = function (ID) {
@@ -34,12 +34,5 @@ function GameEventManager() {
 		  }
 		});
 		this.events = eventJson;
-		console.log(this.events);
-	};
-
-	this.executeNextEvent = function (choice) {
-		event = this.getNextEvent(choice);
-		console.log(event);
-		return event;
 	};
 }
