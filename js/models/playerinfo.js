@@ -36,3 +36,6 @@ function infrastructure () {
 	this.resourceextractors = 0;
 	this.waterextractors = 0;
 }
+function research () {
+	this.heliumgenerator = false;
+}
