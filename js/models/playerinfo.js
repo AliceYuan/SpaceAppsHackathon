@@ -33,5 +33,7 @@ function infrastructure () {
 	this.waterextractors = 0;
 }
 function research () {
-	this.heliumgenerator = false;
+	printerlevel = 1;
+	metalrefinerylevel = 1;
+	commodityrefinerylevel = 1;
 }
