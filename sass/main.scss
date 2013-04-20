@@ -75,7 +75,6 @@
 
 
  #secondary-menu{
- 	height:100px;
  	width: 100%;
  	background: rgba(0,0,0,.7);
  	color: white;
@@ -91,7 +90,7 @@
  	height: 130px;
  	background:black;
  	float: left;
- 	margin-left: 20px;
+ 	margin-left: 10px;
  	img{
  		width: 100px;
  		height: 100px;
@@ -101,10 +100,11 @@
  		margin: 10px;
  		opacity: 0.6;
  		&:hover{
-	 		width: 120px;
-	 		height: 120px;
-	 		opacity: 1;
-	 		@include transition(all 0.5s ease-in-out);
+ 			width: 120px;
+ 			height: 120px;
+ 			opacity: 1;
+ 			margin: 0;
+ 			@include transition(all 0.5s ease-in-out);
  		}
 
  	}
@@ -126,6 +126,7 @@
   	font-family: 'CapsuulaRegular', Arial, sans-serif;
   	letter-spacing: 0;
   	color: white;
+  	@include border-top-right-radius(10px);
   }
 
   .progressbar {
@@ -149,6 +150,17 @@
   .progressbar.water div{
   	background: blue;
   }
+  .progressbar.value-resources div{
+  	background: green;
+  }
+  .progressbar.manufacturing-resources div{
+  	background: purple;
+  }
+  .progressbar.energy div{
+  	background: orange;
+  }
+
+
 
   #choice-menu{
   	height: 40%;
@@ -163,12 +175,12 @@
   	position: relative;
   	@include border-radius(10px);
   	h2.title{
-	 	text-align: center;
-	 	margin: 10px;
+  		text-align: center;
+  		margin: 10px;
   	}
   	h3.choice-description{
-	 	text-align: center;
-	 	min-height: 3em;
+  		text-align: center;
+  		min-height: 3em;
 
   	}
   	ol {

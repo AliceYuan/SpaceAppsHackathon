@@ -1,13 +1,12 @@
 var player;
+var manager;
 
 $(document).ready(function() {
 	// startIntialStory();
 	player = new playerinfo();
 	updateProgress();
 	manager = new GameEventManager();
-
-	var p = new playerinfo();
-	console.log(p.healthpercent());
+	// console.log(p.healthpercent());
 
 	// event = manager.executeNextEvent();
 	// while(event != null) {
@@ -16,31 +15,51 @@ $(document).ready(function() {
 	// 	var y=window.prompt("please choose next")
 	// 	event = manager.executeNextEvent(y);
 	// }
+	event = manager.getNextEvent();
+	runEvent(event);
 });
 
-function updateProgress() {
-	// var waterPercentage = player.resourcepercent.water;
-	// var moneyPercentage = player.resourcepercent.money;
-	// var heliumPercentage = player.resourcepercent.helium;
-	// var energyPercentage = player.resourcepercent.energy;
-	var waterPercentage = 50;
-	$("#progressbar.water div").width(waterPercentage + "%");
+function runEvent(event) {
+	manager.currentEvent = event;
+	$(".title").text(event.title);
+	$(".choice-description").html(event.description);
+	var count = 0;
+	$("ol li").each(function() {
+		$(this).unbind();
+		var choice = event.choices[count];	
+		if(choice) {
+			var nextEvent = manager.getNextEvent(count);
+			$(this).children(".text").text(choice);
+			$(this).bind('click', {nextEvent:nextEvent},function(event){
+			    var data = event.data;
+				runEvent(data.nextEvent);
+			});
+		} else {
+			$(this).children(".text").text("");
+		}
+		count ++; 
+	});
+}
 
-	var moneyPercentage = 60;
-	$("#progressbar.money div").width(moneyPercentage + "%");
+function updateProgress() {
+	var waterPercentage = player.resourcespercent();
+	$(".progressbar.water div").width(waterPercentage + "%");
+
+	var moneyPercentage = player.moneypercent();
+	$(".progressbar.value-resources div").width(moneyPercentage + "%");
 
 	var heliumPercentage = 30;
-	$("#progressbar.helium div").width(heliumPercentage + "%");
+	$(".progressbar.manufacturing-resources div").width(heliumPercentage + "%");
 
-	var energyPercentage = 80;
-	$("#progressbar.energy div").width(energyPercentage + "%");
+    var energyPercentage = 80;
+    $(".progressbar.energy div").width(energyPercentage + "%");
 }
 
 function draw(text) {
-	canvas = document.getElementById('canvas');
-	ctx = canvas.getContext('2d');
-	ctx.fillStyle = "orange";
-	ctx.fillRect(0,0, canvas.width, canvas.height);
-	ctx.font="30px Arial";
-	ctx.strokeText(text,10,50);
+    canvas = document.getElementById('canvas');
+    ctx = canvas.getContext('2d');
+    ctx.fillStyle = "orange";
+    ctx.fillRect(0,0, canvas.width, canvas.height);
+    ctx.font="30px Arial";
+    ctx.strokeText(text,10,50);
 }
