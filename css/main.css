@@ -148,27 +148,26 @@ body {
 
 /* line 77, ../sass/main.scss */
 #secondary-menu {
-  height: 100px;
   width: 100%;
   background: rgba(0, 0, 0, 0.7);
   color: white;
 }
 
-/* line 83, ../sass/main.scss */
+/* line 82, ../sass/main.scss */
 #secondary-menu ul {
   width: 100%;
   display: block;
 }
 
-/* line 89, ../sass/main.scss */
+/* line 88, ../sass/main.scss */
 #secondary-menu li {
   width: 130px;
   height: 130px;
   background: black;
   float: left;
-  margin-left: 20px;
+  margin-left: 10px;
 }
-/* line 95, ../sass/main.scss */
+/* line 94, ../sass/main.scss */
 #secondary-menu li img {
   width: 100px;
   height: 100px;
@@ -182,11 +181,12 @@ body {
   margin: 10px;
   opacity: 0.6;
 }
-/* line 103, ../sass/main.scss */
+/* line 102, ../sass/main.scss */
 #secondary-menu li img:hover {
   width: 120px;
   height: 120px;
   opacity: 1;
+  margin: 0;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
@@ -207,9 +207,12 @@ body {
   font-family: "CapsuulaRegular", Arial, sans-serif;
   letter-spacing: 0;
   color: white;
+  -moz-border-radius-topright: 10px;
+  -webkit-border-top-right-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
-/* line 131, ../sass/main.scss */
+/* line 132, ../sass/main.scss */
 .progressbar {
   background-color: black;
   border-radius: 13px;
@@ -218,25 +221,40 @@ body {
   margin-top: 5px;
 }
 
-/* line 138, ../sass/main.scss */
+/* line 139, ../sass/main.scss */
 .progressbar div {
   height: 20px;
   border-radius: 10px;
 }
 
-/* line 143, ../sass/main.scss */
+/* line 144, ../sass/main.scss */
 .progressbar div p {
   color: white;
   vertical-align: middle;
   margin-left: 10px;
 }
 
-/* line 149, ../sass/main.scss */
+/* line 150, ../sass/main.scss */
 .progressbar.water div {
   background: blue;
 }
 
 /* line 153, ../sass/main.scss */
+.progressbar.value-resources div {
+  background: green;
+}
+
+/* line 156, ../sass/main.scss */
+.progressbar.manufacturing-resources div {
+  background: purple;
+}
+
+/* line 159, ../sass/main.scss */
+.progressbar.energy div {
+  background: orange;
+}
+
+/* line 165, ../sass/main.scss */
 #choice-menu {
   height: 40%;
   width: 50%;
@@ -254,21 +272,21 @@ body {
   -o-border-radius: 10px;
   border-radius: 10px;
 }
-/* line 165, ../sass/main.scss */
+/* line 177, ../sass/main.scss */
 #choice-menu h2.title {
   text-align: center;
   margin: 10px;
 }
-/* line 169, ../sass/main.scss */
+/* line 181, ../sass/main.scss */
 #choice-menu h3.choice-description {
   text-align: center;
   min-height: 3em;
 }
-/* line 174, ../sass/main.scss */
+/* line 186, ../sass/main.scss */
 #choice-menu ol {
   margin-left: 2em;
 }
-/* line 176, ../sass/main.scss */
+/* line 188, ../sass/main.scss */
 #choice-menu ol li {
   font-size: 2em;
   margin-bottom: .5em;
