@@ -9,7 +9,12 @@ function initMenuActions(){
     });
 
     $("#main-menu .research").click(function () {
-        $("#secondary-menu .research li").animate({opacity:1, marginLeft:'0'}, 1000);
+        hideMenuItems($("#secondary-menu ul li"));
+        showMenuItemsAnimate($("#secondary-menu .research li"));
+    });
+    $("#main-menu .construct").click(function () {
+        hideMenuItems($("#secondary-menu ul li"));
+        showMenuItemsAnimate($("#secondary-menu .construct li"));
     });
 }
 
@@ -19,6 +24,10 @@ function hideMenuItems($item){
 
 function hideMenuItemsAnimate($item){
     $item.animate( {"marginLeft": "-10%" , "opacity":"0"});
+}
+
+function showMenuItemsAnimate($item){
+    $item.animate( {marginLeft:'0px', "opacity":"1"}, 1000);
 }
 
 

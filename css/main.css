@@ -85,8 +85,8 @@ h2 {
 }
 
 /* line 26, ../sass/main.scss */
-h2 {
-  font-size: 1.6em;
+h3 {
+  font-size: 1.3em;
 }
 
 /* line 30, ../sass/main.scss */
@@ -257,15 +257,16 @@ body {
 
 /* line 167, ../sass/main.scss */
 #choice-menu {
-  height: 40%;
-  width: 50%;
+  min-height: 40%;
+  width: 60%;
   padding: 2.5%;
   border: 5px white solid;
   color: white;
   background: grey;
-  margin-left: 25%;
+  margin-left: 20%;
   margin-top: 10%;
   font-family: "CapsuulaRegular", Arial, sans-serif;
+  z-index: 1;
   position: relative;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -273,33 +274,34 @@ body {
   -o-border-radius: 10px;
   border-radius: 10px;
 }
-/* line 179, ../sass/main.scss */
+/* line 180, ../sass/main.scss */
 #choice-menu h2.title {
   text-align: center;
   margin: 10px;
 }
-/* line 183, ../sass/main.scss */
+/* line 184, ../sass/main.scss */
 #choice-menu h3.choice-description {
   text-align: center;
   min-height: 3em;
 }
-/* line 188, ../sass/main.scss */
+/* line 189, ../sass/main.scss */
 #choice-menu ol {
   margin-left: 2em;
-}
-/* line 190, ../sass/main.scss */
-#choice-menu ol li {
-  display: block;
-  font-size: 2em;
-  margin-bottom: .5em;
+  margin-top: 1em;
 }
 /* line 192, ../sass/main.scss */
+#choice-menu ol li {
+  display: block;
+  font-size: 1.6em;
+  margin-bottom: .5em;
+}
+/* line 194, ../sass/main.scss */
 #choice-menu ol li p:first-child {
   float: left;
   margin-right: 1em;
 }
 
-/* line 204, ../sass/main.scss */
+/* line 206, ../sass/main.scss */
 .hide {
   visibility: none;
 }
