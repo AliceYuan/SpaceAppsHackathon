@@ -28,6 +28,7 @@ function runEvent(event) {
 	var count = 0;
 	$("ol li").each(function() {
 		$(this).unbind();
+		$(this).show();
 		var choice = event.choices[count];	
 		if(choice) {
 			var nextEvent = manager.getNextEvent(count);
@@ -37,7 +38,7 @@ function runEvent(event) {
 				runEvent(data.nextEvent);
 			});
 		} else {
-			$(this).children(".text").text("");
+			$(this).hide();
 		}
 		count ++; 
 	});
