@@ -1,7 +1,6 @@
 function playerinfo () {
 	this.resourcevalue = new resourcevalue();
 	this.resourcemax = new resourcemax();
-	this.commodity = new commodity();
 	this.infrastructure = new infrastructure();
 
 	this.resourcespercent = function () {
@@ -34,5 +33,7 @@ function infrastructure () {
 	this.waterextractors = 0;
 }
 function research () {
-	this.heliumgenerator = false;
+	printerlevel = 1;
+	metalrefinerylevel = 1;
+	commodityrefinerylevel = 1;
 }
