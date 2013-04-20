@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Space Apps</title>
-    <link rel="stylesheet" type="text/css" href="css/reset.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link rel="stylesheet" href="css/fonts/Aaargh-fontfacekit/stylesheet.css" type="text/css" charset="utf-8">
-    <link rel="stylesheet" href="css/fonts/capsuula-fontfacekit/stylesheet.css" type="text/css" charset="utf-8">
+  <title>Space Apps</title>
+  <link rel="stylesheet" type="text/css" href="css/reset.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" href="css/fonts/Aaargh-fontfacekit/stylesheet.css" type="text/css" charset="utf-8">
+  <link rel="stylesheet" href="css/fonts/capsuula-fontfacekit/stylesheet.css" type="text/css" charset="utf-8">
 
-    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <script src="js/main.js"></script>
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <script src="js/main.js"></script>
         <!--[if gte IE 9]>
           <style type="text/css">
             .gradient {
@@ -17,19 +17,22 @@
           </style>
           <![endif]-->
       </head>
+
+      <script src="js/initialStory.js"></script>
+      <script src="js/GameEventManager.js"></script>
       <body>
-       <div id="canvas-container">
-        <div id="main-menu">
+         <div id="canvas-container">
+          <div id="main-menu">
             <ul>
-                <li><p>Research</p></li>
-                <li><p>Explore</p></li>
-                <li><p>Build</p></li>
-                <li><p>Sell</p></li>
-                <li><p>Options</p></li>
-            </ul>
-        </div>
-        <div id="secondary-menu">
-            <ul>
+              <li><p>Research</p></li>
+              <li><p>Explore</p></li>
+              <li><p>Build</p></li>
+              <li><p>Sell</p></li>
+              <li><p>Options</p></li>
+          </ul>
+      </div>
+          <div id="secondary-menu">
+              <ul>
                 <li>Research</li>
                 <li>Explore</li>
                 <li>Build</li>
@@ -49,30 +52,30 @@
             </ul>
         </div>
         <div id="status">
-            <div id="progressbar" class="water">
-              <div>
-                <p>Water</p>
-              </div>
-            </div>
-            <div id="progressbar" class="money">
-              <div>
-                <p>Money</p>
-              </div>
-            </div>
-            <div id="progressbar" class="helium">
-              <div>
-                <p>Helium</p>
-              </div>
-            </div>
-            <div id="progressbar" class="energy">
-              <div>
-                <p>Energy</p>
-              </div>
-            </div>
+          <div id="progressbar" class="water">
+            <div>
+              <p>Water</p>
+          </div>
       </div>
-      <canvas id="canvas" class="canvas" width="800" height="600">
-         Please use a browser that supports HTML5 canvas
-     </canvas>
- </div>
+      <div id="progressbar" class="money">
+        <div>
+          <p>Money</p>
+      </div>
+  </div>
+  <div id="progressbar" class="helium">
+    <div>
+      <p>Helium</p>
+  </div>
+</div>
+<div id="progressbar" class="energy">
+    <div>
+      <p>Energy</p>
+  </div>
+</div>
+</div>
+<canvas id="canvas" class="canvas" width="800" height="600">
+ Please use a browser that supports HTML5 canvas
+</canvas>
+</div>
 </body>
 </html>
