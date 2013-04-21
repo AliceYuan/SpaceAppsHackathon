@@ -58,6 +58,8 @@
  	width: 200px;
  	height: 50px;
  	margin-right: 10px;
+  border-radius: 10px;
+  border: solid white 1px;
 
  	float: left;
  	cursor: default;
@@ -70,7 +72,7 @@
  }
 
  #main-menu li p{
- 	margin: auto;
+ 	margin: 12px auto;
  	vertical-align: middle;
  }
 
@@ -90,7 +92,6 @@
  #secondary-menu li{
  	width: 130px;
  	height: 130px;
- 	background:black;
  	float: left;
  	margin-left: 10px;
  	img{
@@ -98,7 +99,10 @@
  		height: 100px;
  		@include border-radius(50%);
  		border: 5px solid white;
- 		background: grey;
+ 		background-color: rgb(255,255,255);
+ 		@include filter-gradient(#ffffff, #7a7a7a, horizontal);
+ 		$experimental-support-for-svg: true;
+ 		@include background-image(radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%,rgba(0,0,0,1) 100%,rgba(122,122,122,1) 100%));	
  		margin: 10px;
  		opacity: 0.6;
  		&:hover{
@@ -143,7 +147,8 @@
   	border-radius: 10px;
   }
 
-  .progressbar div p{
+  .progressbar p{
+  	position: absolute;
   	color: white;
   	vertical-align: middle;
   	margin-left: 10px;
@@ -199,10 +204,25 @@
   			font-size: 1.6em;
   			margin-bottom: .5em;
   		}
+  		li:hover{
+  			color: #EDEDED;
+  			font-weight: bold;
+
+  		}
 
   	}
   }
 
   .hide{
   	visibility: none;
+  }
+
+  #tool-tip{
+    position:absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    img{
+      height: 50%;
+    }
   }
