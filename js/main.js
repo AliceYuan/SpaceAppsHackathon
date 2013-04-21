@@ -140,16 +140,12 @@ function resetProgress(){
 }
 
 function updateProgress() {
-    var waterPercentage = player.resourcespercent();
-    $(".progressbar.water div").width(waterPercentage + "%");
-
     var moneyPercentage = player.moneypercent();
-    $(".progressbar.value-resources div").width(moneyPercentage + "%");
-
-    $(".progressbar.manufacturing-resources div").css('width', Math.min(100, player.resourcespercent()) + "%");
-
     var infrastructureCompletion = player.totalInfrastructure / 100;
-    $(".progressbar.energy div").width(Math.min(100, infrastructureCompletion) + "%");
+
+    $(".progressbar.value-resources div").animate({width:(moneyPercentage + "%")});
+    $(".progressbar.manufacturing-resources div").animate({width:(Math.min(100, player.resourcespercent()) + "%")});
+    $(".progressbar.energy div").animate({width:(Math.min(100, infrastructureCompletion) + "%")});
 
     $('#moneyDisplay').text(player.resourcevalue.money);
     $('#dateDisplay').text(months[gameDate.getMonth()] + ' ' + gameDate.getFullYear());
