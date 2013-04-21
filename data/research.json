@@ -1,0 +1,101 @@
+{
+    "research":[ 
+    {   
+        "ID" : 1,
+        "title" : "3D Printer Gen 1",
+        "description" : "A 3D printer is an additive manufacturing technology that enables automated construction of complex sub-assemblies via layered deposition.",
+        "benefits" : "+ 4 units infrastructure",
+        "cost" : {"value-resources": -5, "money": -5000000, "infrastructure":4},
+        "img" : "img/3D_Printerpic.png",
+        "tip": "Cool! You just made your first 3D printer, allowing us to produce entire structures using local materials! <a href='http://www.esa.int/Our_Activities/Technology/Building_a_lunar_base_with_3D_printing'> check this out! </a>"
+    },
+    {   
+        "ID" : 2,
+        "title" : "3D Printer Gen 2",
+        "description" : "A 3D printer is an additive manufacturing technology that enables automated construction of complex sub-assemblies via layered deposition.",
+        "benefits" : "+6 units infrastructure",
+        "cost" : {"value-resources": -7, "money": -10000000, "infrastructure":6},
+        "img" : "img/3D_Printerpic.png",
+        "requirements": 1
+    },
+    {   
+        "ID" : 3,
+        "title" : "3D Printer Gen 3",
+        "description" : "A 3D printer is an additive manufacturing technology that enables automated construction of complex sub-assemblies via layered deposition.",
+        "benefits" : "+6 units infrastructure",
+        "cost" : {"value-resources": -7, "money": -20000000, "infrastructure":20},
+        "img" : "img/3D_Printerpic.png",
+        "requirements": 2
+    },
+    {   
+        "ID" : 4,
+        "title" : "Saw Mill",
+        "description" : "A sawmill converts felled logs from trees into green wood lumbar.",
+        "benefits" : "+3 units value-resources, +3 units infrastructure",
+        "cost" : {"value-resources": 3, "money": -3000000, "infrastructure":3},
+        "img" : "img/Sawmill.png"
+    },
+    {   
+        "ID" : 5,
+        "title" : "3D Scanner Gen 1",
+        "description" : "3D Scanners enable near-instantaneous input of spatial data into digital systems",
+        "benefits" : "+6 units infrastructure",
+        "cost" : {"value-resources": -2, "money": -5000000, "infrastructure":6},
+        "img" : "img/3D_Scanner.png"
+    },
+    {   
+        "ID" : 6,
+        "title" : "3D Scanner Gen 2",
+        "description" : "3D Scanners enable near-instantaneous input of spatial data into digital systems",
+        "benefits" : "+7 units infrastructure",
+        "cost" : {"value-resources": -3, "money": -25000000, "infrastructure":7},
+        "img" : "img/3D_Scanner.png",
+        "requirements": 5
+    },
+    {   
+        "ID" : 7,
+        "title" : "Universal Power Supply",
+        "description" : "A Universal Power Supply forms the backbone of an off-grid electrical system.",
+        "benefits" : "+ 10 units value-resources, + 2 units infrastructure",
+        "cost" : {"value-resources": 10, "money": -50000000, "infrastructure":2},
+        "img" : "img/UPS.png"
+    }
+
+    ],
+    "construct":[ 
+    {   
+        "ID" : 1,
+        "title" : "Nickel Iron Battery",
+        "description" : "Nickel Iron Battery is the primary electrical energy storage device",
+        "benefits" : "+5 value-resources ",
+        "cost" : {"value-resources": 5, "money": -1200000, "infrastructure":-1},
+        "img" : "img/Nickel-Iron_Batterypic.png"
+    },
+    {   
+        "ID" : 2,
+        "title" : "Power Cube",
+        "description" : "The Power Cube is a modular, universal, self-contained power unit consisting of an engine coupled to a hydraulic pump",
+        "benefits" : "+10 units value-resources",
+        "cost" : {"value-resources": 10, "money": -2300000, "infrastructure":1},
+        "img" : "src/Power_Cube.png"
+    } ,
+    {   
+        "ID" : 3,
+        "title" : "Gasifier Burner",
+        "description" : "The Gasifier Burner converts biomass fuel into power and useful chemicals.",
+        "benefits" : "+5 units value-resources, +3 infrastructure",
+        "cost" : {"value-resources": 5, "money": -1300000, "infrastructure":3},
+        "img" : "src/GasifierBurner.png",
+        "tip" : "This is achieved by reacting the material at high temperatures (>700°C), without combustion, with a controlled amount of oxygen and/or steam, breaking down the biomass into carbon monoxide, hydrogen, carbon dioxide and methane. The resulting gas mixture is a fuel called syngas. If Air is used in place of oxygen the gas also contains inert nitrogen and is called producer gas."
+    } ,
+    {   
+        "ID" : 4,
+        "title" : " Plasma Cutter",
+        "description" : "A Plasma Cutter is used to cut metals and other materials.",
+        "benefits" : "+10 units value-resources",
+        "cost" : {"value-resources": 10, "money": -2300000, "infrastructure":1},
+        "img" : "src/Power_Cube.png",
+        "tip": "Whoa! A Plasma Cutter! This uses  inert gas or compressed air is exposed to an electrical arc and blown at high speed from a nozzle. <a href='http://www.plasmacam.com/archive/cnchow.htm'> check out how a plasma cutter works! </a>"
+    } ,
+    ]
+} 

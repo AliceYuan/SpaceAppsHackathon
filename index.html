@@ -14,6 +14,7 @@
   <script src="js/models/infrastructure.js" type="text/javascript"></script>
   <script src="js/GameEventManager.js" type="text/javascript"></script>
   <script src="js/RandomEventManager.js" type="text/javascript"></script>
+  <script src="js/researchManager.js" type="text/javascript"></script>
   <script src="js/actions.js" type="text/javascript"></script>
   <script src="js/main.js" type="text/javascript"></script>
   <script src="js/menu.js" type="text/javascript"></script>
@@ -50,12 +51,6 @@
       <ul class="research">
         <li>
           <img src="img/equipment/3D_Printerpic.png"/>
-          <div class="info-box">
-            <h3 class="title"></h3>
-            <p class="description"></p>
-            <p class="cost"></p>
-            <p class="benifits"></p>
-          </div>
 
         </li>
 
@@ -72,12 +67,6 @@
       <ul class="construct">
         <li>
           <img src="img/equipment/AluminumExtractor.png"/>
-          <div class="info-box">
-            <h3 class="title"></h3>
-            <p class="description"></p>
-            <p class="cost"></p>
-            <p class="benifits"></p>
-          </div>
 
         </li>
 
@@ -91,6 +80,12 @@
           <img src="img/equipment/3D_Printerpic.png"/>
         </li>
       </ul>
+      <div class="info-box">
+        <h3 class="title">title</h3>
+        <p class="description">description</p>
+        <p class="cost">cost</p>
+        <p class="benefits">benefits</p>
+      </div>
     </div>
 
     <div id="choice-menu">
@@ -141,18 +136,18 @@
       <h2>Year:</h2>
 
       <p id="dateDisplay">2017</p>
-      <div class="progressbar value-resources">
-        <p>Value Resources</p>
-        <div></div>
-      </div>
-
       <div class="progressbar manufacturing-resources">
         <p>Manufacturing Resources</p>
         <div></div>
       </div>
 
+      <div class="progressbar value-resources">
+        <p>Sustainable Income</p>
+        <div></div>
+      </div>
+
       <div class="progressbar energy">
-        <p>Infrastructure</p>
+        <p>Sustainable Infrastructure</p>
         <div></div>
       </div>
     </div>
