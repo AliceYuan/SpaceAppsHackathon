@@ -55,10 +55,10 @@ var eventCallbacks = {
         	'	<dd>', player.resourcevalue.resources, 'kg</dd>',
 
         	'	<dt>Commodity Income</dt>',
-        	'	<dd>$', income, '</dd>',
+        	'	<dd>$', showMoney(income), '</dd>',
 
         	'	<dt>Total Money</dt>',
-        	'	<dd>$', player.resourcevalue.money, '</dd>',
+        	'	<dd>$', showMoney(player.resourcevalue.money), '</dd>',
 
         	'</dl>'
         ].join(''));        
@@ -75,6 +75,19 @@ var eventCallbacks = {
         incrementAndDisplayGameDate(0);
     }
 };
+
+function showMoney(val) {
+	if (val < 1000) {
+		return val;
+	}
+	if (val < 1000000) {
+		return Math.round(val / 1000) + "K";
+	}
+	if (val < 1000000000) {
+		return Math.round(val / 1000000) + "M";
+	}
+	return "lots";
+}
 
 function buildInfrastructure (infrastructure) {
     if (player.resourcevalue.money > infrastructure.cost().money && player.resourcevalue.resources > infrastructure.cost().resources) {
@@ -146,7 +159,6 @@ function updateDisplayForEvent (event, isRandom) {
             mon = player.resourcevalue.money;
 
         jQuery.each(allInfrastructure, function(_, inf) {
-			console.log(inf.name, res > inf.cost().resources, mon > inf.cost().money, inf.prerequisiteCheck());
             if (res > inf.cost().resources && mon > inf.cost().money && inf.prerequisiteCheck()) {
                 choices.push([
                     "Build a ",
@@ -154,7 +166,7 @@ function updateDisplayForEvent (event, isRandom) {
                     " (",
                     inf.cost().resources,
                     " kg resources / $",
-                    inf.cost().money,
+                    showMoney(inf.cost().money),
                     ")"
                 ].join(''));
                 next.push(inf.eventid);
@@ -213,15 +225,14 @@ function resetProgress(){
 }
 
 function updateProgress() {
-    var moneyPercentage = player.moneypercent();
+    var sustainableIncome = ((player.infrastructure.commodityrefineries * commodityPrice) / onGoingCost) * 100;
     var infrastructureCompletion = player.totalInfrastructure / 100;
 
-    $(".progressbar.value-resources div").animate({width:(moneyPercentage + "%")});
+    $(".progressbar.value-resources div").animate({width:(Math.min(100, sustainableIncome) + "%")});
     $(".progressbar.manufacturing-resources div").animate({width:(Math.min(100, player.resourcespercent()) + "%")});
     $(".progressbar.energy div").animate({width:(Math.min(100, infrastructureCompletion) + "%")});
 
-    $('#moneyDisplay').text(player.resourcevalue.money);
-
+    $('#moneyDisplay').text(showMoney(player.resourcevalue.money));
 }
 
 function incrementAndDisplayGameDate(numberOfMonths) {

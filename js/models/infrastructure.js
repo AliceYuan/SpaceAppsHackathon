@@ -6,7 +6,7 @@ function infrastructure(name, type, weight, eventid, prerequisiteCheck) {
 		4: 100
 	},
 		maxGeneration = 4,
-		transportCost = 10000,
+		transportCost = 20000,
 		gearRatio = 4,
 		currentGeneration = 1,
 		weight = weight,	
