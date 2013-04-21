@@ -3,18 +3,63 @@
         "ID" : 1,
         "title" : "Micrometeorite Surge!",
         "description" : "<p>Hundreds of micrometeorites from space rain down on your equipment daily. Lately, however, there has been a surge of these tiny, usually harmless particles. This time, their barrage cannot be ignored and resources must be repaired, consuming valuable resources.</p>",
-        "variable description" : [
+        "variableDescription" : [
             "<p>Unfortunately, the crude construction of your 3D printers failed to fend off the attacks and now require precious resources to bring back into working condition.</p>",
             "<p>Fortunately, your industrial strength printers shrugged off the particles with ease, requiring minimal resources to fully repair.</p>"],
         "choices" : [ "Continue" ]
     },
 
     {   
-        "ID" : 1,
+        "ID" : 2,
         "title" : "Meteorite!",
-        "description" : "<p>You wonder how bad your luck can be as a giant hunk of space rock waltzes right though the moon's non-existant atmostphere and directly for your base.</p>",
-        "variable description" : [
-            "<p>Fortunately, the meteorite's path sends its conveniently out of reach of your delicate machinery. Too close for comfort, you nevertheless count your blessings as operations continue as normal.</p>"],
+        "description" : "<p>You wonder just how bad one's luck can get as a giant hunk of space rock waltzes right though the moon's non-existant atmostphere and directly for your base.</p>",
+        "variableDescription" : [
+            "<p>Fortunately, the meteorite flies far into the moon's horizon, barely making a sound. Slightly regretting the distance between you and the action, you nevertheless count your blessings as operations continue as normal.</p>"],
+        "choices" : [ "Continue" ]
+    },
+
+    {   
+        "ID" : 3,
+        "title" : "Meteorite!",
+        "description" : "<p>You wonder just how bad one's luck can get as a giant hunk of space rock waltzes right though the moon's non-existant atmostphere and directly for your base.</p>",
+        "variableDescription" : [
+            "<p>Fortunately, the meteorite's path sends its conveniently out of reach of your delicate machinery. Despite the close call, you set up the lunar photoshoot of the incident for the researchers on earth, anticipating the generous income for the months to come.</p>"],
+        "choices" : [ "Continue" ]
+    },
+
+    {   
+        "ID" : 4,
+        "title" : "Meteorite!",
+        "description" : "<p>You wonder just how bad one's luck can get as a giant hunk of space rock waltzes right though the moon's non-existant atmostphere and directly for your base.</p>",
+        "variableDescription" : [
+            "<p>By some freak accident, the meteorite managed to meander its way staight into one of your resource storage facilities. You foresee many delays creeping into your project plan as bits of your precious resources are scattered across the moon.</p>"],
+        "choices" : [ "Continue" ]
+    },
+
+    {   
+        "ID" : 5,
+        "title" : "Solar Flare!",
+        "description" : "<p>A truly magnificent spectacle to behold, a solar flare from our resident star is often followed by tweets and facebook post of untold proportions. However, having a mission on the moon brings a less cheery perspective thanks to a lack of protective atmostphere that the earth so conveniently possesses.</p>",
+        "variableDescription" : [
+            "<p>Normally, under such circumstances, you can count on every single piece of electronics getting fried in a matter of seconds. Fortunately, it appears even the sun's radiation cannot penetrate the 73.5 trillion gigagrams of moon rock in the way. Indeed, on the moon, it pays to be on the dark side.</p>"],
+        "choices" : [ "Continue" ]
+    },
+
+    {   
+        "ID" : 6,
+        "title" : "Solar Flare!",
+        "description" : "<p>A truly magnificent spectacle to behold, a solar flare from our resident star is often followed by tweets and facebook post of untold proportions. However, having a mission on the moon brings a less cheery perspective thanks to a lack of protective atmostphere that the earth so conveniently possesses.</p>",
+        "variableDescription" : [
+            "<p>Unfortunately, the massive amounts of radiation that resulted from the solar flare made it directly to the most sensitive parts of your infrastructure - the electronics. The near future will almost certainly be dedicated to rebuilding and recovery.</p>"],
+        "choices" : [ "Continue" ]
+    },
+
+    {   
+        "ID" : 7,
+        "title" : "Moon Dust!",
+        "description" : "<p></p>",
+        "variableDescription" : [
+            "<p>Unfortunately, the massive amounts of radiation that resulted from the solar flare made it directly to the most sensitive parts of your infrastructure - the electronics. The near future will almost certainly be dedicated to rebuilding and recovery.</p>"],
         "choices" : [ "Continue" ]
     }
 ]
