@@ -1,16 +1,73 @@
-[ 
+{
+    "research":[ 
     {   
         "ID" : 1,
-        "title" : "First",
+        "title" : "3D Printer Gen 1",
+        "description" : "A 3D printer is an additive manufacturing technology that enables automated construction of complex sub-assemblies via layered deposition.",
+        "benefits" : "+infrastructure",
+        "cost" : {"value-resources": -5, "money": -5000000, "infrastructure":4},
+        "img" : "img/3D_Printerpic.png"
+    },
+    {   
+        "ID" : 2,
+        "title" : "3D Printer Gen 2",
+        "description" : "A 3D printer is an additive manufacturing technology that enables automated construction of complex sub-assemblies via layered deposition.",
+        "benefits" : "+infrastructure",
+        "cost" : {"value-resources": -7, "money": -10000000, "infrastructure":6},
+        "img" : "img/3D_Printerpic.png",
+        "requirements": 1
+    },
+    {   
+
+        "ID" : 3,
+        "title" : "3D Printer Gen 3",
+        "description" : "A 3D printer is an additive manufacturing technology that enables automated construction of complex sub-assemblies via layered deposition.",
+        "benefits" : "benefits",
+        "cost" : "cost",
+        "img" : "img/3D_Printerpic.png",
+        "requirements": 2
+    },
+    {   
+        "ID" : 4,
+        "title" : "3D Printer Gen 1",
+        "description" : "A 3D printer is an additive manufacturing technology that enables automated construction of complex sub-assemblies via layered deposition.",
+        "benefits" : "benefits",
+        "cost" : {"value-resources": -5, "money": -5000000, "infrastructure":4},
+        "img" : "img/3D_Printerpic.png"
+    },
+    {   
+        "ID" : 5,
+        "title" : "3D Printer Gen 1",
+        "description" : "A 3D printer is an additive manufacturing technology that enables automated construction of complex sub-assemblies via layered deposition.",
+        "benefits" : "benefits",
+        "cost" : {"value-resources": -5, "money": -5000000, "infrastructure":4},
+        "img" : "img/3D_Printerpic.png"
+    },
+    {   
+        "ID" : 6,
+        "title" : "3D Printer Gen 1",
+        "description" : "A 3D printer is an additive manufacturing technology that enables automated construction of complex sub-assemblies via layered deposition.",
+        "benefits" : "benefits",
+        "cost" : {"value-resources": -5, "money": -5000000, "infrastructure":4},
+        "img" : "img/3D_Printerpic.png"
+    }
+
+    ],
+    "construct":[ 
+    {   
+        "ID" : 1,
+        "title" : "3D Printer Gen 1",
         "description" : "description",
         "benefits" : "benefits",
-        "cost" : "cost"
+        "cost" : "cost",
+        "img" : ""
     },
     {   
         "ID" : 2,
         "title" : "Second",
         "description" : "description",
         "benefits" : "benefits",
-        "cost" : "cost"
-    }
-]
+        "cost" : "cost",
+        "img" : ""
+    } ]
+} 

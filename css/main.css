@@ -235,10 +235,11 @@ body {
 /* line 145, ../sass/main.scss */
 .progressbar div {
   height: 20px;
+  width: 0;
   border-radius: 10px;
 }
 
-/* line 150, ../sass/main.scss */
+/* line 151, ../sass/main.scss */
 .progressbar p {
   position: absolute;
   color: white;
@@ -246,27 +247,27 @@ body {
   margin-left: 10px;
 }
 
-/* line 157, ../sass/main.scss */
+/* line 158, ../sass/main.scss */
 .progressbar.water div {
   background: blue;
 }
 
-/* line 160, ../sass/main.scss */
+/* line 161, ../sass/main.scss */
 .progressbar.value-resources div {
   background: green;
 }
 
-/* line 163, ../sass/main.scss */
+/* line 164, ../sass/main.scss */
 .progressbar.manufacturing-resources div {
   background: purple;
 }
 
-/* line 166, ../sass/main.scss */
+/* line 167, ../sass/main.scss */
 .progressbar.energy div {
   background: orange;
 }
 
-/* line 172, ../sass/main.scss */
+/* line 173, ../sass/main.scss */
 #choice-menu {
   min-height: 40%;
   width: 60%;
@@ -285,55 +286,67 @@ body {
   -o-border-radius: 10px;
   border-radius: 10px;
 }
-/* line 185, ../sass/main.scss */
+/* line 186, ../sass/main.scss */
 #choice-menu h2.title {
   text-align: center;
   margin: 10px;
 }
-/* line 189, ../sass/main.scss */
+/* line 190, ../sass/main.scss */
 #choice-menu h3.choice-description {
   text-align: center;
   min-height: 3em;
 }
-/* line 194, ../sass/main.scss */
+/* line 195, ../sass/main.scss */
 #choice-menu ol {
   margin-left: 2em;
   margin-top: 1em;
 }
-/* line 197, ../sass/main.scss */
+/* line 198, ../sass/main.scss */
 #choice-menu ol li {
   display: block;
   font-size: 1.6em;
   margin-bottom: .5em;
 }
-/* line 199, ../sass/main.scss */
+/* line 200, ../sass/main.scss */
 #choice-menu ol li p:first-child {
   float: left;
   margin-right: 1em;
 }
-/* line 207, ../sass/main.scss */
+/* line 208, ../sass/main.scss */
 #choice-menu ol li:hover {
   color: #EDEDED;
   font-weight: bold;
 }
 
-/* line 216, ../sass/main.scss */
+/* line 217, ../sass/main.scss */
 .hide {
   visibility: none;
 }
 
-/* line 220, ../sass/main.scss */
+/* line 222, ../sass/main.scss */
+#secondary-menu .info-box {
+  font-family: "CapsuulaRegular", Arial, sans-serif;
+  font-size: 1.2em;
+  float: right;
+  -webkit-transition: all 0.5 ease-in-out;
+  -moz-transition: all 0.5 ease-in-out;
+  -o-transition: all 0.5 ease-in-out;
+  transition: all 0.5 ease-in-out;
+  margin-right: 2em;
+}
+
+/* line 231, ../sass/main.scss */
 #tool-tip {
   position: absolute;
   right: 0;
   bottom: 0;
   z-index: 1;
 }
-/* line 225, ../sass/main.scss */
+/* line 236, ../sass/main.scss */
 #tool-tip img {
   height: 400px;
 }
-/* line 230, ../sass/main.scss */
+/* line 242, ../sass/main.scss */
 #tool-tip .speech {
   position: absolute;
   right: 300px;
@@ -351,7 +364,7 @@ body {
   font-size: 1.2em;
   font-family: "CapsuulaRegular", Arial, sans-serif;
 }
-/* line 249, ../sass/main.scss */
+/* line 261, ../sass/main.scss */
 #tool-tip .speech:after {
   content: "";
   position: absolute;
