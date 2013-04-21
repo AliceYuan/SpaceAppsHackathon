@@ -11,35 +11,35 @@
 
     {   
         "ID" : 2,
-        "title" : "Meteorite!",
-        "description" : "<p>You wonder just how bad one's luck can get as a giant hunk of space rock waltzes right though the moon's non-existant atmostphere and directly for your base.</p>",
+        "title" : "Space Debris!",
+        "description" : "<p>You wonder just how bad one's luck can get as a giant hunk of <a href=\"http://en.wikipedia.org/wiki/Space_debris\">space debris</a> from a failed lunar orbiter mission waltzes right though the moon's non-existant atmostphere and directly for your base.</p>",
         "variableDescription" : [
-            "<p>Fortunately, the meteorite flies far into the moon's horizon, barely making a sound. Slightly regretting the distance between you and the action, you nevertheless count your blessings as operations continue as normal.</p>"],
+            "<p>Fortunately, the space debris flies far into the moon's horizon. Slightly regretting the distance between you and the action, you nevertheless count your blessings as operations continue as normal.</p>"],
         "choices" : [ "Continue" ]
     },
 
     {   
         "ID" : 3,
-        "title" : "Meteorite!",
-        "description" : "<p>You wonder just how bad one's luck can get as a giant hunk of space rock waltzes right though the moon's non-existant atmostphere and directly for your base.</p>",
+        "title" : "Space Debris!",
+        "description" : "<p>You wonder just how bad one's luck can get as a giant hunk of <a href=\"http://en.wikipedia.org/wiki/Space_debris\">space debris</a> from a failed lunar orbiter mission waltzes right though the moon's non-existant atmostphere and directly for your base.</p>",
         "variableDescription" : [
-            "<p>Fortunately, the meteorite's path sends its conveniently out of reach of your delicate machinery. Despite the close call, you set up the lunar photoshoot of the incident for the researchers on earth, anticipating the generous income for the months to come.</p>"],
+            "<p>Fortunately, the space debris's path sends its conveniently out of reach of your delicate machinery. Despite the close call, you set up the lunar photoshoot of the incident for the researchers on earth study. Maybe they will be kind enough to name this now-dead space object after you.</p>"],
         "choices" : [ "Continue" ]
     },
 
     {   
         "ID" : 4,
-        "title" : "Meteorite!",
-        "description" : "<p>You wonder just how bad one's luck can get as a giant hunk of space rock waltzes right though the moon's non-existant atmostphere and directly for your base.</p>",
+        "title" : "Space Debris!!",
+        "description" : "<p>You wonder just how bad one's luck can get as a giant hunk of <a href=\"http://en.wikipedia.org/wiki/Space_debris\">space debris</a> from a failed lunar orbiter mission waltzes right though the moon's non-existant atmostphere and directly for your base.</p>",
         "variableDescription" : [
-            "<p>By some freak accident, the meteorite managed to meander its way staight into one of your resource storage facilities. You foresee many delays creeping into your project plan as bits of your precious resources are scattered across the moon.</p>"],
+            "<p>By some freak accident, the space debris managed to meander its way straight into one of your resource storage facilities. You foresee many delays creeping into your project plan as bits of your precious resources are scattered across the moon.</p>"],
         "choices" : [ "Continue" ]
     },
 
     {   
         "ID" : 5,
         "title" : "Solar Flare!",
-        "description" : "<p>A truly magnificent spectacle to behold, a solar flare from our resident star is often followed by tweets and facebook post of untold proportions. However, having a mission on the moon brings a less cheery perspective thanks to a lack of protective atmostphere that the earth so conveniently possesses.</p>",
+        "description" : "<p>A truly magnificent spectacle to behold, a solar flare from our resident star is often followed by tweets and facebook posts due to the growing susceptibility of our increasingly miniaturized future technologies to damage caused by <a href=\"http://en.wikipedia.org/wiki/Single_event\">high energy particles</a>. However, having a mission on the moon brings a less cheery perspective thanks to a lack of protective atmosphere that the earth so conveniently possesses.</p>",
         "variableDescription" : [
             "<p>Normally, under such circumstances, you can count on every single piece of electronics getting fried in a matter of seconds. Fortunately, it appears even the sun's radiation cannot penetrate the 73.5 trillion gigagrams of moon rock in the way. Indeed, on the moon, it pays to be on the dark side.</p>"],
         "choices" : [ "Continue" ]
@@ -48,18 +48,29 @@
     {   
         "ID" : 6,
         "title" : "Solar Flare!",
-        "description" : "<p>A truly magnificent spectacle to behold, a solar flare from our resident star is often followed by tweets and facebook post of untold proportions. However, having a mission on the moon brings a less cheery perspective thanks to a lack of protective atmostphere that the earth so conveniently possesses.</p>",
+        "description" : "<p>A truly magnificent spectacle to behold, a solar flare from our resident star is often followed by tweets and facebook posts due to the growing susceptibility of our increasingly miniaturized future technologies to damage caused by <a href=\"http://en.wikipedia.org/wiki/Single_event\">high energy particles</a>. However, having a mission on the moon brings a less cheery perspective thanks to a lack of protective atmosphere that the earth so conveniently possesses.</p>",
         "variableDescription" : [
-            "<p>Unfortunately, the massive amounts of radiation that resulted from the solar flare made it directly to the most sensitive parts of your infrastructure - the electronics. The near future will almost certainly be dedicated to rebuilding and recovery.</p>"],
+            "<p>Unfortunately, the massive amounts of radiation that resulted from the solar flare made it directly to the most sensitive parts of your overall crude infrastructure - the electronics. The near future will almost certainly be dedicated to rebuilding and recovery.</p>",
+            "<p>Thankfully, the investments you have made into your infrastructure as a whole has proven to be an effective measure in preventing an otherwise tragic damage control marathon.</p>"],
         "choices" : [ "Continue" ]
     },
 
     {   
         "ID" : 7,
-        "title" : "Moon Dust!",
-        "description" : "<p></p>",
+        "title" : "Lunar Dust!",
+        "description" : "<p>Lunar <a href=\"http://en.wikipedia.org/wiki/Lunar_dust#Moon_dust_fountains_and_electrostatic_levitation\">dust fountains</a> occur regularly due to electrostatic levitation. They can wreak havoc on moving parts of machinery amongst many <a href=\"http://en.wikipedia.org/wiki/Lunar_dust#Harmful_effects_of_lunar_dust\">other effects.</a> </p>",
         "variableDescription" : [
-            "<p>Unfortunately, the massive amounts of radiation that resulted from the solar flare made it directly to the most sensitive parts of your infrastructure - the electronics. The near future will almost certainly be dedicated to rebuilding and recovery.</p>"],
+            "<p>This shockingly regular event is your greatest problem. Your production is delayed as you run maintenance to clean your infrastructure.</p>",
+            "<p>This shockingly regular event is your greatest problem. Amazingly, one of the brilliant engineers at NASA has found an all encompassing <a href=\"http://www.grc.nasa.gov/WWW/StructuresMaterials/TribMech/research/C_lunar_dust.html\">solution</a> that you have integrated into the latest generation of your technology;; you’ve dodged this dastardly problem this time... THIS TIME...</p>"],
         "choices" : [ "Continue" ]
-    }
+    },
+
+{   
+        "ID" : 8,
+        "title" : "Operator Error!",
+        "description" : "<p>One of your tele-operators got a little too drunk the previous night at one of General <a href=\"http://en.wikipedia.org/wiki/Pete_Worden\">Pete Worden</a> ’s legendary parties.</p>",
+        "variableDescription" : [
+            "<p>The day after the party, the tele-operator drove one of your rovers over the edge of a crater, never to be seen again.</p>"],
+        "choices" : [ "Continue" ]
+    },
 ]
