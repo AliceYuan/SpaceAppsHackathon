@@ -106,6 +106,9 @@ function buildInfrastructure (infrastructure) {
     } else {
         alert("You have insufficient resources.");
     }
+    if (player.infrastructure.printers > 3 && player.infrastructure.resourceextractors > 3 && player.infrastructure.metalrefineries > 3) {
+		switchToLate();
+    }
 }
 
 function runEvent(event) {
@@ -181,6 +184,10 @@ function updateDisplayForEvent (event, isRandom) {
 
     if (!isRandom && event.ID == 6) {
     	event = generateInfrastructureChoices(event, earlyInfrastructure);
+    }
+
+    if (!isRandom && event.ID == 11) {
+    	event = generateInfrastructureChoices(event, lateInfrastructure);
     }
 
     var count = 0;
