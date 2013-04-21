@@ -48,7 +48,7 @@ var eventCallbacks = {
 
         $("#tool-tip").children(".speech").show().html([
         	'<dl>',
-        	'	<dt>Additional In-Situ Resources</dt>',
+        	'	<dt>Additional <a href=\"http://en.wikipedia.org/wiki/In-situ_resource_utilization\">In-Situ</a> Resources</dt>',
         	'	<dd>', resources, 'kg</dd>',
 
         	'	<dt>Total In-Situ Resources</dt>',
@@ -183,9 +183,17 @@ function updateDisplayForEvent (event, isRandom) {
             $(this).bind('click', {nextEvent:nextEvent, currentEvent:event},function(event){
                 var data = event.data;
                 if (data.currentEvent.title.toLowerCase().indexOf("failure") >= 0){
+                    $('body').fadeOut(1000, function(){
+                    runEvent(data.nextEvent);
                     resetProgress();
+                    $('body').fadeIn(1000);
+
+                    });
                 }
+                else{
                 runEvent(data.nextEvent);
+
+                }
             });
         } else {
             $(this).hide();
@@ -198,10 +206,8 @@ var gameDate = new Date(2017, 11, 1),
     months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 function resetProgress(){
-    $('body').fadeOut(1000);
     gameDate = new Date(2017, 11, 1);
     player  = new playerinfo();
-    $('body').fadeIn(1000);
 
 }
 
