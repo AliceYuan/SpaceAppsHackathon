@@ -3,7 +3,6 @@ function GameEventManager() {
 	this.currentEvent = null;
 
 	this.getNextEvent = function (choice) {
-		this.getAllEvents();
 		this.turn +=1;
 		if(this.currentEvent == null) {
 			nextEvent = this.events[0];
@@ -35,4 +34,6 @@ function GameEventManager() {
 		});
 		this.events = eventJson;
 	};
+	// Only do this once.
+	this.getAllEvents();
 }
