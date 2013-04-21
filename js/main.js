@@ -1,6 +1,7 @@
 var player;
 var manager;
 var randomManager;
+var researchManager;
 var randomEventCount;
 var randomEventChance = 0.05;
 var resourceExtractionRate = 100;
@@ -12,6 +13,7 @@ $(document).ready(function() {
     updateProgress();
     manager = new GameEventManager();
     randomManager = new RandomEventManager();
+    researchManager = new ResearchManager();
 
     event = manager.getNextEvent();
     runEvent(event);
