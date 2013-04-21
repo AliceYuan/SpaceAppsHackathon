@@ -76,6 +76,7 @@ function runEvent(event) {
 function updateDisplayForEvent (event, isRandom) {
     if (event.title.toLowerCase().indexOf("failure") >= 0){
         $("#tool-tip img.astronaut").attr("src","img/sad-astronaut.png");
+        resetProgress();
     } else{
         $("#tool-tip img.astronaut").attr("src","img/happy-astronaut.png");
     }
@@ -86,9 +87,6 @@ function updateDisplayForEvent (event, isRandom) {
         $("#tool-tip").children(".speech").hide();
 
     }
-
-
-
 
     $("#choice-menu").children(".title").text(event.title);
     $(".choice-description").html(event.description);
@@ -132,8 +130,7 @@ var gameDate = new Date(2017, 11, 1),
 
 function resetProgress(){
     gameDate = new Date(2017, 11, 1);
-    waterPercentage = 0;
-
+    player = new playerinfo();
 }
 
 function updateProgress() {
