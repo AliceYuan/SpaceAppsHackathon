@@ -35,10 +35,40 @@
         "One of the Lunar Poles - Highest concentration of Sun and Volatiles"
       ],
     "description" : "<p>You must now decide upon a location for your initial base of operations.</p>",
-    "next" : [ 3,
+    "next" : [ 6,
         3
       ],
     "requirements" : null,
     "title" : "Phase 2"
-  }
+  },
+  {"ID": 6,
+	"choices": ["Make a 3D Printer",
+		"Make a Resource Refinery",
+		"Make a Commodity Refinery"
+	],
+	"description": "<p>You now need to choose how to build out your starting infrastructure.</p>",
+	"next": [
+		7, 8, 9
+	],
+	"requirements": null,
+	"title": "Build Some Infrastructure"
+	},
+	{"ID": 7,
+	"choices": ["Fantastic!  What Next?"],
+	"description": "<p>You've successfully built a 3D printer</p>",
+	"next": [6],
+	"title": "Done!"
+	},
+	{"ID": 8,
+	"choices": ["Fantastic!  What Next?"],
+	"description": "<p>You've successfully built a Resource Refinery</p>",
+	"next": [6],
+	"title": "Done!"
+	},
+	{"ID": 9,
+	"choices": ["Fantastic!  What Next?"],
+	"description": "<p>You've successfully built a Commodity Refinery</p>",
+	"next": [6],
+	"title": "Done!"
+	}	
 ]
