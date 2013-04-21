@@ -1,4 +1,4 @@
-function infrastructure(name, type, weight) {
+function infrastructure(name, type, weight, eventid) {
 	var generationModifiers = {
 		1: 90,
 		2: 95,
@@ -16,8 +16,8 @@ function infrastructure(name, type, weight) {
 
 	function cost() {
 		var multiplier = generationModifiers[currentGeneration];
-			money = transportCost * weight * (gearRatio + 1) * ( (100 - multiplier) / 100);
-			resources = weight * (multiplier / 100);
+			money = Math.round(transportCost * weight * (gearRatio + 1) * ( (100 - multiplier) / 100));
+			resources = Math.round(weight * (multiplier / 100));
 
 		return {money: money, resources: resources};
 	}
@@ -42,14 +42,15 @@ function infrastructure(name, type, weight) {
 		current: current,
 		name: name, 
 		type: type, // For convenient referencing.
-		weight: weight
+		weight: weight,
+		eventid: eventid
 	};
 }
 
-var metalRefinery = infrastructure("Metal Refinery", "metalrefineries", 1019),
-	commodityRefinery = infrastructure("Commodity Refinery", "commodityrefineries", 733),
-	printer = infrastructure("3D Printer", "printers", 169),
-	resourceExtractor = infrastructure("Resource Extractor", "resourceextractors", 70);
+var metalRefinery = infrastructure("Metal Refinery", "metalrefineries", 1019, 8),
+	commodityRefinery = infrastructure("Commodity Refinery", "commodityrefineries", 733, 9),
+	printer = infrastructure("3D Printer", "printers", 169, 7),
+	resourceExtractor = infrastructure("Resource Extractor", "resourceextractors", 70, 10);
 
 var allInfrastructure = [printer, metalRefinery, commodityRefinery, resourceExtractor];
 
