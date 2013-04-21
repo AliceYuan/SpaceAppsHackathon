@@ -1,8 +1,8 @@
 var player;
 var manager;
 var randomManager;
+var pauseProduction = false;
 var researchManager;
-var randomEventCount;
 var randomEventChance = 0.05;
 var resourceExtractionRate = 100;
 var commodityPrice = 100000;
@@ -115,12 +115,6 @@ function runEvent(event) {
         var randomEvent = randomManager.getRandomEvent();
         updateDisplayForEvent(randomEvent, true);
     } else {
-        if(event.ID <= 5) {
-            randomEventCount = 0;
-        } else {
-            randomEventCount = getRandomInt(0,3);
-        }
-        console.log(randomEventCount + " random events coming up!");
         updateDisplayForEvent(event, false);
     }
 }

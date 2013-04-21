@@ -30,7 +30,7 @@ function chooseDescriptionForRandomEvent (event) {
 			else{
 				playerinfo.resources = Math.max(playerinfo.resources - 10, 0);
 				playerinfo.money = Math.max(playerinfo.money - 10, 0);
-				pauseProduction = true;;
+				pauseProduction = true;
 			}
 		case 7:
 			return 0;
