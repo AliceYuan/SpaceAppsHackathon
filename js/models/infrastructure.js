@@ -45,7 +45,8 @@ function infrastructure(name, type, weight, eventid, prerequisiteCheck) {
 		type: type, // For convenient referencing.
 		weight: weight,
 		eventid: eventid,
-		prerequisiteCheck: prerequisiteCheck
+		prerequisiteCheck: prerequisiteCheck,
+		finished: finished
 	};
 }
 var printerPrereqCallback = function () {return player.infrastructure.printers > 0},

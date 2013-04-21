@@ -8,6 +8,7 @@ var resourceExtractionRate = 100;
 var commodityPrice = 100000;
 var onGoingCost = 1000000;
 var victoryInfrastructureKgs = 10000;
+var late = false;
 
 $(document).ready(function() {
     player = new playerinfo();
@@ -102,19 +103,28 @@ function buildInfrastructure (infrastructure) {
         player.resourcevalue.resources -= infrastructure.cost().resources;
         // Add infrastructure to player.
         // Upgrade all infrastructure types when the printer gets upgraded.
-        if (infrastructure.type == 'printers') {
-            jQuery.each(allInfrastructure, function(_, inf) {
-                inf.upgrade();
-            });
-        }
+        // Hrm.  Switch to independent, even though it has complicated prerequisites, really.
+        infrastructure.upgrade();
+//        if (infrastructure.type == 'printers') {
+  //          jQuery.each(allInfrastructure, function(_, inf) {
+    //            inf.upgrade();
+      //      });
+        //}
         player.addInfrastructure(infrastructure.type, infrastructure.weight);
         console.log("built ", infrastructure.name, player.totalInfrastructure, 'total');
     } else {
         alert("You have insufficient resources.");
     }
-    if (player.infrastructure.printers > 3 && player.infrastructure.resourceextractors > 3 && player.infrastructure.metalrefineries > 3) {
+    var leap = true;
+	jQuery.each(earlyInfrastructure, function(_, inf) {
+		if (!inf.finished()) {
+			leap = false;
+		}
+	});
+	if (leap) {
 		switchToLate();
-    }
+		late = true;
+	}
 }
 
 function runEvent(event) {
@@ -150,7 +160,11 @@ function generateInfrastructureChoices(event, allInfrastructure) {
     });
 
     choices.push("Just Accumulate Resources");
-    next.push(6);
+    if (late) {
+    	next.push(11);
+    } else {
+    	next.push(6);
+	}
     event.choices = choices;
     event.next = next;
     return event;
