@@ -81,7 +81,7 @@
 	{"ID": 9,
 	"choices": ["Fantastic!  What Next?"],
 	"description": "<p>You've successfully built a Commodity Refinery</p>",
-	"next": [6],
+	"next": [7],
 	"title": "Done!",
 	"callback": "buildCommodityRefinery"
 	},
@@ -98,6 +98,13 @@
 	"next": [],
 	"title": "Build Commodity Infrastructure",
 	"callback": "resourcePhase"
+	},
+	{"ID": 12,
+	"choices": ["Fantastic!  What Next?"],
+	"description": "<p>You've successfully built a Rover</p>",
+	"next": [7],
+	"title": "Done!",
+	"callback": "buildRover"
 	}
 
 ]
