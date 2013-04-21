@@ -175,7 +175,11 @@ function updateDisplayForEvent (event, isRandom) {
         $(".choice-description").html(html + event.variableDescription[index]);
     }
     if (event.callback && eventCallbacks[event.callback]) {
-        eventCallbacks[event.callback]();
+        if(pauseProduction){
+            pauseProduction = false; //pause production for one turn!!
+        } else {
+            eventCallbacks[event.callback]();
+        }
     }
 
     if (!isRandom && event.ID == 6) {
