@@ -178,7 +178,7 @@ function updateDisplayForEvent (event, isRandom) {
                 nextEvent = manager.getNextEvent(count);
             }
             $(this).children(".text").text(choice);
-            $(this).bind('click', {nextEvent:nextEvent, currentEvent:event},function(events){
+            $(this).bind('click', {nextEvent:nextEvent, currentEvent:event},function(event){
                 var data = event.data;
                 if (data.currentEvent.title.toLowerCase().indexOf("failure") >= 0){
                     resetProgress();
