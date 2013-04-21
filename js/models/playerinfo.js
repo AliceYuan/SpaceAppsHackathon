@@ -3,6 +3,7 @@ function playerinfo () {
 	this.resourcemax = new resourcemax();
 	this.infrastructure = new infrastructureItems();
 	this.research = new research();
+	this.totalInfrastructure = 0;
 
 	this.resourcespercent = function () {
 		return this.resourcevalue.resources / this.resourcemax.resources;
@@ -14,8 +15,9 @@ function playerinfo () {
 		return this.resourcevalue.commodities / this.resourcemax.commodities;
 	};
 
-	this.addInfrastructure = function (infrastructureType) {
+	this.addInfrastructure = function (infrastructureType, weight) {
 		this.infrastructure[infrastructureType] += 1;
+		this.totalInfrastructure += weight;
 	}
 }
 

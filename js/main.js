@@ -39,6 +39,8 @@ var eventCallbacks = {
 		player.resourcevalue.resources += player.infrastructure.resourceextractors * 100;
 		// Should reflect the value of commodities.
 		player.resourcevalue.money += player.infrastructure.waterextractors * 1000000;
+		// Presumably it costs money to run a moonbase.
+		player.resourcevalue.money -= 1000000;
 
 		console.log('Now have', player.resourcevalue.resources, 'resources and', player.resourcevalue.money, 'money');
 	}
@@ -56,8 +58,8 @@ function buildInfrastructure (infrastructure) {
 				inf.upgrade();
 			});
 		}
-		player.addInfrastructure(infrastructure.type);
-		console.log("built ", infrastructure.name)
+		player.addInfrastructure(infrastructure.type, infrastructure.weight);
+		console.log("built ", infrastructure.name, player.totalInfrastructure, 'total')
 	} else {
 		alert("You have insufficient resources.")
 	}
@@ -103,8 +105,8 @@ function updateProgress() {
 
 	$(".progressbar.manufacturing-resources div").css('width', Math.min(100, player.resourcespercent()) + "%");
 
-    var energyPercentage = 80;
-    $(".progressbar.energy div").width(energyPercentage + "%");
+    var infrastructureCompletion = player.totalInfrastructure / 100;
+    $(".progressbar.energy div").width(Math.min(100, infrastructureCompletion) + "%");
 
     $('#moneyDisplay').text(player.resourcevalue.money);
     $('#dateDisplay').text(months[gameDate.getMonth()] + ' ' + gameDate.getFullYear());
