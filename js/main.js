@@ -67,11 +67,12 @@ var eventCallbacks = {
     },
     jumpToFutureFailure: function () {
     	gameDate = new Date(2025,8,1);
-    	updateProgress();
+    	incrementAndDisplayGameDate(0);
     },
     restartGame: function () {
 	    gameDate = new Date(2017, 11, 1);
 	    player = new playerinfo();
+        incrementAndDisplayGameDate(0);
     }
 };
 
@@ -111,9 +112,8 @@ function runEvent(event) {
 }
 
 function updateDisplayForEvent (event, isRandom) {
-    if (event.title.toLowerCase().indexOf("phase 1, failure") >= 0) {
-        gameDate = new Date(2025,8,1);
-        updateProgress();
+    if(!isRandom) {
+        incrementAndDisplayGameDate(2);
     }
 
     if (event.title.toLowerCase().indexOf("failure") >= 0){
@@ -203,11 +203,11 @@ function updateDisplayForEvent (event, isRandom) {
     });
 }
 
-var gameDate = new Date(2017, 11, 1),
+var gameDate = new Date(2017, 9, 1),
     months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 function resetProgress(){
-    gameDate = new Date(2017, 11, 1);
+    gameDate = new Date(2017, 9, 1);
     player  = new playerinfo();
 
 }
@@ -221,7 +221,11 @@ function updateProgress() {
     $(".progressbar.energy div").animate({width:(Math.min(100, infrastructureCompletion) + "%")});
 
     $('#moneyDisplay').text(player.resourcevalue.money);
+
+}
+
+function incrementAndDisplayGameDate(numberOfMonths) {
+    gameDate.setMonth(gameDate.getMonth() + numberOfMonths);
     $('#dateDisplay').text(months[gameDate.getMonth()] + ' ' + gameDate.getFullYear());
-    gameDate.setMonth(gameDate.getMonth() + 1);
 }
 
