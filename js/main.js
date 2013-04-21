@@ -109,6 +109,35 @@ function updateDisplayForEvent (event, isRandom) {
         eventCallbacks[event.callback]();
     }
 
+    if (!isRandom && event.ID == 6) {
+    	var choices = [],
+    		next = [],
+    		res = player.resourcevalue.resources,
+    		mon = player.resourcevalue.money;
+
+    	if (res > printer.cost().resources && mon > printer.cost().money) {
+    		choices.push(["Build a 3D Printer (", printer.cost().resources, " kg resources / $", printer.cost().money, ')'].join(''));
+    		next.push(7);
+    	}
+    	if (res > resourceExtractor.cost().resources && mon > resourceExtractor.cost().money) {    		
+    		choices.push(["Build a Resource Extractor (", resourceExtractor.cost().resources, " kg resources / $", resourceExtractor.cost().money, ')'].join(''));
+    		next.push(10);
+    	}
+    	if (res > metalRefinery.cost().resources && mon > metalRefinery.cost().money) {
+    		choices.push(["Build a Resource Refinery (", metalRefinery.cost().resources, " kg resources / $", metalRefinery.cost().money, ')'].join(''));
+    		next.push(8);
+    	}
+    	if (res > commodityRefinery.cost().resources && mon > commodityRefinery.cost().money) {
+    		choices.push(["Build a Commodity Refinery (", commodityRefinery.cost().resources, " kg resources / $", commodityRefinery.cost().money, ')'].join(''));
+    		next.push(9);
+    	}
+
+    	choices.push("Just Accumulate Resources");
+    	next.push(6);
+    	event.choices = choices;
+    	event.next = next;
+    }
+
     var count = 0;
 
     $("ol li").each(function() {
