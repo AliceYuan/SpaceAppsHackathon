@@ -11,6 +11,13 @@ var victoryInfrastructureKgs = 10000;
 var late = false;
 
 $(document).ready(function() {
+
+        $("#canvas-container").hide();
+    $(document).click(function(){
+        $("#test").fadeOut();
+        $("#canvas-container").fadeIn();
+
+    });
     player = new playerinfo();
     updateProgress();
     manager = new GameEventManager();

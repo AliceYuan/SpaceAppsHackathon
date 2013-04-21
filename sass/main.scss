@@ -19,7 +19,35 @@ a:visited {
   color: #76A4B3;
 }
 
+#test{
+  background: black url('img/Moon.jpg') center no-repeat; 
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
 
+#main-title{
+  font-family: 'CapsuulaRegular', Arial, sans-serif;
+  h1{
+  font-weight: bold;
+  font-size: 10em;
+  color: white;
+  text-align: center;
+  margin-top: 100px;
+
+}
+h2{
+  font-size: 5em;
+
+
+margin-top: 200px;
+  text-align: center;
+  color: white;
+
+}
+}
+
+}
 * {
   cursor: default;
   -webkit-user-select: none; /* Chrome/Safari */        
