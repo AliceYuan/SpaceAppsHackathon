@@ -23,7 +23,7 @@ function playerinfo () {
 
 function resourcevalue () {
 	this.resources = 0;
-	this.money = 100000000;
+	this.money = 500000000;
 	this.commodities = 0;
 }
 
