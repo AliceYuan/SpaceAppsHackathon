@@ -39,7 +39,7 @@
     {   
         "ID" : 5,
         "title" : "Solar Flare!",
-        "description" : "<p>A truly magnificent spectacle to behold, a solar flare from our resident star is often followed by tweets and facebook posts due to the growing susceptibility of our increasingly miniaturized future technologies to damage caused by <a href=\"http://en.wikipedia.org/wiki/Single_event\">high energy particles</a>. However, having a mission on the moon brings a less cheery perspective thanks to a lack of protective atmosphere that the earth so conveniently possesses.</p>",
+        "description" : "<p>A truly magnificent spectacle to behold, a solar flare from our resident star is often followed by tweets and facebook posts due to the growing susceptibility of our increasingly miniaturized future technologies to damage caused by <a href=\"http://radhome.gsfc.nasa.gov\">high energy particles</a>. However, having a mission on the moon brings a less cheery perspective thanks to a lack of protective atmosphere that the earth so conveniently possesses.</p>",
         "variableDescription" : [
             "<p>Normally, under such circumstances, you can count on every single piece of electronics getting fried in a matter of seconds. Fortunately, it appears even the sun's radiation cannot penetrate the 73.5 trillion gigagrams of moon rock in the way. Indeed, on the moon, it pays to be on the dark side.</p>"],
         "choices" : [ "Continue" ]
@@ -48,7 +48,7 @@
     {   
         "ID" : 6,
         "title" : "Solar Flare!",
-        "description" : "<p>A truly magnificent spectacle to behold, a solar flare from our resident star is often followed by tweets and facebook posts due to the growing susceptibility of our increasingly miniaturized future technologies to damage caused by <a href=\"http://en.wikipedia.org/wiki/Single_event\">high energy particles</a>. However, having a mission on the moon brings a less cheery perspective thanks to a lack of protective atmosphere that the earth so conveniently possesses.</p>",
+        "description" : "<p>A truly magnificent spectacle to behold, a solar flare from our resident star is often followed by tweets and facebook posts due to the growing susceptibility of our increasingly miniaturized future technologies to damage caused by <a href=\"http://radhome.gsfc.nasa.gov\">high energy particles</a>. However, having a mission on the moon brings a less cheery perspective thanks to a lack of protective atmosphere that the earth so conveniently possesses.</p>",
         "variableDescription" : [
             "<p>Unfortunately, the massive amounts of radiation that resulted from the solar flare made it directly to the most sensitive parts of your overall crude infrastructure - the electronics. The near future will almost certainly be dedicated to rebuilding and recovery.</p>",
             "<p>Thankfully, the investments you have made into your infrastructure as a whole has proven to be an effective measure in preventing an otherwise tragic damage control marathon.</p>"],

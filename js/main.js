@@ -1,6 +1,7 @@
 var player;
 var manager;
 var randomManager;
+var pauseProduction = false;
 var researchManager;
 var randomEventChance = 0.05;
 var resourceExtractionRate = 100;
