@@ -40,3 +40,23 @@ function chooseDescriptionForRandomEvent (event) {
 			return 0;
 	}
 }
+
+function chooseDescriptionForEvent (event) {
+	switch(event.ID) {
+		case 4:
+			if (Math.random() < 0.5)
+			{
+		    	gameDate = new Date(2022,8,1);
+		    	incrementAndDisplayGameDate(0);
+				return 0;
+			}
+			else
+			{
+		    	gameDate = new Date(2028,8,1);
+		    	incrementAndDisplayGameDate(0);
+				return 1;
+			}
+		default:
+			return 0;
+	}
+}

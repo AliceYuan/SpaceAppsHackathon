@@ -169,11 +169,16 @@ function updateDisplayForEvent (event, isRandom) {
 
     $("#choice-menu").children(".title").text(event.title);
     $(".choice-description").html(event.description);
-    if(isRandom) {
-        var index = chooseDescriptionForRandomEvent(event);
+    if(event.variableDescription) {
+        var index;
+        if(isRandom) {
+            index = chooseDescriptionForRandomEvent(event);
+        } else {
+            index = chooseDescriptionForEvent(event);
+        }
         var html = $(".choice-description").html();
         $(".choice-description").html(html + event.variableDescription[index]);
-    }
+    } 
     if (event.callback && eventCallbacks[event.callback]) {
         if(pauseProduction){
             pauseProduction = false; //pause production for one turn!!
