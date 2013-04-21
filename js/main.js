@@ -146,7 +146,8 @@ function updateDisplayForEvent (event, isRandom) {
             mon = player.resourcevalue.money;
 
         jQuery.each(allInfrastructure, function(_, inf) {
-            if (res > inf.cost().resources && mon > inf.cost().money) {
+			console.log(inf.name, res > inf.cost().resources, mon > inf.cost().money, inf.prerequisiteCheck());
+            if (res > inf.cost().resources && mon > inf.cost().money && inf.prerequisiteCheck()) {
                 choices.push([
                     "Build a ",
                     inf.name,
@@ -183,9 +184,17 @@ function updateDisplayForEvent (event, isRandom) {
             $(this).bind('click', {nextEvent:nextEvent, currentEvent:event},function(event){
                 var data = event.data;
                 if (data.currentEvent.title.toLowerCase().indexOf("failure") >= 0){
+                    $('body').fadeOut(1000, function(){
+                    runEvent(data.nextEvent);
                     resetProgress();
+                    $('body').fadeIn(1000);
+
+                    });
                 }
+                else{
                 runEvent(data.nextEvent);
+
+                }
             });
         } else {
             $(this).hide();
@@ -198,10 +207,8 @@ var gameDate = new Date(2017, 11, 1),
     months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 function resetProgress(){
-    $('body').fadeOut(1000);
     gameDate = new Date(2017, 11, 1);
     player  = new playerinfo();
-    $('body').fadeIn(1000);
 
 }
 
