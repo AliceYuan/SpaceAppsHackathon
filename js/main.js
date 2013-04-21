@@ -74,6 +74,11 @@ function runEvent(event) {
 }
 
 function updateDisplayForEvent (event, isRandom) {
+    if (event.title.toLowerCase().indexOf("phase 1, failure") >= 0) {
+    	gameDate = new Date(2025,8,1);
+    	updateProgress();
+    }
+
     if (event.title.toLowerCase().indexOf("failure") >= 0){
         $("#tool-tip img.astronaut").attr("src","img/sad-astronaut.png");
         resetProgress();
@@ -85,16 +90,14 @@ function updateDisplayForEvent (event, isRandom) {
         $("#tool-tip").children(".speech").show().html(event.tips);
     }else{
         $("#tool-tip").children(".speech").hide();
-
     }
 
     $("#choice-menu").children(".title").text(event.title);
     $(".choice-description").html(event.description);
     if(isRandom) {
-        var randomIndex = getRandomInt(0,event.variableDescription.length-1);
-
+        var index = chooseDescriptionForRandomEvent(event);
         var html = $(".choice-description").html();
-        $(".choice-description").html(html + event.variableDescription[randomIndex]);
+        $(".choice-description").html(html + event.variableDescription[index]);
     }
     if (event.callback && eventCallbacks[event.callback]) {
         eventCallbacks[event.callback]();
