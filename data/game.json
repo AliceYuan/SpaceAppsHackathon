@@ -48,7 +48,7 @@
             "One of the Lunar Poles - Highest concentration of Sun and Volatiles"
           ],
         "description" : "<p>You must now decide upon a location for your initial base of operations.</p>",
-        "next" : [ 6,
+        "next" : [ 13,
             3
           ],
         "requirements" : null,
@@ -118,5 +118,12 @@
 	"next": [7],
 	"title": "Done!",
 	"callback": "buildRover"
+	},
+	{"ID": 13,
+	 "choices": ["Time to start building..."],
+	 "next": [6],
+	 "title": "Initial Launch",
+	 "description": "<p>You have chosen to establish your initial base at the <a href=\"http://en.wikipedia.org/wiki/Aristarchus_%28crater%29\">Aristarchus Plateau</a> which is closer to the Moons equator and has been identified as an excellent location for resource extraction due to high concetrations of ore and young basalts.</p><p>Performing the initial launch of starting infrastructure will cost $400M.</p><p>However, Recent advances in <a href=\"http://en.wikipedia.org/wiki/Nuclear_fusion_power\">nuclear fusion</a> technology have resulted an increased demand for <a href=\"http://en.wikipedia.org/wiki/Helium3\">Helium-3</a>. Due to this fortuitous development, you were able to raise extra funding to help capitalize your venture.</p>",
+	 "callback": "greatLaunch"
 	}
 ]
