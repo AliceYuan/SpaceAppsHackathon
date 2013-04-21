@@ -34,6 +34,16 @@ function GameEventManager() {
 		});
 		this.events = eventJson;
 	};
+
+	this.overrideNext = function (eventid, override) {
+		for (var i = 0; i < this.events.length; i++) {
+			if (this.events[i].ID == eventid) {
+				var ev = this.events[i];
+				ev.next = [override];
+				this.events[i] = ev;
+			}
+		}	
+	}
 	// Only do this once.
 	this.getAllEvents();
 }

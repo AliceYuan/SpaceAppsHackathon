@@ -54,11 +54,19 @@ var printerPrereqCallback = function () {return player.infrastructure.printers >
 var metalRefinery = infrastructure("Metal Refinery", "metalrefineries", 1019, 8, printerPrereqCallback),
 	commodityRefinery = infrastructure("Commodity Refinery", "commodityrefineries", 733, 9, printerRefineryPrereq),
 	printer = infrastructure("3D Printer", "printers", 169, 7),
-	resourceExtractor = infrastructure("Resource Extractor", "resourceextractors", 70, 10, printerPrereqCallback);
+	resourceExtractor = infrastructure("Resource Extractor", "resourceextractors", 70, 10, printerPrereqCallback)
+	rover = infrastructure("Rover", "rovers", 50, 11, printerPrereqCallback);
 
-var allInfrastructure = [printer, resourceExtractor, metalRefinery, commodityRefinery];
+var allInfrastructure = [printer, resourceExtractor, metalRefinery, rover, commodityRefinery];
 var earlyInfrastructure = [printer, resourceExtractor, metalRefinery];
-var lateInfrastructure = [printer, resourceExtractor, commodityRefinery];
+var lateInfrastructure = [printer, resourceExtractor, rover, commodityRefinery];
+
+function switchToLate() {
+	jQuery.each(allInfrastructure, function (_, inf) {
+		manager.overrideNext(inf.eventid, 11);
+	});
+	resourceExtractionRate = 80;
+}
 
 /* Modifying the state of infrastructure 
 console.log('Current generation', metalRefinery.current());
