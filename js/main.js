@@ -3,7 +3,7 @@ var manager;
 var randomManager;
 var pauseProduction = false;
 var researchManager;
-var randomEventChance = 0.05;
+var randomEventChance = 0.15;
 var resourceExtractionRate = 100;
 var commodityPrice = 100000;
 var onGoingCost = 1000000;
