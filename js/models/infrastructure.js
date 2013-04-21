@@ -1,4 +1,4 @@
-function infrastructure(name, weight) {
+function infrastructure(name, type, weight) {
 	var generationModifiers = {
 		1: 90,
 		2: 95,
@@ -10,7 +10,8 @@ function infrastructure(name, weight) {
 		gearRatio = 4,
 		currentGeneration = 1,
 		weight = weight,
-		name = name;
+		name = name,
+		type = type;
 
 
 	function cost() {
@@ -39,13 +40,16 @@ function infrastructure(name, weight) {
 		cost: cost,
 		upgrade: increaseGeneration,
 		current: current,
-		name: name
+		name: name, 
+		type: type // For convenient referencing.
 	};
 }
 
-var metalRefinery = infrastructure("Metal Refinery", 1019),
-	commodityRefinery = infrastructure("Commodity Refinery", 733),
-	printer = infrastructure("3D Printer", 169);
+var metalRefinery = infrastructure("Metal Refinery", "metalrefinery", 1019),
+	commodityRefinery = infrastructure("Commodity Refinery", "commodityrefinery", 733),
+	printer = infrastructure("3D Printer", "printer", 169);
+
+var allInfrastructure = [printer, metalRefinery, commodityRefinery];
 
 /* Modifying the state of infrastructure 
 console.log('Current generation', metalRefinery.current());
