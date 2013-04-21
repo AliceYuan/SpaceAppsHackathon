@@ -62,8 +62,7 @@ function buildInfrastructure (infrastructure) {
 function runEvent(event) {
     updateProgress();
     manager.currentEvent = event;
-
-    if(Math.random() < randomEventChance) {
+    if(event.ID >= 6 && Math.random() < randomEventChance) {
         var randomEvent = randomManager.getRandomEvent();
         updateDisplayForEvent(randomEvent, true);
     } else {
