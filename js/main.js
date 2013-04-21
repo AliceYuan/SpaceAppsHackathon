@@ -1,11 +1,14 @@
 var player;
 var manager;
+var randomManager;
+var randomEventCount;
 
 $(document).ready(function() {
     // startIntialStory();
     player = new playerinfo();
     updateProgress();
     manager = new GameEventManager();
+    randomManager = new RandomEventManager();
     // console.log(p.healthpercent());
 
     // event = manager.executeNextEvent();
@@ -66,27 +69,52 @@ function buildInfrastructure (infrastructure) {
 
 function runEvent(event) {
     updateProgress();
-    manager.currentEvent = event;
-    if (event.title.toLowerCase().indexOf("failure") >= 0){
-    console.log(event.title.toLowerCase());
-        $("#tool-tip img.astronaut").attr("src","img/sad-astronaut.png");
-    } else{
-        $("#tool-tip img.astronaut").attr("src","img/happy-astronaut.png");
+
+	if(randomEventCount > 0) {
+	    var randomEvent = randomManager.getRandomEvent();
+		updateDisplayForEvent(randomEvent, true);
+		randomEventCount -=1;
+	} else {
+		randomEventCount = getRandomInt(0,3);
+		console.log(randomEventCount + " random events coming up!");
+	    manager.currentEvent = event;
+	    updateDisplayForEvent(event, false);
+	}
+}
+
+function updateDisplayForEvent (event, isRandom) {
+	if (event.title.toLowerCase().indexOf("failure") >= 0){
+	    console.log(event.title.toLowerCase());
+	    $("#tool-tip img.astronaut").attr("src","img/sad-astronaut.png");
+	} else{
+	    $("#tool-tip img.astronaut").attr("src","img/happy-astronaut.png");
     }
     $("#choice-menu").children(".title").text(event.title);
     $(".choice-description").html(event.description);
-    var count = 0;
+    if(isRandom) {
+    	console.log(event);
+		var randomIndex = getRandomInt(0,event.variableDescription.length-1);
 
-    if (event.callback && eventCallbacks[event.callback]) {
+	    var html = $(".choice-description").html();
+	    $(".choice-description").html(html + event.variableDescription[randomIndex]);
+    }
+	if (event.callback && eventCallbacks[event.callback]) {
         eventCallbacks[event.callback]();
     }
+
+    var count = 0;
 
     $("ol li").each(function() {
         $(this).unbind();
         $(this).show();
         var choice = event.choices[count];
         if(choice) {
-            var nextEvent = manager.getNextEvent(count);
+        	var nextEvent;
+        	if(isRandom) {
+        		nextEvent = manager.currentEvent;
+        	} else {
+            	nextEvent = manager.getNextEvent(count);
+            }
             $(this).children(".text").text(choice);
             $(this).bind('click', {nextEvent:nextEvent},function(event){
                 var data = event.data;
