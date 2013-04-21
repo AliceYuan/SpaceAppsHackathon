@@ -38,6 +38,9 @@ var eventCallbacks = {
     buildRover: function () {
         buildInfrastructure(rover);
     },
+    greatLaunch: function () {
+    	player.resourcevalue.money = 125000000;
+    },
     resourcePhase: function () {
         // Should reflect the generation-levels of the extractors.
         var resources = player.infrastructure.resourceextractors * resourceExtractionRate;
