@@ -44,11 +44,12 @@
   {"ID": 6,
 	"choices": ["Make a 3D Printer",
 		"Make a Resource Refinery",
-		"Make a Commodity Refinery"
+		"Make a Commodity Refinery",
+		"Just Accumulate Resources"
 	],
 	"description": "<p>You now need to choose how to build out your starting infrastructure.</p>",
 	"next": [
-		7, 8, 9
+		7, 8, 9, 6
 	],
 	"requirements": null,
 	"title": "Build Some Infrastructure",

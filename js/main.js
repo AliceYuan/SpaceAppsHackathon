@@ -60,6 +60,7 @@ function buildInfrastructure (infrastructure) {
 }
 
 function runEvent(event) {
+	updateProgress();
 	manager.currentEvent = event;
 	$("#choice-menu").children(".title").text(event.title);
 	$(".choice-description").html(event.description);
@@ -95,7 +96,8 @@ function updateProgress() {
 	$(".progressbar.value-resources div").width(moneyPercentage + "%");
 
 	var heliumPercentage = 30;
-	$(".progressbar.manufacturing-resources div").width(heliumPercentage + "%");
+	console.log($(".progressbar.manufacturing-resources div"));
+	$(".progressbar.manufacturing-resources div").css('width', Math.min(100, player.resourcespercent()) + "%");
 
     var energyPercentage = 80;
     $(".progressbar.energy div").width(energyPercentage + "%");
