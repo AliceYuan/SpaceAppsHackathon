@@ -1,0 +1,20 @@
+[ 
+    {   
+        "ID" : 1,
+        "title" : "Micrometeorite Surge!",
+        "description" : "<p>Hundreds of micrometeorites from space rain down on your equipment daily. Lately, however, there has been a surge of these tiny, usually harmless particles. This time, their barrage cannot be ignored and resources must be repaired, consuming valuable resources.</p>",
+        "variable description" : [
+            "<p>Unfortunately, the crude construction of your 3D printers failed to fend off the attacks and now require precious resources to bring back into working condition.</p>",
+            "<p>Fortunately, your industrial strength printers shrugged off the particles with ease, requiring minimal resources to fully repair.</p>"],
+        "choices" : [ "Continue" ]
+    },
+
+    {   
+        "ID" : 1,
+        "title" : "Meteorite!",
+        "description" : "<p>You wonder how bad your luck can be as a giant hunk of space rock waltzes right though the moon's non-existant atmostphere and directly for your base.</p>",
+        "variable description" : [
+            "<p>Fortunately, the meteorite's path sends its conveniently out of reach of your delicate machinery. Too close for comfort, you nevertheless count your blessings as operations continue as normal.</p>"],
+        "choices" : [ "Continue" ]
+    }
+]
