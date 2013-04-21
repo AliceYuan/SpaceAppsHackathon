@@ -88,6 +88,8 @@ function runEvent(event) {
 	});
 }
 
+var gameDate = new Date(2017, 11, 1),
+	months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 function updateProgress() {
 	var waterPercentage = player.resourcespercent();
 	$(".progressbar.water div").width(waterPercentage + "%");
@@ -95,12 +97,14 @@ function updateProgress() {
 	var moneyPercentage = player.moneypercent();
 	$(".progressbar.value-resources div").width(moneyPercentage + "%");
 
-	var heliumPercentage = 30;
-	console.log($(".progressbar.manufacturing-resources div"));
 	$(".progressbar.manufacturing-resources div").css('width', Math.min(100, player.resourcespercent()) + "%");
 
     var energyPercentage = 80;
     $(".progressbar.energy div").width(energyPercentage + "%");
+
+    $('#moneyDisplay').text(player.resourcevalue.money);
+    $('#dateDisplay').text(months[gameDate.getMonth()] + ' ' + gameDate.getFullYear());
+    gameDate.setMonth(gameDate.getMonth() + 1);
 }
 
 function draw(text) {
