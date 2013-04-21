@@ -3,7 +3,7 @@ var manager;
 var randomManager;
 var pauseProduction = false;
 var researchManager;
-var randomEventChance = 0.05;
+var randomEventChance = 0.15;
 var resourceExtractionRate = 100;
 var commodityPrice = 100000;
 var onGoingCost = 1000000;
@@ -40,7 +40,7 @@ var eventCallbacks = {
         buildInfrastructure(rover);
     },
     greatLaunch: function () {
-    	player.resourcevalue.money = 125000000;
+        player.resourcevalue.money = 125000000;
     },
     resourcePhase: function () {
         // Should reflect the generation-levels of the extractors.
@@ -55,27 +55,27 @@ var eventCallbacks = {
         player.resourcevalue.money -= onGoingCost;
 
         $("#tool-tip").children(".speech").show().html([
-        	'<dl>',
-        	'	<dt>Additional <a href=\"http://en.wikipedia.org/wiki/In-situ_resource_utilization\">In-Situ</a> Resources</dt>',
-        	'	<dd>', resources, 'kg</dd>',
+            '<dl>',
+            '   <dt>Additional <a href=\"http://en.wikipedia.org/wiki/In-situ_resource_utilization\">In-Situ</a> Resources</dt>',
+            '   <dd>', resources, 'kg</dd>',
 
-        	'	<dt>Total In-Situ Resources</dt>',
-        	'	<dd>', player.resourcevalue.resources, 'kg</dd>',
+            '   <dt>Total In-Situ Resources</dt>',
+            '   <dd>', player.resourcevalue.resources, 'kg</dd>',
 
-        	'	<dt>Commodity Income</dt>',
-        	'	<dd>$', showMoney(income), '</dd>',
+            '   <dt>Commodity Income</dt>',
+            '   <dd>$', showMoney(income), '</dd>',
 
-        	'	<dt>Total Money</dt>',
-        	'	<dd>$', showMoney(player.resourcevalue.money), '</dd>',
+            '   <dt>Total Money</dt>',
+            '   <dd>$', showMoney(player.resourcevalue.money), '</dd>',
 
-        	'</dl>'
+            '</dl>'
             ].join(''));        
 
         console.log('Now have', player.resourcevalue.resources, 'resources and', player.resourcevalue.money, 'money');
     },
     jumpToFutureFailure: function () {
-    	gameDate = new Date(2025,8,1);
-    	incrementAndDisplayGameDate(0);
+        gameDate = new Date(2025,8,1);
+        incrementAndDisplayGameDate(0);
     },
     restartGame: function () {
      gameDate = new Date(2017, 11, 1);
@@ -85,16 +85,16 @@ var eventCallbacks = {
 };
 
 function showMoney(val) {
-	if (val < 1000) {
-		return val;
-	}
-	if (val < 1000000) {
-		return Math.round(val / 1000) + "K";
-	}
-	if (val < 1000000000) {
-		return Math.round(val / 1000000) + "M";
-	}
-	return "lots";
+    if (val < 1000) {
+        return val;
+    }
+    if (val < 1000000) {
+        return Math.round(val / 1000) + "K";
+    }
+    if (val < 1000000000) {
+        return Math.round(val / 1000000) + "M";
+    }
+    return "lots";
 }
 
 function buildInfrastructure (infrastructure) {
@@ -163,7 +163,7 @@ function runEvent(event) {
 }
 
 function generateInfrastructureChoices(event, allInfrastructure) {
-	var choices = [],
+    var choices = [],
     next = [],
     res = player.resourcevalue.resources,
     mon = player.resourcevalue.money;
@@ -185,9 +185,9 @@ function generateInfrastructureChoices(event, allInfrastructure) {
 
     choices.push("Just Accumulate Resources");
     if (late) {
-    	next.push(11);
+        next.push(11);
     } else {
-    	next.push(6);
+        next.push(6);
     }
     event.choices = choices;
     event.next = next;
@@ -236,11 +236,11 @@ function updateDisplayForEvent (event, isRandom) {
     }
 
     if (!isRandom && event.ID == 6) {
-    	event = generateInfrastructureChoices(event, earlyInfrastructure);
+        event = generateInfrastructureChoices(event, earlyInfrastructure);
     }
 
     if (!isRandom && event.ID == 11) {
-    	event = generateInfrastructureChoices(event, lateInfrastructure);
+        event = generateInfrastructureChoices(event, lateInfrastructure);
     }
 
     var count = 0;
@@ -287,18 +287,33 @@ function resetProgress(){
 
 }
 
+var showYayMessage = true;
 function updateProgress() {
     var sustainableIncome = ((player.infrastructure.commodityrefineries * commodityPrice) / onGoingCost) * 100;
     var infrastructureCompletion = (player.totalInfrastructure / victoryInfrastructureKgs) * 100;
+
+    var equipment = jQuery.map(allInfrastructure, function(inf) {
+        if (player.infrastructure[inf.type]) {
+            return [
+                '<b>',
+                inf.name,
+                ':</b> ',
+                player.infrastructure[inf.type],
+                ' &nbsp; &nbsp; '
+            ].join('');
+        }
+    });
+    $('#equipmentDisplay').html(equipment);
 
     $(".progressbar.value-resources div").animate({width:(Math.min(100, sustainableIncome) + "%")});
     $(".progressbar.manufacturing-resources div").animate({width:(Math.min(100, player.resourcespercent()) + "%")});
     $(".progressbar.energy div").animate({width:(Math.min(100, infrastructureCompletion) + "%")});
 
     $('#moneyDisplay').text(showMoney(player.resourcevalue.money));
-    if (sustainableIncome >= 100 && infrastructureCompletion >= 100) {
-      alert("The amount of income from commodities, and the amount of infrastructure on the moon means it's now sustainable.  Yay!");	
-  }
+    if (sustainableIncome >= 100 && infrastructureCompletion >= 100 && showYayMessage) {
+        alert("The amount of income from commodities, and the amount of infrastructure on the moon means it's now sustainable.  Yay!"); 
+        showYayMessage = false;
+    }
 }
 
 function incrementAndDisplayGameDate(numberOfMonths) {
