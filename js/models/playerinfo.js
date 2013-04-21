@@ -1,7 +1,7 @@
 function playerinfo () {
 	this.resourcevalue = new resourcevalue();
 	this.resourcemax = new resourcemax();
-	this.infrastructure = new infrastructure();
+	this.infrastructure = new infrastructureItems();
 	this.research = new research();
 
 	this.resourcespercent = function () {
@@ -17,20 +17,20 @@ function playerinfo () {
 
 function resourcevalue () {
 	this.resources = 0;
-	this.money = 0;
+	this.money = 100000000;
 	this.commodities = 0;
 }
 
 function resourcemax () {
 	this.resources = 100;
-	this.money = 10000;
+	this.money = 1000000000;
 	this.commodities = 1000;
 }
-function infrastructure () {
+function infrastructureItems () {
 	this.rovers = 0;
 	this.solarpanels = 0;
 	this.printers = 0;
-	this.resourceextractors = 0;
+	this.resourceextractors = 2;
 	this.waterextractors = 0;
 }
 function research () {

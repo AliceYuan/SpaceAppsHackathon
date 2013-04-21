@@ -21,11 +21,55 @@ $(document).ready(function() {
     initMenuActions();
 });
 
+var eventCallbacks = {
+	build3dPrinter: function () {
+		buildInfrastructure(printer);
+	},
+	buildMetalRefinery: function () {
+		buildInfrastructure(metalRefinery);
+	},
+	buildCommodityRefinery: function () {
+		buildInfrastructure(commodityRefinery);
+	},
+	resourcePhase: function () {
+		// Should reflect the generation-levels of the extractors.
+		player.resourcevalue.resources += player.infrastructure.resourceextractors * 100;
+		// Should reflect the value of commodities.
+		player.resourcevalue.money += player.infrastructure.waterextractors * 1000000;
+
+		console.log('Now have', player.resourcevalue.resources, 'resources and', player.resourcevalue.money, 'money');
+	}
+}
+
+function buildInfrastructure (infrastructure) {
+	if (player.resourcevalue.money > infrastructure.cost().money
+		&& player.resourcevalue.resources > infrastructure.cost().resources) {
+		player.resourcevalue.money -= infrastructure.cost().money;
+		player.resourcevalue.resources -= infrastructure.cost().resources;
+		// Add infrastructure to player.
+		// Upgrade all infrastructure types when the printer gets upgraded.
+		if (infrastructure.type == 'printer') {
+			jQuery.each(allInfrastructure, function(_, inf) {
+				inf.upgrade();
+			});
+		}
+		console.log("built ", infrastructure.name)
+	} else {
+		alert("You have insufficient resources.")
+	}
+}
+
 function runEvent(event) {
+	updateProgress();
 	manager.currentEvent = event;
 	$("#choice-menu").children(".title").text(event.title);
 	$(".choice-description").html(event.description);
 	var count = 0;
+
+	if (event.callback && eventCallbacks[event.callback]) {
+		eventCallbacks[event.callback]()
+	}
+
 	$("ol li").each(function() {
 		$(this).unbind();
 		$(this).show();
@@ -52,7 +96,8 @@ function updateProgress() {
 	$(".progressbar.value-resources div").width(moneyPercentage + "%");
 
 	var heliumPercentage = 30;
-	$(".progressbar.manufacturing-resources div").width(heliumPercentage + "%");
+	console.log($(".progressbar.manufacturing-resources div"));
+	$(".progressbar.manufacturing-resources div").css('width', Math.min(100, player.resourcespercent()) + "%");
 
     var energyPercentage = 80;
     $(".progressbar.energy div").width(energyPercentage + "%");
