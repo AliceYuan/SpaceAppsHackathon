@@ -48,7 +48,7 @@ var eventCallbacks = {
 
         $("#tool-tip").children(".speech").show().html([
         	'<dl>',
-        	'	<dt>Additional In-Situ Resources</dt>',
+        	'	<dt>Additional <a href=\"http://en.wikipedia.org/wiki/In-situ_resource_utilization\">In-Situ</a> Resources</dt>',
         	'	<dd>', resources, 'kg</dd>',
 
         	'	<dt>Total In-Situ Resources</dt>',
