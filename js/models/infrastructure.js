@@ -55,7 +55,7 @@ var metalRefinery = infrastructure("Metal Refinery", "metalrefineries", 1019, 8,
 	commodityRefinery = infrastructure("Commodity Refinery", "commodityrefineries", 733, 9, printerRefineryPrereq),
 	printer = infrastructure("3D Printer", "printers", 169, 7),
 	resourceExtractor = infrastructure("Resource Extractor", "resourceextractors", 70, 10, printerPrereqCallback)
-	rover = infrastructure("Rover", "rovers", 50, 11, printerPrereqCallback);
+	rover = infrastructure("Rover", "rovers", 50, 12, printerPrereqCallback);
 
 var allInfrastructure = [printer, resourceExtractor, metalRefinery, rover, commodityRefinery];
 var earlyInfrastructure = [printer, resourceExtractor, metalRefinery];

@@ -35,6 +35,9 @@ var eventCallbacks = {
     buildResourceExtractor: function() {
         buildInfrastructure(resourceExtractor);
     },
+    buildRover: function () {
+        buildInfrastructure(rover);
+    },
     resourcePhase: function () {
         // Should reflect the generation-levels of the extractors.
         var resources = player.infrastructure.resourceextractors * resourceExtractionRate;
