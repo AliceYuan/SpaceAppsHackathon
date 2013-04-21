@@ -107,7 +107,7 @@
     {
         "ID": 11,
         "choices": [],
-        "description": "<p>You now have enough infrastructure that you can start expanding to accumulate resources</p>",
+        "description": "<p>You have reached a point in your infrastructure development that gives you confidence that you can now begin focusing more on harvesting commodities. It is time to expand your operation to the South Pole Aeitkn basin where you will begin mining the water that exists in small craters permanently hidden from the light of the sun.</p>",
         "next": [],
         "title": "Build Commodity Infrastructure",
         "callback": "resourcePhase"

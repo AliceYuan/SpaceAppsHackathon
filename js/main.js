@@ -3,7 +3,7 @@ var manager;
 var randomManager;
 var pauseProduction = false;
 var researchManager;
-var randomEventChance = 0.05;
+var randomEventChance = 0.15;
 var resourceExtractionRate = 100;
 var commodityPrice = 100000;
 var onGoingCost = 1000000;
@@ -260,6 +260,7 @@ function resetProgress(){
 
 }
 
+var showYayMessage = true;
 function updateProgress() {
     var sustainableIncome = ((player.infrastructure.commodityrefineries * commodityPrice) / onGoingCost) * 100;
     var infrastructureCompletion = (player.totalInfrastructure / victoryInfrastructureKgs) * 100;
@@ -282,8 +283,9 @@ function updateProgress() {
     $(".progressbar.energy div").animate({width:(Math.min(100, infrastructureCompletion) + "%")});
 
     $('#moneyDisplay').text(showMoney(player.resourcevalue.money));
-    if (sustainableIncome >= 100 && infrastructureCompletion >= 100) {
+    if (sustainableIncome >= 100 && infrastructureCompletion >= 100 && showYayMessage) {
 		alert("The amount of income from commodities, and the amount of infrastructure on the moon means it's now sustainable.  Yay!");	
+		showYayMessage = false;
     }
 }
 
