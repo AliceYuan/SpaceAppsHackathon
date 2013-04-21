@@ -8,10 +8,27 @@
  @import "compass/css3/transition";
  @import "compass/css3/border-radius";
 
+a {
+  color: rgb(110, 130, 238);
+}
+
+a:hover {
+  color: rgb(81, 108, 255);
+}
+a:visited {
+  color: rgb(97, 97, 97);
+}
 
 
  * {
  	cursor: default;
+  -webkit-user-select: none; /* Chrome/Safari */        
+-moz-user-select: none; /* Firefox */
+-ms-user-select: none; /* IE10+ */
+
+/* Rules below not implemented in browsers yet */
+-o-user-select: none;
+user-select: none;
  }
 
  h1{
@@ -176,7 +193,7 @@
 	padding: 2.5%;
 	border: 5px white solid;
 	color: white;
-	background: grey;
+	background: rgba(50, 50, 50, 0.8);
 	margin-left: 20%;
 	margin-top: 10%;
 	font-family: 'CapsuulaRegular', Arial, sans-serif;
@@ -196,6 +213,7 @@
 		margin-left: 2em;
 		margin-top: 1em;
 		li{
+      font-weight: bold;
 			display: block;	
 			p:first-child{
 				float: left;
@@ -206,8 +224,8 @@
 			margin-bottom: .5em;
 		}
 		li:hover{
-			color: #EDEDED;
-			font-weight: bold;
+			color: #D5E9ED;
+      font-style: italic;
 
 		}
 
@@ -222,9 +240,16 @@
 #secondary-menu .info-box{
   font-family: 'CapsuulaRegular', Arial, sans-serif;
   font-size: 1.2em;
-  float: right;
+  position: absolute;
+  right: 0;
+  top: 0;
   @include transition(all 0.5 ease-in-out);
   margin-right: 2em;
+  max-width: 300px;
+  p{
+    margin-bottom: 5px;
+  }
+
 }
 
 
