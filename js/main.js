@@ -264,6 +264,19 @@ function updateProgress() {
     var sustainableIncome = ((player.infrastructure.commodityrefineries * commodityPrice) / onGoingCost) * 100;
     var infrastructureCompletion = (player.totalInfrastructure / victoryInfrastructureKgs) * 100;
 
+    var equipment = jQuery.map(allInfrastructure, function(inf) {
+    	if (player.infrastructure[inf.type]) {
+    		return [
+    			'<b>',
+    			inf.name,
+    			':</b> ',
+    			player.infrastructure[inf.type],
+    			' &nbsp; &nbsp; '
+    		].join('');
+    	}
+    });
+    $('#equipmentDisplay').html(equipment);
+
     $(".progressbar.value-resources div").animate({width:(Math.min(100, sustainableIncome) + "%")});
     $(".progressbar.manufacturing-resources div").animate({width:(Math.min(100, player.resourcespercent()) + "%")});
     $(".progressbar.energy div").animate({width:(Math.min(100, infrastructureCompletion) + "%")});
