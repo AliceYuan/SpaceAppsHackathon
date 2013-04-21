@@ -91,6 +91,6 @@
 	"next": [6],
 	"title": "Done!",
 	"callback": "buildResourceExtractor"
-	}	
+	}
 
 ]

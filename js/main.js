@@ -7,6 +7,7 @@ var randomEventChance = 0.05;
 var resourceExtractionRate = 100;
 var commodityPrice = 100000;
 var onGoingCost = 1000000;
+var victoryInfrastructureKgs = 10000;
 
 $(document).ready(function() {
     player = new playerinfo();
@@ -226,17 +227,22 @@ function resetProgress(){
 
 function updateProgress() {
     var sustainableIncome = ((player.infrastructure.commodityrefineries * commodityPrice) / onGoingCost) * 100;
-    var infrastructureCompletion = player.totalInfrastructure / 100;
+    var infrastructureCompletion = (player.totalInfrastructure / victoryInfrastructureKgs) * 100;
 
     $(".progressbar.value-resources div").animate({width:(Math.min(100, sustainableIncome) + "%")});
     $(".progressbar.manufacturing-resources div").animate({width:(Math.min(100, player.resourcespercent()) + "%")});
     $(".progressbar.energy div").animate({width:(Math.min(100, infrastructureCompletion) + "%")});
 
     $('#moneyDisplay').text(showMoney(player.resourcevalue.money));
+    if (sustainableIncome >= 100 && infrastructureCompletion >= 100) {
+		alert("The amount of income from commodities, and the amount of infrastructure on the moon means it's now sustainable.  Yay!");	
+    }
 }
 
 function incrementAndDisplayGameDate(numberOfMonths) {
     gameDate.setMonth(gameDate.getMonth() + numberOfMonths);
     $('#dateDisplay').text(months[gameDate.getMonth()] + ' ' + gameDate.getFullYear());
+
+    gameDate.setMonth(gameDate.getMonth() + 1);
 }
 
