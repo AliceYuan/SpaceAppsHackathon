@@ -23,13 +23,13 @@ $(document).ready(function() {
 
 var eventCallbacks = {
 	build3dPrinter: function () {
-		buildInfrastructure(player, printer);
+		buildInfrastructure(printer);
 	},
 	buildMetalRefinery: function () {
-		buildInfrastructure(player, metalRefinery);
+		buildInfrastructure(metalRefinery);
 	},
 	buildCommodityRefinery: function () {
-		buildInfrastructure(player, commodityRefinery);
+		buildInfrastructure(commodityRefinery);
 	},
 	resourcePhase: function () {
 		// Should reflect the generation-levels of the extractors.
@@ -41,13 +41,12 @@ var eventCallbacks = {
 	}
 }
 
-function buildInfrastructure (player, infrastructure) {
+function buildInfrastructure (infrastructure) {
 	if (player.resourcevalue.money > infrastructure.cost().money
 		&& player.resourcevalue.resources > infrastructure.cost().resources) {
 		player.resourcevalue.money -= infrastructure.cost().money;
 		player.resourcevalue.resources -= infrastructure.cost().resources;
-		
-		//console.log(new infrastructure());
+		// Add infrastructure to player.
 		infrastructure.upgrade();
 		console.log("built ", infrastructure.name)
 	} else {

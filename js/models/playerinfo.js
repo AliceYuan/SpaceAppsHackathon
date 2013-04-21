@@ -16,13 +16,13 @@ function playerinfo () {
 
 function resourcevalue () {
 	this.resources = 0;
-	this.money = 0;
+	this.money = 100000000;
 	this.commodities = 0;
 }
 
 function resourcemax () {
 	this.resources = 100;
-	this.money = 10000;
+	this.money = 1000000000;
 	this.commodities = 1000;
 }
 function infrastructureItems () {
