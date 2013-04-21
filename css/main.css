@@ -123,6 +123,8 @@ body {
   width: 200px;
   height: 50px;
   margin-right: 10px;
+  border-radius: 10px;
+  border: solid white 1px;
   float: left;
   cursor: default;
   text-align: center;
@@ -141,34 +143,33 @@ body {
   text-transform: uppercase;
 }
 
-/* line 72, ../sass/main.scss */
+/* line 74, ../sass/main.scss */
 #main-menu li p {
-  margin: auto;
+  margin: 12px auto;
   vertical-align: middle;
 }
 
-/* line 79, ../sass/main.scss */
+/* line 81, ../sass/main.scss */
 #secondary-menu {
   width: 100%;
   background: rgba(0, 0, 0, 0.7);
   color: white;
 }
 
-/* line 84, ../sass/main.scss */
+/* line 86, ../sass/main.scss */
 #secondary-menu ul {
   width: 100%;
   display: block;
 }
 
-/* line 90, ../sass/main.scss */
+/* line 92, ../sass/main.scss */
 #secondary-menu li {
   width: 130px;
   height: 130px;
-  background: black;
   float: left;
   margin-left: 10px;
 }
-/* line 96, ../sass/main.scss */
+/* line 97, ../sass/main.scss */
 #secondary-menu li img {
   width: 100px;
   height: 100px;
@@ -178,11 +179,20 @@ body {
   -o-border-radius: 50%;
   border-radius: 50%;
   border: 5px solid white;
-  background: grey;
+  background-color: white;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=1, startColorstr='#FFFFFFFF', endColorstr='#FF7A7A7A');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IiIgcj0iMTAwIj48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZmZmZmZmIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMDAwMDAwIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjN2E3YTdhIi8+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+  background-image: -webkit-gradient(radial, 50%, 0, 50%, 100, color-stop(0%, #ffffff), color-stop(100%, #000000), color-stop(100%, #7a7a7a));
+  background-image: -webkit-radial-gradient(center, ellipse cover, #ffffff 0%, #000000 100%, #7a7a7a 100%);
+  background-image: -moz-radial-gradient(center, ellipse cover, #ffffff 0%, #000000 100%, #7a7a7a 100%);
+  background-image: -o-radial-gradient(center, ellipse cover, #ffffff 0%, #000000 100%, #7a7a7a 100%);
+  background-image: radial-gradient(center, ellipse cover, #ffffff 0%, #000000 100%, #7a7a7a 100%);
   margin: 10px;
   opacity: 0.6;
 }
-/* line 104, ../sass/main.scss */
+/* line 108, ../sass/main.scss */
 #secondary-menu li img:hover {
   width: 120px;
   height: 120px;
@@ -197,7 +207,7 @@ body {
 /*
  * status bar
  */
-/* line 121, ../sass/main.scss */
+/* line 125, ../sass/main.scss */
 #status {
   width: 40%;
   position: absolute;
@@ -213,7 +223,7 @@ body {
   border-top-right-radius: 10px;
 }
 
-/* line 134, ../sass/main.scss */
+/* line 138, ../sass/main.scss */
 .progressbar {
   background-color: black;
   border-radius: 13px;
@@ -222,40 +232,41 @@ body {
   margin-top: 5px;
 }
 
-/* line 141, ../sass/main.scss */
+/* line 145, ../sass/main.scss */
 .progressbar div {
   height: 20px;
   border-radius: 10px;
 }
 
-/* line 146, ../sass/main.scss */
-.progressbar div p {
+/* line 150, ../sass/main.scss */
+.progressbar p {
+  position: absolute;
   color: white;
   vertical-align: middle;
   margin-left: 10px;
 }
 
-/* line 152, ../sass/main.scss */
+/* line 157, ../sass/main.scss */
 .progressbar.water div {
   background: blue;
 }
 
-/* line 155, ../sass/main.scss */
+/* line 160, ../sass/main.scss */
 .progressbar.value-resources div {
   background: green;
 }
 
-/* line 158, ../sass/main.scss */
+/* line 163, ../sass/main.scss */
 .progressbar.manufacturing-resources div {
   background: purple;
 }
 
-/* line 161, ../sass/main.scss */
+/* line 166, ../sass/main.scss */
 .progressbar.energy div {
   background: orange;
 }
 
-/* line 167, ../sass/main.scss */
+/* line 172, ../sass/main.scss */
 #choice-menu {
   min-height: 40%;
   width: 60%;
@@ -274,34 +285,51 @@ body {
   -o-border-radius: 10px;
   border-radius: 10px;
 }
-/* line 180, ../sass/main.scss */
+/* line 185, ../sass/main.scss */
 #choice-menu h2.title {
   text-align: center;
   margin: 10px;
 }
-/* line 184, ../sass/main.scss */
+/* line 189, ../sass/main.scss */
 #choice-menu h3.choice-description {
   text-align: center;
   min-height: 3em;
 }
-/* line 189, ../sass/main.scss */
+/* line 194, ../sass/main.scss */
 #choice-menu ol {
   margin-left: 2em;
   margin-top: 1em;
 }
-/* line 192, ../sass/main.scss */
+/* line 197, ../sass/main.scss */
 #choice-menu ol li {
   display: block;
   font-size: 1.6em;
   margin-bottom: .5em;
 }
-/* line 194, ../sass/main.scss */
+/* line 199, ../sass/main.scss */
 #choice-menu ol li p:first-child {
   float: left;
   margin-right: 1em;
 }
+/* line 207, ../sass/main.scss */
+#choice-menu ol li:hover {
+  color: #EDEDED;
+  font-weight: bold;
+}
 
-/* line 206, ../sass/main.scss */
+/* line 216, ../sass/main.scss */
 .hide {
   visibility: none;
+}
+
+/* line 220, ../sass/main.scss */
+#tool-tip {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+/* line 225, ../sass/main.scss */
+#tool-tip img {
+  height: 50%;
 }
