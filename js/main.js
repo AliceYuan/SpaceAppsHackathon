@@ -2,6 +2,7 @@ var player;
 var manager;
 var randomManager;
 var randomEventCount;
+var randomEventChance = 0.05;
 
 $(document).ready(function() {
     player = new playerinfo();
@@ -61,11 +62,9 @@ function buildInfrastructure (infrastructure) {
 function runEvent(event) {
     updateProgress();
     manager.currentEvent = event;
-
-    if(randomEventCount > 0) {
+    if(event.ID >= 6 && Math.random() < randomEventChance) {
         var randomEvent = randomManager.getRandomEvent();
         updateDisplayForEvent(randomEvent, true);
-        randomEventCount -=1;
     } else {
     	if(event.ID <= 5) {
     		randomEventCount = 0;
