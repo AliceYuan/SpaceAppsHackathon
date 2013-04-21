@@ -69,6 +69,7 @@ function buildInfrastructure (infrastructure) {
 
 function runEvent(event) {
     updateProgress();
+    manager.currentEvent = event;
 
 	if(randomEventCount > 0) {
 	    var randomEvent = randomManager.getRandomEvent();
@@ -77,7 +78,6 @@ function runEvent(event) {
 	} else {
 		randomEventCount = getRandomInt(0,3);
 		console.log(randomEventCount + " random events coming up!");
-	    manager.currentEvent = event;
 	    updateDisplayForEvent(event, false);
 	}
 }
