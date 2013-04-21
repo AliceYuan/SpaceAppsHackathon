@@ -69,7 +69,7 @@ var eventCallbacks = {
         	'	<dd>$', showMoney(player.resourcevalue.money), '</dd>',
 
         	'</dl>'
-        ].join(''));        
+            ].join(''));        
 
         console.log('Now have', player.resourcevalue.resources, 'resources and', player.resourcevalue.money, 'money');
     },
@@ -78,10 +78,10 @@ var eventCallbacks = {
     	incrementAndDisplayGameDate(0);
     },
     restartGame: function () {
-	    gameDate = new Date(2017, 11, 1);
-	    player = new playerinfo();
-        incrementAndDisplayGameDate(0);
-    }
+     gameDate = new Date(2017, 11, 1);
+     player = new playerinfo();
+     incrementAndDisplayGameDate(0);
+ }
 };
 
 function showMoney(val) {
@@ -116,33 +116,57 @@ function buildInfrastructure (infrastructure) {
         alert("You have insufficient resources.");
     }
     var leap = true;
-	jQuery.each(earlyInfrastructure, function(_, inf) {
-		if (!inf.finished()) {
-			leap = false;
-		}
-	});
-	if (leap) {
-		switchToLate();
-		late = true;
-	}
+    jQuery.each(earlyInfrastructure, function(_, inf) {
+      if (!inf.finished()) {
+       leap = false;
+   }
+});
+    if (leap) {
+      switchToLate();
+      late = true;
+  }
 }
 
 function runEvent(event) {
     updateProgress();
     manager.currentEvent = event;
-    if(event.ID >= 6 && Math.random() < randomEventChance) {
-        var randomEvent = randomManager.getRandomEvent();
-        updateDisplayForEvent(randomEvent, true);
-    } else {
-        updateDisplayForEvent(event, false);
+
+    if (event.ID != 1){
+        $("#choice-menu").animate({
+            marginLeft:'100%'
+        },500, function(){
+
+            $("#choice-menu").css({
+                marginLeft:'-100%'
+            } );
+
+
+            if(event.ID >= 6 && Math.random() < randomEventChance) {
+                var randomEvent = randomManager.getRandomEvent();
+
+                updateDisplayForEvent(randomEvent, true);
+            } else {
+                updateDisplayForEvent(event, false);
+            }
+
+            $("#choice-menu").animate({
+                marginLeft:'20%'
+            },500
+            );
+
+        }
+        );
+    }else{
+                updateDisplayForEvent(event, false);
+        
     }
 }
 
 function generateInfrastructureChoices(event, allInfrastructure) {
 	var choices = [],
-        next = [],
-        res = player.resourcevalue.resources,
-        mon = player.resourcevalue.money;
+    next = [],
+    res = player.resourcevalue.resources,
+    mon = player.resourcevalue.money;
 
     jQuery.each(allInfrastructure, function(_, inf) {
         if (res > inf.cost().resources && mon > inf.cost().money && inf.prerequisiteCheck()) {
@@ -150,10 +174,10 @@ function generateInfrastructureChoices(event, allInfrastructure) {
                 "Build a ",
                 inf.name,
                 " (",
-                inf.cost().resources,
-                " kg resources / $",
-                showMoney(inf.cost().money),
-                ")"
+                    inf.cost().resources,
+                    " kg resources / $",
+                    showMoney(inf.cost().money),
+                    ")"
             ].join(''));
             next.push(inf.eventid);
         }
@@ -164,7 +188,7 @@ function generateInfrastructureChoices(event, allInfrastructure) {
     	next.push(11);
     } else {
     	next.push(6);
-	}
+    }
     event.choices = choices;
     event.next = next;
     return event;
@@ -174,6 +198,10 @@ function updateDisplayForEvent (event, isRandom) {
     if(!isRandom) {
         incrementAndDisplayGameDate(2);
     }
+
+
+
+
 
     if (event.title.toLowerCase().indexOf("failure") >= 0){
         $("#tool-tip img.astronaut").attr("src","img/sad-astronaut.png");
@@ -233,14 +261,13 @@ function updateDisplayForEvent (event, isRandom) {
                 var data = event.data;
                 if (data.currentEvent.title.toLowerCase().indexOf("failure") >= 0){
                     $('body').fadeOut(1000, function(){
-                    runEvent(data.nextEvent);
-                    resetProgress();
-                    $('body').fadeIn(1000);
-
+                        runEvent(data.nextEvent);
+                        resetProgress();
+                        $('body').fadeIn(1000);
                     });
                 }
                 else{
-                runEvent(data.nextEvent);
+                    runEvent(data.nextEvent);
 
                 }
             });
@@ -252,7 +279,7 @@ function updateDisplayForEvent (event, isRandom) {
 }
 
 var gameDate = new Date(2017, 9, 1),
-    months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 function resetProgress(){
     gameDate = new Date(2017, 9, 1);
@@ -270,8 +297,8 @@ function updateProgress() {
 
     $('#moneyDisplay').text(showMoney(player.resourcevalue.money));
     if (sustainableIncome >= 100 && infrastructureCompletion >= 100) {
-		alert("The amount of income from commodities, and the amount of infrastructure on the moon means it's now sustainable.  Yay!");	
-    }
+      alert("The amount of income from commodities, and the amount of infrastructure on the moon means it's now sustainable.  Yay!");	
+  }
 }
 
 function incrementAndDisplayGameDate(numberOfMonths) {

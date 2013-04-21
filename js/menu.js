@@ -86,7 +86,7 @@ $("#main-menu .construct").bind('click', {construct:construct},function(event){
         }
         );
 
-    // $("#secondary-menu li").bind('click', {research:research, construct:construct},function(event){
+    // $("#secondary-menu li").bind ('click', {research:research, construct:construct},function(event){
     //     var data = event.data;
     //     console.log("Test$");
     //     if ($(this).parents().hasClass('research')){

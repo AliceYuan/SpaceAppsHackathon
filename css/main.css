@@ -79,7 +79,7 @@ a:hover {
 
 /* line 18, ../sass/main.scss */
 a:visited {
-  color: #616161;
+  color: #76A4B3;
 }
 
 /* line 23, ../sass/main.scss */
@@ -228,10 +228,19 @@ body {
   transition: all 0.5s ease-in-out;
 }
 
+/* line 138, ../sass/main.scss */
+#secondary-menu ul li.disable img {
+  opacity: 0.3;
+}
+/* line 140, ../sass/main.scss */
+#secondary-menu ul li.disable img:hover {
+  opacity: 0.2;
+}
+
 /*
 * status bar
 */
-/* line 142, ../sass/main.scss */
+/* line 152, ../sass/main.scss */
 #status {
   width: 40%;
   position: absolute;
@@ -247,7 +256,7 @@ body {
   border-top-right-radius: 10px;
 }
 
-/* line 155, ../sass/main.scss */
+/* line 165, ../sass/main.scss */
 .progressbar {
   background-color: black;
   border-radius: 13px;
@@ -256,14 +265,14 @@ body {
   margin-top: 5px;
 }
 
-/* line 162, ../sass/main.scss */
+/* line 172, ../sass/main.scss */
 .progressbar div {
   height: 20px;
   width: 0;
   border-radius: 10px;
 }
 
-/* line 168, ../sass/main.scss */
+/* line 178, ../sass/main.scss */
 .progressbar p {
   position: absolute;
   color: white;
@@ -271,27 +280,27 @@ body {
   margin-left: 10px;
 }
 
-/* line 175, ../sass/main.scss */
+/* line 185, ../sass/main.scss */
 .progressbar.water div {
   background: blue;
 }
 
-/* line 178, ../sass/main.scss */
+/* line 188, ../sass/main.scss */
 .progressbar.value-resources div {
   background: green;
 }
 
-/* line 181, ../sass/main.scss */
+/* line 191, ../sass/main.scss */
 .progressbar.manufacturing-resources div {
   background: purple;
 }
 
-/* line 184, ../sass/main.scss */
+/* line 194, ../sass/main.scss */
 .progressbar.energy div {
   background: orange;
 }
 
-/* line 190, ../sass/main.scss */
+/* line 200, ../sass/main.scss */
 #choice-menu {
   min-height: 40%;
   width: 60%;
@@ -310,45 +319,45 @@ body {
   -o-border-radius: 10px;
   border-radius: 10px;
 }
-/* line 203, ../sass/main.scss */
+/* line 213, ../sass/main.scss */
 #choice-menu h2.title {
   text-align: center;
   margin: 10px;
 }
-/* line 207, ../sass/main.scss */
+/* line 217, ../sass/main.scss */
 #choice-menu h3.choice-description {
   text-align: center;
   min-height: 3em;
 }
-/* line 212, ../sass/main.scss */
+/* line 222, ../sass/main.scss */
 #choice-menu ol {
   margin-left: 2em;
   margin-top: 1em;
 }
-/* line 215, ../sass/main.scss */
+/* line 225, ../sass/main.scss */
 #choice-menu ol li {
   font-weight: bold;
   display: block;
   font-size: 1.6em;
   margin-bottom: .5em;
 }
-/* line 218, ../sass/main.scss */
+/* line 228, ../sass/main.scss */
 #choice-menu ol li p:first-child {
   float: left;
   margin-right: 1em;
 }
-/* line 226, ../sass/main.scss */
+/* line 236, ../sass/main.scss */
 #choice-menu ol li:hover {
   color: #D5E9ED;
   font-style: italic;
 }
 
-/* line 235, ../sass/main.scss */
+/* line 245, ../sass/main.scss */
 .hide {
   visibility: none;
 }
 
-/* line 240, ../sass/main.scss */
+/* line 250, ../sass/main.scss */
 #secondary-menu .info-box {
   font-family: "CapsuulaRegular", Arial, sans-serif;
   font-size: 1.2em;
@@ -362,23 +371,23 @@ body {
   margin-right: 2em;
   max-width: 300px;
 }
-/* line 249, ../sass/main.scss */
+/* line 259, ../sass/main.scss */
 #secondary-menu .info-box p {
   margin-bottom: 5px;
 }
 
-/* line 256, ../sass/main.scss */
+/* line 266, ../sass/main.scss */
 #tool-tip {
   position: absolute;
   right: 0;
   bottom: 0;
   z-index: 1;
 }
-/* line 261, ../sass/main.scss */
+/* line 271, ../sass/main.scss */
 #tool-tip img {
   height: 400px;
 }
-/* line 267, ../sass/main.scss */
+/* line 277, ../sass/main.scss */
 #tool-tip .speech {
   position: absolute;
   right: 300px;
@@ -396,7 +405,7 @@ body {
   font-size: 1.2em;
   font-family: "CapsuulaRegular", Arial, sans-serif;
 }
-/* line 286, ../sass/main.scss */
+/* line 296, ../sass/main.scss */
 #tool-tip .speech:after {
   content: "";
   position: absolute;

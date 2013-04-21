@@ -8,7 +8,7 @@
  @import "compass/css3/transition";
  @import "compass/css3/border-radius";
 
-a {
+ a {
   color: rgb(110, 130, 238);
 }
 
@@ -16,65 +16,65 @@ a:hover {
   color: rgb(81, 108, 255);
 }
 a:visited {
-  color: rgb(97, 97, 97);
+  color: #76A4B3;
 }
 
 
- * {
- 	cursor: default;
+* {
+  cursor: default;
   -webkit-user-select: none; /* Chrome/Safari */        
--moz-user-select: none; /* Firefox */
--ms-user-select: none; /* IE10+ */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
 
-/* Rules below not implemented in browsers yet */
--o-user-select: none;
-user-select: none;
- }
+  /* Rules below not implemented in browsers yet */
+  -o-user-select: none;
+  user-select: none;
+}
 
- h1{
- 	font-size: 3em;
- 	font-weight: bold;
- }
+h1{
+  font-size: 3em;
+  font-weight: bold;
+}
 
- h2{
- 	font-size: 2em;
- 	font-weight: bold;
- }
- h3{
- 	font-size: 1.3em;
- }
+h2{
+  font-size: 2em;
+  font-weight: bold;
+}
+h3{
+  font-size: 1.3em;
+}
 
- body{
- 	background: black;
- 	font-size: 16px;
- }
+body{
+  background: black;
+  font-size: 16px;
+}
 
 
- #canvas-container{
- 	border: black solid 1em;
- 	width: 1366px;
- 	height: 868px;
- 	background: black url('img/Moon.jpg') bottom no-repeat;	
- 	margin: auto;
- 	position: relative;
- 	overflow: hidden;
- }
+#canvas-container{
+  border: black solid 1em;
+  width: 1366px;
+  height: 868px;
+  background: black url('img/Moon.jpg') bottom no-repeat;	
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+}
 
- #main-menu{
- 	height:60px;
- 	width: 100%;
- 	background: black;
- 	color: white;
- 	font-family: 'CapsuulaRegular', Arial, sans-serif;
- 	letter-spacing: 0; 	
- }
+#main-menu{
+  height:60px;
+  width: 100%;
+  background: black;
+  color: white;
+  font-family: 'CapsuulaRegular', Arial, sans-serif;
+  letter-spacing: 0; 	
+}
 
- #main-menu li {
- 	font-size: 1.3em;
- 	font-weight: bold;
- 	width: 200px;
- 	height: 50px;
- 	margin-right: 10px;
+#main-menu li {
+  font-size: 1.3em;
+  font-weight: bold;
+  width: 200px;
+  height: 50px;
+  margin-right: 10px;
   border-radius: 10px;
   border: solid white 1px;
 
@@ -134,6 +134,16 @@ user-select: none;
 }
 
 
+#secondary-menu ul li.disable{
+  img{
+  opacity: 0.3;
+  &:hover{
+    opacity: 0.2;
+  }
+}
+}
+
+
 
 /*
 * status bar
@@ -162,7 +172,7 @@ user-select: none;
 .progressbar div {
 	height: 20px;
   width: 0;
-	border-radius: 10px;
+  border-radius: 10px;
 }
 
 .progressbar p{
@@ -214,22 +224,22 @@ user-select: none;
 		margin-top: 1em;
 		li{
       font-weight: bold;
-			display: block;	
-			p:first-child{
-				float: left;
-				margin-right: 1em;
+      display: block;	
+      p:first-child{
+        float: left;
+        margin-right: 1em;
 
-			}
-			font-size: 1.6em;
-			margin-bottom: .5em;
-		}
-		li:hover{
-			color: #D5E9ED;
-      font-style: italic;
+      }
+      font-size: 1.6em;
+      margin-bottom: .5em;
+    }
+    li:hover{
+     color: #D5E9ED;
+     font-style: italic;
 
-		}
+   }
 
-	}
+ }
 }
 
 .hide{

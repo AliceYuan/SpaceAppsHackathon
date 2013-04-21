@@ -94,7 +94,7 @@
         "description" : "A Plasma Cutter is used to cut metals and other materials.",
         "benefits" : "+10 units value_resources",
         "cost" : {"value_resources": 10, "money": -2300000, "infrastructure":1},
-        "img" : "img/equipment/Power_Cube.png",
+        "img" : "img/equipment/PlasmaCutter.png",
         "tip": "Whoa! A Plasma Cutter! This uses  inert gas or compressed air is exposed to an electrical arc and blown at high speed from a nozzle. <a href='http://www.plasmacam.com/archive/cnchow.htm'> check out how a plasma cutter works! </a>"
     } 
     ]
