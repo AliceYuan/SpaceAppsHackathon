@@ -55,10 +55,10 @@ var eventCallbacks = {
         	'	<dd>', player.resourcevalue.resources, 'kg</dd>',
 
         	'	<dt>Commodity Income</dt>',
-        	'	<dd>$', income, '</dd>',
+        	'	<dd>$', showMoney(income), '</dd>',
 
         	'	<dt>Total Money</dt>',
-        	'	<dd>$', player.resourcevalue.money, '</dd>',
+        	'	<dd>$', showMoney(player.resourcevalue.money), '</dd>',
 
         	'</dl>'
         ].join(''));        
@@ -74,6 +74,19 @@ var eventCallbacks = {
 	    player = new playerinfo();
     }
 };
+
+function showMoney(val) {
+	if (val < 1000) {
+		return val;
+	}
+	if (val < 1000000) {
+		return Math.round(val / 1000) + "K";
+	}
+	if (val < 1000000000) {
+		return Math.round(val / 1000000) + "M";
+	}
+	return "lots";
+}
 
 function buildInfrastructure (infrastructure) {
     if (player.resourcevalue.money > infrastructure.cost().money && player.resourcevalue.resources > infrastructure.cost().resources) {
@@ -153,7 +166,7 @@ function updateDisplayForEvent (event, isRandom) {
                     " (",
                     inf.cost().resources,
                     " kg resources / $",
-                    inf.cost().money,
+                    showMoney(inf.cost().money),
                     ")"
                 ].join(''));
                 next.push(inf.eventid);
@@ -219,7 +232,7 @@ function updateProgress() {
     $(".progressbar.manufacturing-resources div").animate({width:(Math.min(100, player.resourcespercent()) + "%")});
     $(".progressbar.energy div").animate({width:(Math.min(100, infrastructureCompletion) + "%")});
 
-    $('#moneyDisplay').text(player.resourcevalue.money);
+    $('#moneyDisplay').text(showMoney(player.resourcevalue.money));
     $('#dateDisplay').text(months[gameDate.getMonth()] + ' ' + gameDate.getFullYear());
     gameDate.setMonth(gameDate.getMonth() + 1);
 }
