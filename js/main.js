@@ -31,11 +31,16 @@ var eventCallbacks = {
 	buildCommodityRefinery: function () {
 		buildInfrastructure(commodityRefinery);
 	},
+	buildResourceExtractor: function() {
+		buildInfrastructure(resourceExtractor);	
+	},
 	resourcePhase: function () {
 		// Should reflect the generation-levels of the extractors.
 		player.resourcevalue.resources += player.infrastructure.resourceextractors * 100;
 		// Should reflect the value of commodities.
 		player.resourcevalue.money += player.infrastructure.waterextractors * 1000000;
+		// Presumably it costs money to run a moonbase.
+		player.resourcevalue.money -= 1000000;
 
 		console.log('Now have', player.resourcevalue.resources, 'resources and', player.resourcevalue.money, 'money');
 	}
@@ -48,12 +53,13 @@ function buildInfrastructure (infrastructure) {
 		player.resourcevalue.resources -= infrastructure.cost().resources;
 		// Add infrastructure to player.
 		// Upgrade all infrastructure types when the printer gets upgraded.
-		if (infrastructure.type == 'printer') {
+		if (infrastructure.type == 'printers') {
 			jQuery.each(allInfrastructure, function(_, inf) {
 				inf.upgrade();
 			});
 		}
-		console.log("built ", infrastructure.name)
+		player.addInfrastructure(infrastructure.type, infrastructure.weight);
+		console.log("built ", infrastructure.name, player.totalInfrastructure, 'total')
 	} else {
 		alert("You have insufficient resources.")
 	}
@@ -88,6 +94,8 @@ function runEvent(event) {
 	});
 }
 
+var gameDate = new Date(2017, 11, 1),
+	months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 function updateProgress() {
 	var waterPercentage = player.resourcespercent();
 	$(".progressbar.water div").width(waterPercentage + "%");
@@ -95,12 +103,14 @@ function updateProgress() {
 	var moneyPercentage = player.moneypercent();
 	$(".progressbar.value-resources div").width(moneyPercentage + "%");
 
-	var heliumPercentage = 30;
-	console.log($(".progressbar.manufacturing-resources div"));
 	$(".progressbar.manufacturing-resources div").css('width', Math.min(100, player.resourcespercent()) + "%");
 
-    var energyPercentage = 80;
-    $(".progressbar.energy div").width(energyPercentage + "%");
+    var infrastructureCompletion = player.totalInfrastructure / 100;
+    $(".progressbar.energy div").width(Math.min(100, infrastructureCompletion) + "%");
+
+    $('#moneyDisplay').text(player.resourcevalue.money);
+    $('#dateDisplay').text(months[gameDate.getMonth()] + ' ' + gameDate.getFullYear());
+    gameDate.setMonth(gameDate.getMonth() + 1);
 }
 
 function draw(text) {

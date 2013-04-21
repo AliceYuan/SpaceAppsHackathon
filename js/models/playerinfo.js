@@ -3,6 +3,7 @@ function playerinfo () {
 	this.resourcemax = new resourcemax();
 	this.infrastructure = new infrastructureItems();
 	this.research = new research();
+	this.totalInfrastructure = 0;
 
 	this.resourcespercent = function () {
 		return this.resourcevalue.resources / this.resourcemax.resources;
@@ -13,6 +14,11 @@ function playerinfo () {
 	this.commoditiespercent = function () {
 		return this.resourcevalue.commodities / this.resourcemax.commodities;
 	};
+
+	this.addInfrastructure = function (infrastructureType, weight) {
+		this.infrastructure[infrastructureType] += 1;
+		this.totalInfrastructure += weight;
+	}
 }
 
 function resourcevalue () {
@@ -32,9 +38,12 @@ function infrastructureItems () {
 	this.printers = 0;
 	this.resourceextractors = 2;
 	this.waterextractors = 0;
+	this.metalrefineries = 0;
+	this.commodityrefineries = 0;
 }
 function research () {
-	printerlevel = 1; 				// 1 to 4
-	metalrefinerylevel = 1;			// 1 to 3
-	commodityrefinerylevel = 1;		// 1 to 3
+	// Maaaaybe, don't need this?
+	this.printerlevel = function() {return printer.current()}; 				// 1 to 4
+	this.metalrefinerylevel = function() {return metalRefinery.current()}; ;			// 1 to 3
+	this.commodityrefinerylevel = function() {return commodityRefinery.current()}; ;		// 1 to 3
 }
