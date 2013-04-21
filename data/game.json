@@ -91,6 +91,13 @@
 	"next": [6],
 	"title": "Done!",
 	"callback": "buildResourceExtractor"
+	},
+	{"ID": 11,
+	"choices": [],
+	"description": "<p>You now have enough infrastructure that you can start expanding to accumulate resources</p>",
+	"next": [],
+	"title": "Build Commodity Infrastructure",
+	"callback": "resourcePhase"
 	}
 
 ]

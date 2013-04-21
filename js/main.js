@@ -119,6 +119,34 @@ function runEvent(event) {
     }
 }
 
+function generateInfrastructureChoices(event, allInfrastructure) {
+	var choices = [],
+        next = [],
+        res = player.resourcevalue.resources,
+        mon = player.resourcevalue.money;
+
+    jQuery.each(allInfrastructure, function(_, inf) {
+        if (res > inf.cost().resources && mon > inf.cost().money && inf.prerequisiteCheck()) {
+            choices.push([
+                "Build a ",
+                inf.name,
+                " (",
+                inf.cost().resources,
+                " kg resources / $",
+                showMoney(inf.cost().money),
+                ")"
+            ].join(''));
+            next.push(inf.eventid);
+        }
+    });
+
+    choices.push("Just Accumulate Resources");
+    next.push(6);
+    event.choices = choices;
+    event.next = next;
+    return event;
+}
+
 function updateDisplayForEvent (event, isRandom) {
     if(!isRandom) {
         incrementAndDisplayGameDate(2);
@@ -152,30 +180,7 @@ function updateDisplayForEvent (event, isRandom) {
     }
 
     if (!isRandom && event.ID == 6) {
-        var choices = [],
-            next = [],
-            res = player.resourcevalue.resources,
-            mon = player.resourcevalue.money;
-
-        jQuery.each(allInfrastructure, function(_, inf) {
-            if (res > inf.cost().resources && mon > inf.cost().money && inf.prerequisiteCheck()) {
-                choices.push([
-                    "Build a ",
-                    inf.name,
-                    " (",
-                    inf.cost().resources,
-                    " kg resources / $",
-                    showMoney(inf.cost().money),
-                    ")"
-                ].join(''));
-                next.push(inf.eventid);
-            }
-        });
-
-        choices.push("Just Accumulate Resources");
-        next.push(6);
-        event.choices = choices;
-        event.next = next;
+    	event = generateInfrastructureChoices(event, earlyInfrastructure);
     }
 
     var count = 0;
