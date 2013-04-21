@@ -34,11 +34,32 @@ var eventCallbacks = {
     },
     resourcePhase: function () {
         // Should reflect the generation-levels of the extractors.
-        player.resourcevalue.resources += player.infrastructure.resourceextractors * resourceExtractionRate;
+        var resources = player.infrastructure.resourceextractors * resourceExtractionRate;
+        player.resourcevalue.resources += resources;
+
         // Should reflect the value of commodities.
-        player.resourcevalue.money += player.infrastructure.commodityrefineries * commodityPrice;
+        var income = player.infrastructure.commodityrefineries * commodityPrice;
+        player.resourcevalue.money += income;
+
         // Presumably it costs money to run a moonbase.
         player.resourcevalue.money -= onGoingCost;
+
+        $("#tool-tip").children(".speech").show().html([
+        	'<dl>',
+        	'	<dt>Additional In-Situ Resources</dt>',
+        	'	<dd>', resources, 'kg</dd>',
+
+        	'	<dt>Total In-Situ Resources</dt>',
+        	'	<dd>', player.resourcevalue.resources, 'kg</dd>',
+
+        	'	<dt>Commodity Income</dt>',
+        	'	<dd>$', income, '</dd>',
+
+        	'	<dt>Total Money</dt>',
+        	'	<dd>$', player.resourcevalue.money, '</dd>',
+
+        	'</dl>'
+        ].join(''));        
 
         console.log('Now have', player.resourcevalue.resources, 'resources and', player.resourcevalue.money, 'money');
     },
