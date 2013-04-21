@@ -57,6 +57,8 @@ var metalRefinery = infrastructure("Metal Refinery", "metalrefineries", 1019, 8,
 	resourceExtractor = infrastructure("Resource Extractor", "resourceextractors", 70, 10, printerPrereqCallback);
 
 var allInfrastructure = [printer, resourceExtractor, metalRefinery, commodityRefinery];
+var earlyInfrastructure = [printer, resourceExtractor, metalRefinery];
+var lateInfrastructure = [printer, resourceExtractor, commodityRefinery];
 
 /* Modifying the state of infrastructure 
 console.log('Current generation', metalRefinery.current());
