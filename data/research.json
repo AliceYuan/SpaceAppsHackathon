@@ -29,11 +29,11 @@
     },
     {   
         "ID" : 4,
-        "title" : "Saw Mill",
-        "description" : "A sawmill converts felled logs from trees into green wood lumbar.",
-        "benefits" : "+3 units value_resources, +3 units infrastructure",
-        "cost" : {"value_resources": 3, "money": -3000000, "infrastructure":3},
-        "img" : "img/equipment/Sawmill.png"
+        "title" : "Solar Concentrator",
+        "description" : "Concentrated solar power (CSP) systems, are systems that use mirrors or lenses to concentrate a large area of sunlight, or solar thermal energy, onto a small area. ",
+        "benefits" : "+3 units value resources, +3 units infrastructure",
+        "cost" : {"value_resources": 7, "money": -8000000, "infrastructure":3},
+        "img" : "img/equipment/SolarConcentrator.png"
     },
     {   
         "ID" : 5,
@@ -56,7 +56,7 @@
         "ID" : 7,
         "title" : "Universal Power Supply",
         "description" : "A Universal Power Supply forms the backbone of an off-grid electrical system.",
-        "benefits" : "+ 10 units value_resources, + 2 units infrastructure",
+        "benefits" : "+ 10 units value resources, + 2 units infrastructure",
         "cost" : {"value_resources": 10, "money": -50000000, "infrastructure":2},
         "img" : "img/equipment/UPS.png"
     }
@@ -67,7 +67,7 @@
         "ID" : 1,
         "title" : "Nickel Iron Battery",
         "description" : "Nickel Iron Battery is the primary electrical energy storage device",
-        "benefits" : "+5 value_resources ",
+        "benefits" : "+5 value resources ",
         "cost" : {"value_resources": 5, "money": -1200000, "infrastructure":-1},
         "img" : "img/equipment/Nickel-Iron_Batterypic.png"
     },
@@ -75,7 +75,7 @@
         "ID" : 2,
         "title" : "Power Cube",
         "description" : "The Power Cube is a modular, universal, self-contained power unit consisting of an engine coupled to a hydraulic pump",
-        "benefits" : "+10 units value_resources",
+        "benefits" : "+10 units value resources",
         "cost" : {"value_resources": 10, "money": -2300000, "infrastructure":1},
         "img" : "img/equipment/Power_Cube.png"
     } ,
@@ -83,7 +83,7 @@
         "ID" : 3,
         "title" : "Gasifier Burner",
         "description" : "The Gasifier Burner converts biomass fuel into power and useful chemicals.",
-        "benefits" : "+5 units value_resources, +3 infrastructure",
+        "benefits" : "+5 units value resources, +3 infrastructure",
         "cost" : {"value_resources": 5, "money": -1300000, "infrastructure":3},
         "img" : "img/equipment/GasifierBurner.png",
         "tip" : "This is achieved by reacting the material at high temperatures (>700°C), without combustion, with a controlled amount of oxygen and/or steam, breaking down the biomass into carbon monoxide, hydrogen, carbon dioxide and methane. The resulting gas mixture is a fuel called syngas. If Air is used in place of oxygen the gas also contains inert nitrogen and is called producer gas."
@@ -92,7 +92,7 @@
         "ID" : 4,
         "title" : " Plasma Cutter",
         "description" : "A Plasma Cutter is used to cut metals and other materials.",
-        "benefits" : "+10 units value_resources",
+        "benefits" : "+10 units value resources",
         "cost" : {"value_resources": 10, "money": -2300000, "infrastructure":1},
         "img" : "img/equipment/PlasmaCutter.png",
         "tip": "Whoa! A Plasma Cutter! This uses  inert gas or compressed air is exposed to an electrical arc and blown at high speed from a nozzle. <a href='http://www.plasmacam.com/archive/cnchow.htm'> check out how a plasma cutter works! </a>"

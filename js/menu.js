@@ -91,7 +91,6 @@ $("#main-menu .construct").bind('click', {construct:construct},function(event){
         }
         );
     $("#secondary-menu .construct li").click( function(){
-        if (!$(this).hasClass("disable")){
             console.log(player);
             n = $(this).index();
             research_item = data.construct[n];
@@ -106,8 +105,6 @@ $("#main-menu .construct").bind('click', {construct:construct},function(event){
             // player.addInfrastructure(infrastructure.type, infrastructure.weight);
 
             updateProgress();
-        }
-        $(this).addClass("disable");
     });
 
 showMenuItemsAnimate($("#secondary-menu .construct li"));
