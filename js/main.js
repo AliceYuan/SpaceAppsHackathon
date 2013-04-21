@@ -4,20 +4,11 @@ var randomManager;
 var randomEventCount;
 
 $(document).ready(function() {
-    // startIntialStory();
     player = new playerinfo();
     updateProgress();
     manager = new GameEventManager();
     randomManager = new RandomEventManager();
-    // console.log(p.healthpercent());
 
-    // event = manager.executeNextEvent();
-    // while(event != null) {
-    //  draw(event.description);
-    //  window.alert(event.title);
-    //  var y=window.prompt("please choose next")
-    //  event = manager.executeNextEvent(y);
-    // }
     event = manager.getNextEvent();
     runEvent(event);
 
@@ -84,7 +75,6 @@ function runEvent(event) {
 
 function updateDisplayForEvent (event, isRandom) {
 	if (event.title.toLowerCase().indexOf("failure") >= 0){
-	    console.log(event.title.toLowerCase());
 	    $("#tool-tip img.astronaut").attr("src","img/sad-astronaut.png");
 	} else{
 	    $("#tool-tip img.astronaut").attr("src","img/happy-astronaut.png");
@@ -92,7 +82,6 @@ function updateDisplayForEvent (event, isRandom) {
     $("#choice-menu").children(".title").text(event.title);
     $(".choice-description").html(event.description);
     if(isRandom) {
-    	console.log(event);
 		var randomIndex = getRandomInt(0,event.variableDescription.length-1);
 
 	    var html = $(".choice-description").html();
