@@ -3,6 +3,9 @@ var manager;
 var randomManager;
 var randomEventCount;
 var randomEventChance = 0.05;
+var resourceExtractionRate = 100;
+var commodityPrice = 100000;
+var onGoingCost = 1000000;
 
 $(document).ready(function() {
     player = new playerinfo();
@@ -31,11 +34,11 @@ var eventCallbacks = {
     },
     resourcePhase: function () {
         // Should reflect the generation-levels of the extractors.
-        player.resourcevalue.resources += player.infrastructure.resourceextractors * 100;
+        player.resourcevalue.resources += player.infrastructure.resourceextractors * resourceExtractionRate;
         // Should reflect the value of commodities.
-        player.resourcevalue.money += player.infrastructure.waterextractors * 1000000;
+        player.resourcevalue.money += player.infrastructure.commodityrefineries * commodityPrice;
         // Presumably it costs money to run a moonbase.
-        player.resourcevalue.money -= 1000000;
+        player.resourcevalue.money -= onGoingCost;
 
         console.log('Now have', player.resourcevalue.resources, 'resources and', player.resourcevalue.money, 'money');
     }
