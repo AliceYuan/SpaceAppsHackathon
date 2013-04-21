@@ -61,168 +61,203 @@
   border-radius: 10px;
   border: solid white 1px;
 
- 	float: left;
- 	cursor: default;
- 	text-align:center;
- 	background-color: rgb(76,76,76);
- 	@include filter-gradient(#4c4c4c, #131313, horizontal);
- 	@include background-image(radial-gradient(center, ellipse cover, rgba(76,76,76,1) 0%,rgba(0,0,0,1) 100%));	
- 	@include transition( all 0.5s ease-in-out);
- 	text-transform: uppercase;
- }
+  float: left;
+  cursor: default;
+  text-align:center;
+  background-color: rgb(76,76,76);
+  @include filter-gradient(#4c4c4c, #131313, horizontal);
+  @include background-image(radial-gradient(center, ellipse cover, rgba(76,76,76,1) 0%,rgba(0,0,0,1) 100%));	
+  @include transition( all 0.5s ease-in-out);
+  text-transform: uppercase;
+}
 
- #main-menu li p{
- 	margin: 12px auto;
- 	vertical-align: middle;
- }
-
-
-
- #secondary-menu{
- 	width: 100%;
- 	background: rgba(0,0,0,.7);
- 	color: white;
- }
- #secondary-menu ul{
- 	width: 100%;
- 	display: block;
- }
-
-
- #secondary-menu li{
- 	width: 130px;
- 	height: 130px;
- 	float: left;
- 	margin-left: 10px;
- 	img{
- 		width: 100px;
- 		height: 100px;
- 		@include border-radius(50%);
- 		border: 5px solid white;
- 		background-color: rgb(255,255,255);
- 		@include filter-gradient(#ffffff, #7a7a7a, horizontal);
- 		$experimental-support-for-svg: true;
- 		@include background-image(radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%,rgba(0,0,0,1) 100%,rgba(122,122,122,1) 100%));	
- 		margin: 10px;
- 		opacity: 0.6;
- 		&:hover{
- 			width: 120px;
- 			height: 120px;
- 			opacity: 1;
- 			margin: 0;
- 			@include transition(all 0.5s ease-in-out);
- 		}
-
- 	}
- }
+#main-menu li p{
+  margin: 12px auto;
+  vertical-align: middle;
+}
 
 
 
- /*
-  * status bar
-  */
-
-  #status{
-  	width: 40%;
-  	position: absolute;
-  	padding: 6px;
-  	bottom: 0;
-  	left: 0;
-  	background:rgba(0,0,0,.7);
-  	font-family: 'CapsuulaRegular', Arial, sans-serif;
-  	letter-spacing: 0;
-  	color: white;
-  	@include border-top-right-radius(10px);
-  }
-
-  .progressbar {
-  	background-color: black;
-  	border-radius: 13px; /* (height of inner div) / 2 + padding */
-  	padding: 3px;
-  	margin-top: 5px;
-  }
-
-  .progressbar div {
-  	height: 20px;
-  	border-radius: 10px;
-  }
-
-  .progressbar p{
-  	position: absolute;
-  	color: white;
-  	vertical-align: middle;
-  	margin-left: 10px;
-  }
-
-  .progressbar.water div{
-  	background: blue;
-  }
-  .progressbar.value-resources div{
-  	background: green;
-  }
-  .progressbar.manufacturing-resources div{
-  	background: purple;
-  }
-  .progressbar.energy div{
-  	background: orange;
-  }
+#secondary-menu{
+  width: 100%;
+  background: rgba(0,0,0,.7);
+  color: white;
+}
+#secondary-menu ul{
+  width: 100%;
+  display: block;
+}
 
 
-
-  #choice-menu{
-  	min-height: 40%;
-  	width: 60%;
-  	padding: 2.5%;
-  	border: 5px white solid;
-  	color: white;
-  	background: grey;
-  	margin-left: 20%;
-  	margin-top: 10%;
-  	font-family: 'CapsuulaRegular', Arial, sans-serif;
-  	z-index: 1;
-  	position: relative;
-  	@include border-radius(10px);
-  	h2.title{
-  		text-align: center;
-  		margin: 10px;
-  	}
-  	h3.choice-description{
-  		text-align: center;
-  		min-height: 3em;
-
-  	}
-  	ol {
-  		margin-left: 2em;
-  		margin-top: 1em;
-  		li{
-  			display: block;	
-  			p:first-child{
-  				float: left;
-  				margin-right: 1em;
-
-  			}
-  			font-size: 1.6em;
-  			margin-bottom: .5em;
-  		}
-  		li:hover{
-  			color: #EDEDED;
-  			font-weight: bold;
-
-  		}
-
-  	}
-  }
-
-  .hide{
-  	visibility: none;
-  }
-
-  #tool-tip{
-    position:absolute;
-    right: 0;
-    bottom: 0;
-    z-index: 1;
-    img{
-      height: 50%;
+#secondary-menu li{
+  width: 130px;
+  height: 130px;
+  float: left;
+  margin-left: 10px;
+  img{
+     width: 100px;
+     height: 100px;
+     @include border-radius(50%);
+     border: 5px solid white;
+     background-color: rgb(255,255,255);
+     @include filter-gradient(#ffffff, #7a7a7a, horizontal);
+     $experimental-support-for-svg: true;
+     @include background-image(radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%,rgba(0,0,0,1) 100%,rgba(122,122,122,1) 100%));	
+     margin: 10px;
+     opacity: 0.6;
+     &:hover{
+        width: 120px;
+        height: 120px;
+        opacity: 1;
+        margin: 0;
+        @include transition(all 0.5s ease-in-out);
     }
-  }
+
+}
+}
+
+
+
+/*
+* status bar
+*/
+
+#status{
+	width: 40%;
+	position: absolute;
+	padding: 6px;
+	bottom: 0;
+	left: 0;
+	background:rgba(0,0,0,.7);
+	font-family: 'CapsuulaRegular', Arial, sans-serif;
+	letter-spacing: 0;
+	color: white;
+	@include border-top-right-radius(10px);
+}
+
+.progressbar {
+	background-color: black;
+	border-radius: 13px; /* (height of inner div) / 2 + padding */
+	padding: 3px;
+	margin-top: 5px;
+}
+
+.progressbar div {
+	height: 20px;
+	border-radius: 10px;
+}
+
+.progressbar p{
+	position: absolute;
+	color: white;
+	vertical-align: middle;
+	margin-left: 10px;
+}
+
+.progressbar.water div{
+	background: blue;
+}
+.progressbar.value-resources div{
+	background: green;
+}
+.progressbar.manufacturing-resources div{
+	background: purple;
+}
+.progressbar.energy div{
+	background: orange;
+}
+
+
+
+#choice-menu{
+	min-height: 40%;
+	width: 60%;
+	padding: 2.5%;
+	border: 5px white solid;
+	color: white;
+	background: grey;
+	margin-left: 20%;
+	margin-top: 10%;
+	font-family: 'CapsuulaRegular', Arial, sans-serif;
+	z-index: 1;
+	position: relative;
+	@include border-radius(10px);
+	h2.title{
+		text-align: center;
+		margin: 10px;
+	}
+	h3.choice-description{
+		text-align: center;
+		min-height: 3em;
+
+	}
+	ol {
+		margin-left: 2em;
+		margin-top: 1em;
+		li{
+			display: block;	
+			p:first-child{
+				float: left;
+				margin-right: 1em;
+
+			}
+			font-size: 1.6em;
+			margin-bottom: .5em;
+		}
+		li:hover{
+			color: #EDEDED;
+			font-weight: bold;
+
+		}
+
+	}
+}
+
+.hide{
+	visibility: none;
+}
+
+#tool-tip{
+  position:absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  img{
+    height: 400px;
+}
+
+.speech 
+{
+    position: absolute;
+    right: 300px;
+    top: 100px;
+    max-height: 250px;
+    width: 400px;
+    min-height: 120px;
+    padding: 20px;
+    background: #FFFFFF;
+    border: #7F7F7F solid 4px;
+    -webkit-border-radius: 22px;
+    -moz-border-radius: 22px;
+    border-radius: 22px;
+    color: black;
+    font-size: 1.2em;
+    font-family: 'CapsuulaRegular', Arial, sans-serif;
+}
+
+.speech:after 
+{
+    content: "";
+    position: absolute;
+    top: 29px;
+    right: -45px;
+    border-style: solid;
+    border-width: 18px 0 18px 45px;
+    border-color: transparent #FFFFFF;
+    display: block;
+    width: 0;
+    z-index: 1;
+}
+
+}
+

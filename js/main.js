@@ -62,32 +62,43 @@ function runEvent(event) {
     updateProgress();
     manager.currentEvent = event;
 
-	if(randomEventCount > 0) {
-	    var randomEvent = randomManager.getRandomEvent();
-		updateDisplayForEvent(randomEvent, true);
-		randomEventCount -=1;
-	} else {
-		randomEventCount = getRandomInt(0,3);
-		console.log(randomEventCount + " random events coming up!");
-	    updateDisplayForEvent(event, false);
-	}
+    if(randomEventCount > 0) {
+        var randomEvent = randomManager.getRandomEvent();
+        updateDisplayForEvent(randomEvent, true);
+        randomEventCount -=1;
+    } else {
+        randomEventCount = getRandomInt(0,3);
+        console.log(randomEventCount + " random events coming up!");
+        updateDisplayForEvent(event, false);
+    }
 }
 
 function updateDisplayForEvent (event, isRandom) {
-	if (event.title.toLowerCase().indexOf("failure") >= 0){
-	    $("#tool-tip img.astronaut").attr("src","img/sad-astronaut.png");
-	} else{
-	    $("#tool-tip img.astronaut").attr("src","img/happy-astronaut.png");
+    if (event.title.toLowerCase().indexOf("failure") >= 0){
+        $("#tool-tip img.astronaut").attr("src","img/sad-astronaut.png");
+    } else{
+        $("#tool-tip img.astronaut").attr("src","img/happy-astronaut.png");
     }
+
+    if (event.tips){
+        $("#tool-tip").children(".speech").show().html(event.tips);
+    }else{
+        $("#tool-tip").children(".speech").hide();
+
+    }
+
+
+
+
     $("#choice-menu").children(".title").text(event.title);
     $(".choice-description").html(event.description);
     if(isRandom) {
-		var randomIndex = getRandomInt(0,event.variableDescription.length-1);
+        var randomIndex = getRandomInt(0,event.variableDescription.length-1);
 
-	    var html = $(".choice-description").html();
-	    $(".choice-description").html(html + event.variableDescription[randomIndex]);
+        var html = $(".choice-description").html();
+        $(".choice-description").html(html + event.variableDescription[randomIndex]);
     }
-	if (event.callback && eventCallbacks[event.callback]) {
+    if (event.callback && eventCallbacks[event.callback]) {
         eventCallbacks[event.callback]();
     }
 
@@ -98,11 +109,11 @@ function updateDisplayForEvent (event, isRandom) {
         $(this).show();
         var choice = event.choices[count];
         if(choice) {
-        	var nextEvent;
-        	if(isRandom) {
-        		nextEvent = manager.currentEvent;
-        	} else {
-            	nextEvent = manager.getNextEvent(count);
+            var nextEvent;
+            if(isRandom) {
+                nextEvent = manager.currentEvent;
+            } else {
+                nextEvent = manager.getNextEvent(count);
             }
             $(this).children(".text").text(choice);
             $(this).bind('click', {nextEvent:nextEvent},function(event){
@@ -120,7 +131,9 @@ var gameDate = new Date(2017, 11, 1),
     months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 function resetProgress(){
-    
+    gameDate = new Date(2017, 11, 1);
+    waterPercentage = 0;
+
 }
 
 function updateProgress() {
@@ -140,11 +153,3 @@ function updateProgress() {
     gameDate.setMonth(gameDate.getMonth() + 1);
 }
 
-function draw(text) {
-    canvas = document.getElementById('canvas');
-    ctx = canvas.getContext('2d');
-    ctx.fillStyle = "orange";
-    ctx.fillRect(0,0, canvas.width, canvas.height);
-    ctx.font="30px Arial";
-    ctx.strokeText(text,10,50);
-}
