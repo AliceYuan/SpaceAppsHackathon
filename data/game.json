@@ -57,18 +57,21 @@
 	"choices": ["Fantastic!  What Next?"],
 	"description": "<p>You've successfully built a 3D printer</p>",
 	"next": [6],
-	"title": "Done!"
+	"title": "Done!",
+	"callback": "build3dPrinter"
 	},
 	{"ID": 8,
 	"choices": ["Fantastic!  What Next?"],
 	"description": "<p>You've successfully built a Resource Refinery</p>",
 	"next": [6],
-	"title": "Done!"
+	"title": "Done!",
+	"callback": "buildMetalRefinery"
 	},
 	{"ID": 9,
 	"choices": ["Fantastic!  What Next?"],
 	"description": "<p>You've successfully built a Commodity Refinery</p>",
 	"next": [6],
-	"title": "Done!"
+	"title": "Done!",
+	"callback": "buildCommodityRefinery"
 	}	
 ]

@@ -38,7 +38,8 @@ function infrastructure(name, weight) {
 	return {
 		cost: cost,
 		upgrade: increaseGeneration,
-		current: current
+		current: current,
+		name: name
 	};
 }
 

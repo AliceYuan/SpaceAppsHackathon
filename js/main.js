@@ -21,11 +21,40 @@ $(document).ready(function() {
     initMenuActions();
 });
 
+var eventCallbacks = {
+	build3dPrinter: function () {
+		buildInfrastructure(player, printer);
+	},
+	buildMetalRefinery: function () {
+		buildInfrastructure(player, metalRefinery);
+	},
+	buildCommodityRefinery: function () {
+		buildInfrastructure(player, commodityRefinery);
+	}
+}
+
+function buildInfrastructure (player, infrastructure) {
+	if (player.resourcevalue.money > infrastructure.cost().money
+		&& player.resourcevalue.resources > infrastructure.cost().resources) {
+		player.resourcevalue.money -= infrastructure.cost().money;
+		player.resourcevalue.resources -= infrastructure.cost().resources;
+		infrastructure.upgrade();
+		console.log("built ", infrastructure.name)
+	} else {
+		alert("You have insufficient resources.")
+	}
+}
+
 function runEvent(event) {
 	manager.currentEvent = event;
 	$("#choice-menu").children(".title").text(event.title);
 	$(".choice-description").html(event.description);
 	var count = 0;
+
+	if (event.callback && eventCallbacks[event.callback]) {
+		eventCallbacks[event.callback]()
+	}
+
 	$("ol li").each(function() {
 		$(this).unbind();
 		$(this).show();
