@@ -1,6 +1,7 @@
 var player;
 var manager;
 var randomManager;
+var pauseProduction = false;
 var researchManager;
 var randomEventCount;
 var randomEventChance = 0.05;
