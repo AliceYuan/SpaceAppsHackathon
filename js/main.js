@@ -48,11 +48,12 @@ function buildInfrastructure (infrastructure) {
 		player.resourcevalue.resources -= infrastructure.cost().resources;
 		// Add infrastructure to player.
 		// Upgrade all infrastructure types when the printer gets upgraded.
-		if (infrastructure.type == 'printer') {
+		if (infrastructure.type == 'printers') {
 			jQuery.each(allInfrastructure, function(_, inf) {
 				inf.upgrade();
 			});
 		}
+		player.addInfrastructure(infrastructure.type);
 		console.log("built ", infrastructure.name)
 	} else {
 		alert("You have insufficient resources.")

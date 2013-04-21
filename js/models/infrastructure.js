@@ -9,7 +9,7 @@ function infrastructure(name, type, weight) {
 		transportCost = 10000,
 		gearRatio = 4,
 		currentGeneration = 1,
-		weight = weight,
+		weight = weight,	
 		name = name,
 		type = type;
 
@@ -45,9 +45,9 @@ function infrastructure(name, type, weight) {
 	};
 }
 
-var metalRefinery = infrastructure("Metal Refinery", "metalrefinery", 1019),
-	commodityRefinery = infrastructure("Commodity Refinery", "commodityrefinery", 733),
-	printer = infrastructure("3D Printer", "printer", 169);
+var metalRefinery = infrastructure("Metal Refinery", "metalrefineries", 1019),
+	commodityRefinery = infrastructure("Commodity Refinery", "commodityrefineries", 733),
+	printer = infrastructure("3D Printer", "printers", 169);
 
 var allInfrastructure = [printer, metalRefinery, commodityRefinery];
 
