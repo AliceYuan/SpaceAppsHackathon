@@ -2,6 +2,7 @@ var player;
 var manager;
 var randomManager;
 var randomEventCount;
+var randomEventChance = 0.05;
 
 $(document).ready(function() {
     player = new playerinfo();
@@ -62,13 +63,11 @@ function runEvent(event) {
     updateProgress();
     manager.currentEvent = event;
 
-    if(randomEventCount > 0) {
+    if(Math.random() < randomEventChance) {
         var randomEvent = randomManager.getRandomEvent();
         updateDisplayForEvent(randomEvent, true);
-        randomEventCount -=1;
     } else {
         randomEventCount = getRandomInt(0,3);
-        console.log(randomEventCount + " random events coming up!");
         updateDisplayForEvent(event, false);
     }
 }
