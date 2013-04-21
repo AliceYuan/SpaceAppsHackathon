@@ -234,6 +234,9 @@ function updateProgress() {
     $(".progressbar.energy div").animate({width:(Math.min(100, infrastructureCompletion) + "%")});
 
     $('#moneyDisplay').text(showMoney(player.resourcevalue.money));
+    if (sustainableIncome >= 100 && infrastructureCompletion >= 100) {
+		alert("The amount of income from commodities, and the amount of infrastructure on the moon means it's now sustainable.  Yay!");	
+    }
 }
 
 function incrementAndDisplayGameDate(numberOfMonths) {
@@ -241,9 +244,5 @@ function incrementAndDisplayGameDate(numberOfMonths) {
     $('#dateDisplay').text(months[gameDate.getMonth()] + ' ' + gameDate.getFullYear());
 
     gameDate.setMonth(gameDate.getMonth() + 1);
-
-    if (sustainableIncome >= 100 && infrastructureCompletion >= 100) {
-		alert("The amount of income from commodities, and the amount of infrastructure on the moon means it's now sustainable.  Yay!");	
-    }
 }
 
