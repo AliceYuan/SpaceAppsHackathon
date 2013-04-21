@@ -1,24 +1,26 @@
 function ResearchManager() {
-	this.events = [];
-	this.currentEvent = null;
+	this.researchEvents = [];
+	this.constructEvents = [];
 
 	this.getEventWithID  = function (ID) {
 		return this.events[ID];
 	};
 
 	this.getAllEvents = function () {
-		eventJson = [];
+		researchJson = [];
+		constructJson = [];
 		$.ajax({
 		  url: 'data/research.json',
 		  async: false,
 		  dataType: 'json',
 		  success: function (response) {
-		  	eventJson = response;
+		  	researchJson = response.research;
+		  	constructJson = response.construct;
 		  }
 		});
-		this.events = eventJson;
+		this.researchEvents = researchJson;
+		this.constructEvents = constructJson;
 	};
 	// Only do this once.
 	this.getAllEvents();
-	console.log(this.events);
 }
