@@ -144,7 +144,8 @@ function updateDisplayForEvent (event, isRandom) {
             mon = player.resourcevalue.money;
 
         jQuery.each(allInfrastructure, function(_, inf) {
-            if (res > inf.cost().resources && mon > inf.cost().money) {
+			console.log(inf.name, res > inf.cost().resources, mon > inf.cost().money, inf.prerequisiteCheck());
+            if (res > inf.cost().resources && mon > inf.cost().money && inf.prerequisiteCheck()) {
                 choices.push([
                     "Build a ",
                     inf.name,
