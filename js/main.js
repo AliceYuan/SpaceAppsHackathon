@@ -30,6 +30,14 @@ var eventCallbacks = {
 	},
 	buildCommodityRefinery: function () {
 		buildInfrastructure(player, commodityRefinery);
+	},
+	resourcePhase: function () {
+		// Should reflect the generation-levels of the extractors.
+		player.resourcevalue.resources += player.infrastructure.resourceextractors * 100;
+		// Should reflect the value of commodities.
+		player.resourcevalue.money += player.infrastructure.waterextractors * 1000000;
+
+		console.log('Now have', player.resourcevalue.resources, 'resources and', player.resourcevalue.money, 'money');
 	}
 }
 
@@ -38,6 +46,8 @@ function buildInfrastructure (player, infrastructure) {
 		&& player.resourcevalue.resources > infrastructure.cost().resources) {
 		player.resourcevalue.money -= infrastructure.cost().money;
 		player.resourcevalue.resources -= infrastructure.cost().resources;
+		
+		//console.log(new infrastructure());
 		infrastructure.upgrade();
 		console.log("built ", infrastructure.name)
 	} else {

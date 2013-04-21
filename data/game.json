@@ -51,7 +51,8 @@
 		7, 8, 9
 	],
 	"requirements": null,
-	"title": "Build Some Infrastructure"
+	"title": "Build Some Infrastructure",
+	"callback": "resourcePhase"
 	},
 	{"ID": 7,
 	"choices": ["Fantastic!  What Next?"],
