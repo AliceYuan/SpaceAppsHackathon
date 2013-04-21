@@ -44,12 +44,13 @@
   {"ID": 6,
 	"choices": ["Make a 3D Printer",
 		"Make a Resource Refinery",
+		"Make a Resource Extractor",
 		"Make a Commodity Refinery",
 		"Just Accumulate Resources"
 	],
 	"description": "<p>You now need to choose how to build out your starting infrastructure.</p>",
 	"next": [
-		7, 8, 9, 6
+		7, 8, 10, 9, 6
 	],
 	"requirements": null,
 	"title": "Build Some Infrastructure",
@@ -75,5 +76,13 @@
 	"next": [6],
 	"title": "Done!",
 	"callback": "buildCommodityRefinery"
+	},
+	{"ID": 10,
+	"choices": ["Fantastic!  What Next?"],
+	"description": "<p>You've successfully built a Resource Extractor</p>",
+	"next": [6],
+	"title": "Done!",
+	"callback": "buildResourceExtractor"
 	}	
+
 ]

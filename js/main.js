@@ -31,6 +31,9 @@ var eventCallbacks = {
 	buildCommodityRefinery: function () {
 		buildInfrastructure(commodityRefinery);
 	},
+	buildResourceExtractor: function() {
+		buildInfrastructure(resourceExtractor);	
+	},
 	resourcePhase: function () {
 		// Should reflect the generation-levels of the extractors.
 		player.resourcevalue.resources += player.infrastructure.resourceextractors * 100;

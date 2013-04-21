@@ -47,9 +47,10 @@ function infrastructure(name, type, weight) {
 
 var metalRefinery = infrastructure("Metal Refinery", "metalrefineries", 1019),
 	commodityRefinery = infrastructure("Commodity Refinery", "commodityrefineries", 733),
-	printer = infrastructure("3D Printer", "printers", 169);
+	printer = infrastructure("3D Printer", "printers", 169),
+	resourceExtractor = infrastructure("Resource Extractor", "resourceextractors", 70);
 
-var allInfrastructure = [printer, metalRefinery, commodityRefinery];
+var allInfrastructure = [printer, metalRefinery, commodityRefinery, resourceExtractor];
 
 /* Modifying the state of infrastructure 
 console.log('Current generation', metalRefinery.current());
