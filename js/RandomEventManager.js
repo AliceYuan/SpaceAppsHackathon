@@ -6,21 +6,21 @@ function RandomEventManager() {
 		var randomNumber = getRandomInt(0,100);
 		var index;
 		if(randomNumber <5) {
-			index = 1
+			index = 0;
 		} else if(randomNumber < 10) {
-			index = 2;
+			index = 1;
 		} else if(randomNumber < 15) {
-			index = 3;
+			index = 2;
 		} else if(randomNumber < 20) {
-			index = 4;
+			index = 3;
 		} else if(randomNumber < 40) {
-			index = 5;
+			index = 4;
 		} else if(randomNumber < 55) {
-			index = 6;
+			index = 5;
 		} else if(randomNumber < 95) {
-			index = 7;
+			index = 6;
 		} else {
-			index = 8;
+			index = 7;
 		}
 		return this.events[index];
 	};
