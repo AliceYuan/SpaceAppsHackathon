@@ -98,20 +98,24 @@ function runEvent(event) {
         var randomEvent = randomManager.getRandomEvent();
         updateDisplayForEvent(randomEvent, true);
     } else {
-    	if(event.ID <= 5) {
-    		randomEventCount = 0;
-    	} else {
-	        randomEventCount = getRandomInt(0,3);
-	    }
+        if(event.ID <= 5) {
+            randomEventCount = 0;
+        } else {
+            randomEventCount = getRandomInt(0,3);
+        }
         console.log(randomEventCount + " random events coming up!");
         updateDisplayForEvent(event, false);
     }
 }
 
 function updateDisplayForEvent (event, isRandom) {
+    if (event.title.toLowerCase().indexOf("phase 1, failure") >= 0) {
+        gameDate = new Date(2025,8,1);
+        updateProgress();
+    }
+
     if (event.title.toLowerCase().indexOf("failure") >= 0){
         $("#tool-tip img.astronaut").attr("src","img/sad-astronaut.png");
-       resetProgress();
     } else{
         $("#tool-tip img.astronaut").attr("src","img/happy-astronaut.png");
     }
@@ -134,30 +138,30 @@ function updateDisplayForEvent (event, isRandom) {
     }
 
     if (!isRandom && event.ID == 6) {
-    	var choices = [],
-    		next = [],
-    		res = player.resourcevalue.resources,
-    		mon = player.resourcevalue.money;
+        var choices = [],
+            next = [],
+            res = player.resourcevalue.resources,
+            mon = player.resourcevalue.money;
 
-    	jQuery.each(allInfrastructure, function(_, inf) {
-    		if (res > inf.cost().resources && mon > inf.cost().money) {
-    			choices.push([
-    				"Build a ",
-    				inf.name,
-    				" (",
-    				inf.cost().resources,
-    				" kg resources / $",
-    				inf.cost().money,
-    				")"
-    			].join(''));
-    			next.push(inf.eventid);
-    		}
-    	});
+        jQuery.each(allInfrastructure, function(_, inf) {
+            if (res > inf.cost().resources && mon > inf.cost().money) {
+                choices.push([
+                    "Build a ",
+                    inf.name,
+                    " (",
+                    inf.cost().resources,
+                    " kg resources / $",
+                    inf.cost().money,
+                    ")"
+                ].join(''));
+                next.push(inf.eventid);
+            }
+        });
 
-    	choices.push("Just Accumulate Resources");
-    	next.push(6);
-    	event.choices = choices;
-    	event.next = next;
+        choices.push("Just Accumulate Resources");
+        next.push(6);
+        event.choices = choices;
+        event.next = next;
     }
 
     var count = 0;
@@ -174,8 +178,11 @@ function updateDisplayForEvent (event, isRandom) {
                 nextEvent = manager.getNextEvent(count);
             }
             $(this).children(".text").text(choice);
-            $(this).bind('click', {nextEvent:nextEvent},function(event){
+            $(this).bind('click', {nextEvent:nextEvent, currentEvent:event},function(events){
                 var data = event.data;
+                if (data.currentEvent.title.toLowerCase().indexOf("failure") >= 0){
+                    resetProgress();
+                }
                 runEvent(data.nextEvent);
             });
         } else {
@@ -189,21 +196,20 @@ var gameDate = new Date(2017, 11, 1),
     months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 function resetProgress(){
+    $('body').fadeOut(1000);
     gameDate = new Date(2017, 11, 1);
-    player = new playerinfo();
+    player  = new playerinfo();
+    $('body').fadeIn(1000);
+
 }
 
 function updateProgress() {
-    var waterPercentage = player.resourcespercent();
-    $(".progressbar.water div").width(waterPercentage + "%");
-
     var moneyPercentage = player.moneypercent();
-    $(".progressbar.value-resources div").width(moneyPercentage + "%");
-
-    $(".progressbar.manufacturing-resources div").css('width', Math.min(100, player.resourcespercent()) + "%");
-
     var infrastructureCompletion = player.totalInfrastructure / 100;
-    $(".progressbar.energy div").width(Math.min(100, infrastructureCompletion) + "%");
+
+    $(".progressbar.value-resources div").animate({width:(moneyPercentage + "%")});
+    $(".progressbar.manufacturing-resources div").animate({width:(Math.min(100, player.resourcespercent()) + "%")});
+    $(".progressbar.energy div").animate({width:(Math.min(100, infrastructureCompletion) + "%")});
 
     $('#moneyDisplay').text(player.resourcevalue.money);
     $('#dateDisplay').text(months[gameDate.getMonth()] + ' ' + gameDate.getFullYear());
