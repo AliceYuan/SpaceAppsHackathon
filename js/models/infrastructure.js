@@ -41,7 +41,8 @@ function infrastructure(name, type, weight) {
 		upgrade: increaseGeneration,
 		current: current,
 		name: name, 
-		type: type // For convenient referencing.
+		type: type, // For convenient referencing.
+		weight: weight
 	};
 }
 
