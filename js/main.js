@@ -66,7 +66,12 @@ function runEvent(event) {
         var randomEvent = randomManager.getRandomEvent();
         updateDisplayForEvent(randomEvent, true);
     } else {
-        randomEventCount = getRandomInt(0,3);
+    	if(event.ID <= 5) {
+    		randomEventCount = 0;
+    	} else {
+	        randomEventCount = getRandomInt(0,3);
+	    }
+        console.log(randomEventCount + " random events coming up!");
         updateDisplayForEvent(event, false);
     }
 }
