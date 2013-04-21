@@ -46,11 +46,16 @@ function initMenuActions(){
                 console.log(player);
                 n = $(this).index();
                 research_item = data.research[n];
+
                 money = research_item.cost.money;
-                value_resources = research_item.cost.value_resources;
-                infrastructure = research_item.cost.infrastructure;
                 player.resourcevalue.money += money;
-                player.resourcevalue.commodities += value_resources;
+
+                value_resources = research_item.cost.value_resources;
+                player.resourcevalue.resources += value_resources;
+
+                // infrastructure = research_item.cost.infrastructure;
+                // player.addInfrastructure(infrastructure.type, infrastructure.weight);
+
                 updateProgress();
             }
             $(this).addClass("disable");
@@ -85,28 +90,26 @@ $("#main-menu .construct").bind('click', {construct:construct},function(event){
             $(".info-box").hide();
         }
         );
+    $("#secondary-menu .construct li").click( function(){
+        if (!$(this).hasClass("disable")){
+            console.log(player);
+            n = $(this).index();
+            research_item = data.construct[n];
 
-    // $("#secondary-menu li").bind('click', {research:research, construct:construct},function(event){
-    //     var data = event.data;
-    //     console.log("Test$");
-    //     if ($(this).parents().hasClass('research')){
-    //         console.log("test");
-    //         n = $(this).index();
-    //         research_item = data.research[n];
-    //         money = research_item.cost.money;
-    //         value_resources = research_item.cost.value-resources;
-    //         infrastructure = research_item.cost.infrastructure;
-    //         player.resourcevalue.money += money;
-    //         ($this).addClass("disable");
+            money = research_item.cost.money;
+            player.resourcevalue.money += money;
 
-    //     } else if ($(this).parents().hasClass('construct')){
-    //         n = $(this).index();
-    //         construct_item = data.construct[n];
+            value_resources = research_item.cost.value_resources;
+            player.resourcevalue.resources += value_resources;
 
-    //     }
+            // infrastructure = research_item.cost.infrastructure;
+            // player.addInfrastructure(infrastructure.type, infrastructure.weight);
 
+            updateProgress();
+        }
+        $(this).addClass("disable");
+    });
 
-    // });
 showMenuItemsAnimate($("#secondary-menu .construct li"));
 });
 }
