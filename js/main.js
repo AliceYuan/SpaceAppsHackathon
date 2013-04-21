@@ -225,10 +225,10 @@ function resetProgress(){
 }
 
 function updateProgress() {
-    var moneyPercentage = player.moneypercent();
+    var sustainableIncome = ((player.infrastructure.commodityrefineries * commodityPrice) / onGoingCost) * 100;
     var infrastructureCompletion = player.totalInfrastructure / 100;
 
-    $(".progressbar.value-resources div").animate({width:(moneyPercentage + "%")});
+    $(".progressbar.value-resources div").animate({width:(Math.min(100, sustainableIncome) + "%")});
     $(".progressbar.manufacturing-resources div").animate({width:(Math.min(100, player.resourcespercent()) + "%")});
     $(".progressbar.energy div").animate({width:(Math.min(100, infrastructureCompletion) + "%")});
 
