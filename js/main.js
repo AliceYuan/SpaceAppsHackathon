@@ -41,6 +41,14 @@ var eventCallbacks = {
         player.resourcevalue.money -= onGoingCost;
 
         console.log('Now have', player.resourcevalue.resources, 'resources and', player.resourcevalue.money, 'money');
+    },
+    jumpToFutureFailure: function () {
+    	gameDate = new Date(2025,8,1);
+    	updateProgress();
+    },
+    restartGame: function () {
+	    gameDate = new Date(2017, 11, 1);
+	    player = new playerinfo();
     }
 };
 
@@ -81,14 +89,12 @@ function runEvent(event) {
 
 function updateDisplayForEvent (event, isRandom) {
     if (event.title.toLowerCase().indexOf("phase 1, failure") >= 0) {
-        $(document).fadeOut(400);
         gameDate = new Date(2025,8,1);
         updateProgress();
     }
 
     if (event.title.toLowerCase().indexOf("failure") >= 0){
         $("#tool-tip img.astronaut").attr("src","img/sad-astronaut.png");
-
     } else{
         $("#tool-tip img.astronaut").attr("src","img/happy-astronaut.png");
     }

@@ -4,7 +4,8 @@
     "next" : [ 2 ],
     "requirements" : null,
     "tips":null,
-    "title" : "Introduction"
+    "title" : "Introduction",
+    "callback": "restartGame"
   },
   { "ID" : 2,
     "choices" : [ "A manned mission to the moon",
@@ -24,7 +25,8 @@
     "next" : [ 1 ],
     "requirements" : null,
     "tips":null,
-    "title" : "Phase 1, Failure"
+    "title" : "Phase 1, Failure",
+    "callback": "jumpToFutureFailure"
   },
   { "ID" : 4,
     "choices" : [ "Commence phase 2" ],

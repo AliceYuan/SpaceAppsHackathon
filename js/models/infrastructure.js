@@ -52,7 +52,7 @@ var metalRefinery = infrastructure("Metal Refinery", "metalrefineries", 1019, 8)
 	printer = infrastructure("3D Printer", "printers", 169, 7),
 	resourceExtractor = infrastructure("Resource Extractor", "resourceextractors", 70, 10);
 
-var allInfrastructure = [printer, metalRefinery, commodityRefinery, resourceExtractor];
+var allInfrastructure = [printer, resourceExtractor, metalRefinery, commodityRefinery];
 
 /* Modifying the state of infrastructure 
 console.log('Current generation', metalRefinery.current());
